@@ -38,20 +38,20 @@ public class ChemicalIntegration {
         ChemlibMekanized.LOGGER.info("Registering Mekanism chemical wrappers for ChemLib compounds");
 
         // Common gases
-        MekanismChemicalRegistry.registerCompoundGas("water_vapor", "87CEEB");
-        MekanismChemicalRegistry.registerCompoundGas("carbon_dioxide", "32C832");
-        MekanismChemicalRegistry.registerCompoundGas("methane", "5C5C5C");
-        MekanismChemicalRegistry.registerCompoundGas("ammonia", "87CEEB");
-        MekanismChemicalRegistry.registerCompoundGas("hydrogen_chloride", "B3FFB3");
+        MekanismChemicalRegistry.registerCompoundGas("water_vapor", "87CEEB", false);
+        MekanismChemicalRegistry.registerCompoundGas("carbon_dioxide", "32C832", false);
+        MekanismChemicalRegistry.registerCompoundGas("methane", "5C5C5C", false);
+        MekanismChemicalRegistry.registerCompoundGas("ammonia", "87CEEB", false);
+        MekanismChemicalRegistry.registerCompoundGas("hydrogen_chloride", "B3FFB3", true);
 
         // Organic compounds
-        MekanismChemicalRegistry.registerCompoundGas("ethane", "4F4F4F");
-        MekanismChemicalRegistry.registerCompoundGas("propane", "FFE4B5");
-        MekanismChemicalRegistry.registerCompoundGas("butane", "FFDAB9");
+        MekanismChemicalRegistry.registerCompoundGas("ethane", "4F4F4F", false);
+        MekanismChemicalRegistry.registerCompoundGas("propane", "FFE4B5", false);
+        MekanismChemicalRegistry.registerCompoundGas("butane", "FFDAB9", false);
 
         // Industrial chemicals
-        MekanismChemicalRegistry.registerCompoundGas("chlorine_gas", "FFFF7F");
-        MekanismChemicalRegistry.registerCompoundGas("sulfur_dioxide", "FFFF80");
+        MekanismChemicalRegistry.registerCompoundGas("chlorine_gas", "FFFF7F", true);
+        MekanismChemicalRegistry.registerCompoundGas("sulfur_dioxide", "FFFF80", true);
 
         ChemlibMekanized.LOGGER.info("Registered {} compound chemical wrappers", 10);
     }

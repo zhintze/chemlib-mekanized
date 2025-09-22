@@ -17,6 +17,11 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
+    // ChemLib Renderer Configuration
+    public static final ModConfigSpec.BooleanValue RENDER_ABBREVIATIONS = BUILDER
+            .comment("Whether to render chemical abbreviations on items")
+            .define("renderAbbreviations", true);
+
     public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
             .comment("Whether to log the dirt block on common setup")
             .define("logDirtBlock", true);

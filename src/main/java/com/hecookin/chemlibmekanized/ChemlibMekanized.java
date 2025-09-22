@@ -4,8 +4,10 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
+import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.integration.ChemicalIntegration;
 import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
+import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
 import com.hecookin.chemlibmekanized.recipes.ChemicalConversionRecipes;
 import com.hecookin.chemlibmekanized.recipes.DecompositionRecipeConverter;
 import com.hecookin.chemlibmekanized.recipes.SynthesisRecipeConverter;
@@ -31,13 +33,20 @@ public class ChemlibMekanized {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         LOGGER.info("ChemLibMekanized mod initialization started");
+
+        ChemLibItemRegistry.ITEMS.register(modEventBus);
+        ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);
+        ChemLibItemRegistry.initializeRegistries();
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("ChemLibMekanized common setup starting");
         event.enqueueWork(() -> {
-            LOGGER.info("Initializing chemical system integration");
+            LOGGER.info("Initializing extracted ChemLib content with Mekanism integration");
             MekanismChemicalRegistry.init();
+            MekanismChemLibIntegration.initializeChemicalMappings();
+
+            LOGGER.info("Initializing legacy chemical integration for compatibility");
             ChemicalIntegration.registerAllElements();
             ChemicalIntegration.registerAllCompounds();
 

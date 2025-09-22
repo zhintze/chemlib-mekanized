@@ -86,21 +86,8 @@ description='''${mod_description}'''
     ordering="NONE"
     side="BOTH"
 
-# ChemLib dependency
-[[dependencies.${mod_id}]]
-    modId="chemlib"
-    type="required"
-    versionRange="[2.0.0,)"
-    ordering="AFTER"
-    side="BOTH"
-
-# Alchemistry dependency
-[[dependencies.${mod_id}]]
-    modId="alchemistry"
-    type="required"
-    versionRange="[2.0.0,)"
-    ordering="AFTER"
-    side="BOTH"
+# ChemLib and Alchemistry content has been extracted and integrated into this mod
+# No external dependencies needed since we include all necessary content
 
 # Mekanism dependency
 [[dependencies.${mod_id}]]

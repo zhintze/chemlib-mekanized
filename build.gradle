@@ -112,14 +112,14 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
-    // Mekanism (homebaked JARs from mooStack)
+    // Mekanism (homebaked JARs from mooStack) - temporarily reduced to core only
     implementation "blank:Mekanism-1.21.1-${mekanism_version}"
-    implementation "blank:MekanismAdditions-1.21.1-${mekanism_version}"
-    implementation "blank:MekanismGenerators-1.21.1-${mekanism_version}"
-    implementation "blank:MekanismTools-1.21.1-${mekanism_version}"
+    // implementation "blank:MekanismAdditions-1.21.1-${mekanism_version}"
+    // implementation "blank:MekanismGenerators-1.21.1-${mekanism_version}"
+    // implementation "blank:MekanismTools-1.21.1-${mekanism_version}"
 
-    // Immersive Engineering
-    implementation "blank:ImmersiveEngineering-1.21.1-${immersiveengineering_version}"
+    // Immersive Engineering (temporarily disabled due to cauldron fluid registration conflict)
+    // implementation "blank:ImmersiveEngineering-1.21.1-${immersiveengineering_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -144,6 +144,9 @@ tasks.withType(ProcessResources).configureEach {
     filesMatching(['META-INF/neoforge.mods.toml']) {
         expand replaceProperties
     }
+
+    // Handle duplicate files by preferring generated resources over main resources
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 // Example configuration to allow publishing using the maven-publish plugin
