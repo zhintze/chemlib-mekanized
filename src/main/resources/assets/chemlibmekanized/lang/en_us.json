@@ -1,0 +1,13 @@
+{
+  "itemGroup.chemlibmekanized": "Example Mod Tab",
+  "block.chemlibmekanized.example_block": "Example Block",
+  "item.chemlibmekanized.example_item": "Example Item",
+
+  "chemlibmekanized.configuration.title": "Chemlib_Mekanized Configs",
+  "chemlibmekanized.configuration.section.chemlibmekanized.common.toml": "Chemlib_Mekanized Configs",
+  "chemlibmekanized.configuration.section.chemlibmekanized.common.toml.title": "Chemlib_Mekanized Configs",
+  "chemlibmekanized.configuration.items": "Item List",
+  "chemlibmekanized.configuration.logDirtBlock": "Log Dirt Block",
+  "chemlibmekanized.configuration.magicNumberIntroduction": "Magic Number Text",
+  "chemlibmekanized.configuration.magicNumber": "Magic Number"
+}
