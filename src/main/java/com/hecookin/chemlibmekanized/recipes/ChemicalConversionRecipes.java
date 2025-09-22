@@ -14,10 +14,10 @@ public class ChemicalConversionRecipes {
     public static class StateConversion {
         public final String solidForm;
         public final String liquidForm;
-        public final String gasForm;
-        public final String slurryForm;
+        public final MekanismChemicalRegistry.ChemicalReference gasForm;
+        public final MekanismChemicalRegistry.ChemicalReference slurryForm;
 
-        public StateConversion(String solidForm, String liquidForm, String gasForm, String slurryForm) {
+        public StateConversion(String solidForm, String liquidForm, MekanismChemicalRegistry.ChemicalReference gasForm, MekanismChemicalRegistry.ChemicalReference slurryForm) {
             this.solidForm = solidForm;
             this.liquidForm = liquidForm;
             this.gasForm = gasForm;
@@ -35,40 +35,63 @@ public class ChemicalConversionRecipes {
     }
 
     private static void initializeElementConversions() {
+        // Gas elements
         ELEMENT_CONVERSIONS.put("hydrogen", new StateConversion(
-            "chemlib:hydrogen_item",
+            "minecraft:air",  // Placeholder for hydrogen item
             null,
             MekanismChemicalRegistry.getElementGas("hydrogen"),
             null
         ));
 
         ELEMENT_CONVERSIONS.put("oxygen", new StateConversion(
-            "chemlib:oxygen_item",
+            "minecraft:air",  // Placeholder for oxygen item
             null,
             MekanismChemicalRegistry.getElementGas("oxygen"),
             null
         ));
 
+        ELEMENT_CONVERSIONS.put("nitrogen", new StateConversion(
+            "minecraft:air",  // Placeholder for nitrogen item
+            null,
+            MekanismChemicalRegistry.getElementGas("nitrogen"),
+            null
+        ));
+
+        // Solid elements (as slurries)
         ELEMENT_CONVERSIONS.put("carbon", new StateConversion(
-            "chemlib:carbon_item",
+            "minecraft:coal",
             null,
             null,
             MekanismChemicalRegistry.getElementSlurry("carbon")
         ));
 
         ELEMENT_CONVERSIONS.put("iron", new StateConversion(
-            "chemlib:iron_item",
+            "minecraft:iron_ingot",
             null,
             null,
             MekanismChemicalRegistry.getElementSlurry("iron")
+        ));
+
+        ELEMENT_CONVERSIONS.put("copper", new StateConversion(
+            "minecraft:copper_ingot",
+            null,
+            null,
+            MekanismChemicalRegistry.getElementSlurry("copper")
+        ));
+
+        ELEMENT_CONVERSIONS.put("gold", new StateConversion(
+            "minecraft:gold_ingot",
+            null,
+            null,
+            MekanismChemicalRegistry.getElementSlurry("gold")
         ));
     }
 
     private static void initializeCompoundConversions() {
         COMPOUND_CONVERSIONS.put("water", new StateConversion(
             "minecraft:ice",
-            "minecraft:water",
-            null,
+            "minecraft:water_bucket",
+            MekanismChemicalRegistry.getCompoundGas("water_vapor"),
             null
         ));
 
@@ -85,6 +108,13 @@ public class ChemicalConversionRecipes {
             MekanismChemicalRegistry.getCompoundGas("methane"),
             null
         ));
+
+        COMPOUND_CONVERSIONS.put("ammonia", new StateConversion(
+            null,
+            null,
+            MekanismChemicalRegistry.getCompoundGas("ammonia"),
+            null
+        ));
     }
 
     public static StateConversion getElementConversion(String elementName) {
@@ -95,7 +125,7 @@ public class ChemicalConversionRecipes {
         return COMPOUND_CONVERSIONS.get(compoundName);
     }
 
-    public static String getGasForm(String chemicalName) {
+    public static MekanismChemicalRegistry.ChemicalReference getGasForm(String chemicalName) {
         StateConversion elementConv = getElementConversion(chemicalName);
         if (elementConv != null && elementConv.gasForm != null) {
             return elementConv.gasForm;
@@ -109,7 +139,7 @@ public class ChemicalConversionRecipes {
         return null;
     }
 
-    public static String getSlurryForm(String chemicalName) {
+    public static MekanismChemicalRegistry.ChemicalReference getSlurryForm(String chemicalName) {
         StateConversion elementConv = getElementConversion(chemicalName);
         if (elementConv != null && elementConv.slurryForm != null) {
             return elementConv.slurryForm;

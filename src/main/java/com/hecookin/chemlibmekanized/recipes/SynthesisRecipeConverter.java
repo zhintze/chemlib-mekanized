@@ -1,6 +1,7 @@
 package com.hecookin.chemlibmekanized.recipes;
 
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
+import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,10 +13,10 @@ public class SynthesisRecipeConverter {
 
     public static class SynthesisRecipe {
         public final List<ChemicalInput> inputs;
-        public final String output;
+        public final Object output; // Can be String (item) or ChemicalReference (chemical)
         public final int outputAmount;
 
-        public SynthesisRecipe(List<ChemicalInput> inputs, String output, int outputAmount) {
+        public SynthesisRecipe(List<ChemicalInput> inputs, Object output, int outputAmount) {
             this.inputs = inputs;
             this.output = output;
             this.outputAmount = outputAmount;
@@ -23,10 +24,10 @@ public class SynthesisRecipeConverter {
     }
 
     public static class ChemicalInput {
-        public final String chemical;
+        public final MekanismChemicalRegistry.ChemicalReference chemical;
         public final int amount;
 
-        public ChemicalInput(String chemical, int amount) {
+        public ChemicalInput(MekanismChemicalRegistry.ChemicalReference chemical, int amount) {
             this.chemical = chemical;
             this.amount = amount;
         }

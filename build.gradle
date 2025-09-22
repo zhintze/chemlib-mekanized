@@ -26,6 +26,11 @@ repositories {
         name = 'cursemaven'
         url = 'https://cursemaven.com'
     }
+    maven {
+        // JEI
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
     flatDir {
         dirs 'libs'
     }
@@ -106,6 +111,15 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+
+    // Mekanism (homebaked JARs from mooStack)
+    implementation "blank:Mekanism-1.21.1-${mekanism_version}"
+    implementation "blank:MekanismAdditions-1.21.1-${mekanism_version}"
+    implementation "blank:MekanismGenerators-1.21.1-${mekanism_version}"
+    implementation "blank:MekanismTools-1.21.1-${mekanism_version}"
+
+    // Immersive Engineering
+    implementation "blank:ImmersiveEngineering-1.21.1-${immersiveengineering_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

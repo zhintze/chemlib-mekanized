@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
 import com.hecookin.chemlibmekanized.integration.ChemicalIntegration;
+import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 import com.hecookin.chemlibmekanized.recipes.ChemicalConversionRecipes;
 import com.hecookin.chemlibmekanized.recipes.DecompositionRecipeConverter;
 import com.hecookin.chemlibmekanized.recipes.SynthesisRecipeConverter;
@@ -44,6 +45,9 @@ public class ChemlibMekanized {
             ChemicalConversionRecipes.initializeConversions();
             DecompositionRecipeConverter.initializeDecompositionRecipes();
             SynthesisRecipeConverter.initializeSynthesisRecipes();
+
+            LOGGER.info("Initializing mod integrations");
+            ImmersiveEngineeringIntegration.initializeIntegration();
         });
     }
 

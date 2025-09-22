@@ -1,6 +1,7 @@
 package com.hecookin.chemlibmekanized.recipes;
 
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
+import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,11 +22,11 @@ public class DecompositionRecipeConverter {
     }
 
     public static class ChemicalOutput {
-        public final String chemical;
+        public final MekanismChemicalRegistry.ChemicalReference chemical;
         public final int amount;
         public final double probability;
 
-        public ChemicalOutput(String chemical, int amount, double probability) {
+        public ChemicalOutput(MekanismChemicalRegistry.ChemicalReference chemical, int amount, double probability) {
             this.chemical = chemical;
             this.amount = amount;
             this.probability = probability;
