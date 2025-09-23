@@ -50,7 +50,6 @@ public class ExtractedElementItem extends Item implements Chemical {
             }
         }
 
-        tooltipComponents.add(Component.literal("Mekanism Compatible").withStyle(ChatFormatting.GOLD));
     }
 
     public String getGroupName() {

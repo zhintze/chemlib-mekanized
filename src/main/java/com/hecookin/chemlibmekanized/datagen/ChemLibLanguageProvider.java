@@ -40,7 +40,6 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             String displayName = formatChemicalName(element.name);
             add(translationKey, displayName);
 
-            ChemlibMekanized.LOGGER.debug("Added translation for element: {} -> {}", element.name, displayName);
         }
     }
 
@@ -52,7 +51,6 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             String displayName = formatChemicalName(compound.name);
             add(translationKey, displayName);
 
-            ChemlibMekanized.LOGGER.debug("Added translation for compound: {} -> {}", compound.name, displayName);
         }
     }
 

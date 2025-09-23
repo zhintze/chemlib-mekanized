@@ -57,7 +57,6 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
 
         ItemModelBuilder model = withExistingParent(element.name, parentModel);
 
-        ChemlibMekanized.LOGGER.debug("Generated layered model for element: {} with state: {} using parent: {}", element.name, matterState, parentModel);
     }
 
     private void generateLayeredCompoundModel(ChemLibDataExtractor.CompoundData compound, Item item) {
@@ -72,7 +71,6 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
 
         ItemModelBuilder model = withExistingParent(compound.name, parentModel);
 
-        ChemlibMekanized.LOGGER.debug("Generated layered model for compound: {} with state: {} using parent: {}", compound.name, matterState, parentModel);
     }
 
     public ResourceLocation modLoc(String path) {

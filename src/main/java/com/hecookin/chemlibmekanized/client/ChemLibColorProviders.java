@@ -18,12 +18,7 @@ public class ChemLibColorProviders {
         for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.ELEMENT_ITEMS.values()) {
             Item item = itemHolder.get();
             if (item instanceof ExtractedElementItem elementItem) {
-                event.register((stack, tintIndex) -> {
-                    int color = elementItem.getColor(stack, tintIndex);
-                    ChemlibMekanized.LOGGER.debug("Element {} color for tint index {}: 0x{}",
-                                                  elementItem.getChemicalName(), tintIndex, Integer.toHexString(color));
-                    return color;
-                }, item);
+                event.register(elementItem::getColor, item);
                 elementCount++;
             }
         }
@@ -32,12 +27,7 @@ public class ChemLibColorProviders {
         for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.COMPOUND_ITEMS.values()) {
             Item item = itemHolder.get();
             if (item instanceof ExtractedCompoundItem compoundItem) {
-                event.register((stack, tintIndex) -> {
-                    int color = compoundItem.getColor(stack, tintIndex);
-                    ChemlibMekanized.LOGGER.debug("Compound {} color for tint index {}: 0x{}",
-                                                  compoundItem.getChemicalName(), tintIndex, Integer.toHexString(color));
-                    return color;
-                }, item);
+                event.register(compoundItem::getColor, item);
                 compoundCount++;
             }
         }

@@ -39,20 +39,13 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
                            MultiBufferSource buffer, int light, int overlay) {
 
         if (!(stack.getItem() instanceof Chemical chemical)) {
-            ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Item is not a Chemical: {}", stack.getItem());
             return;
         }
 
-        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Rendering chemical {} in context {}",
-                                    chemical.getChemicalName(), context);
 
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         BakedModel model = getModelForItem(stack, chemical);
 
-        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Got model for {}: {} (missing={})",
-                                    chemical.getChemicalName(),
-                                    model != null ? model.getClass().getSimpleName() : "null",
-                                    model != null && model == Minecraft.getInstance().getModelManager().getMissingModel());
 
         if (model != null) {
             poseStack.pushPose();
@@ -61,7 +54,6 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
             applyContextTransformations(poseStack, context);
 
             // Render the base model
-            ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Rendering base model for {}", chemical.getChemicalName());
             itemRenderer.render(stack, context, false, poseStack, buffer, light, overlay, model);
 
             // Render abbreviation overlay if configured
@@ -81,14 +73,10 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
             minecraft.level.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ITEM)
                 .getKey(stack.getItem()) : null;
 
-        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Getting model for item: {} ({})",
-                                    itemId, chemical.getChemicalName());
 
         // Build template model name based on chemical type and matter state
         String templateName = getTemplateModelName(chemical);
 
-        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Using template model: {} for {}",
-                                    templateName, chemical.getChemicalName());
 
         // Get the template model directly from model manager
         ModelResourceLocation templateLocation = new ModelResourceLocation(
@@ -96,10 +84,6 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
         BakedModel model = minecraft.getModelManager().getModel(templateLocation);
 
-        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Got template model: {} for {} (missing={})",
-                                    model != null ? model.getClass().getSimpleName() : "null",
-                                    chemical.getChemicalName(),
-                                    model != null && model == minecraft.getModelManager().getMissingModel());
 
         return model;
     }

@@ -129,7 +129,6 @@ public class ChemLibItemRegistry {
                 () -> new ExtractedElementItem(element));
             ELEMENT_ITEMS.put(element.name, elementItem);
 
-            ChemlibMekanized.LOGGER.info("Registered element: {} ({})", element.name, element.abbreviation);
         }
     }
 
@@ -141,7 +140,6 @@ public class ChemLibItemRegistry {
                 () -> new ExtractedCompoundItem(compound));
             COMPOUND_ITEMS.put(compound.name, compoundItem);
 
-            ChemlibMekanized.LOGGER.info("Registered compound: {}", compound.name);
         }
     }
 

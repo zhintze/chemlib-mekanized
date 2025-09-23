@@ -65,7 +65,6 @@ public class ExtractedCompoundItem extends Item implements Chemical {
             }
         }
 
-        tooltipComponents.add(Component.literal("Mekanism Compatible").withStyle(ChatFormatting.GOLD));
     }
 
     @Override

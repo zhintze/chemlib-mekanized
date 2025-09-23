@@ -38,7 +38,6 @@ public class MekanismChemLibIntegration {
 
                 if (chemicalRef != null) {
                     ELEMENT_CHEMICAL_MAP.put(elementName, chemicalRef);
-                    ChemlibMekanized.LOGGER.debug("Mapped element {} to Mekanism chemical", elementName);
                 }
             }
         }
@@ -55,7 +54,6 @@ public class MekanismChemLibIntegration {
 
                 if (chemicalRef != null) {
                     COMPOUND_CHEMICAL_MAP.put(compoundName, chemicalRef);
-                    ChemlibMekanized.LOGGER.debug("Mapped compound {} to Mekanism chemical", compoundName);
                 }
             }
         }
