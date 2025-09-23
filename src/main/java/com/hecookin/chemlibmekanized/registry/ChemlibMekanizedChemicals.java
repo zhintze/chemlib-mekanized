@@ -1,11 +1,16 @@
 package com.hecookin.chemlibmekanized.registry;
 
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
+import com.hecookin.chemlibmekanized.extraction.ChemLibDataExtractor;
 import mekanism.api.chemical.Chemical;
 import mekanism.api.chemical.ChemicalBuilder;
 import mekanism.common.registration.impl.ChemicalDeferredRegister;
 import mekanism.common.registration.impl.DeferredChemical;
 import net.minecraft.resources.ResourceLocation;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Registry for all ChemLib-Mekanized chemicals using proper Mekanism Chemical objects.
@@ -18,25 +23,33 @@ public class ChemlibMekanizedChemicals {
 
     public static final ChemicalDeferredRegister CHEMICALS = new ChemicalDeferredRegister(ChemlibMekanized.MODID);
 
-    // Gas Elements - Using Mekanism's default liquid texture with color tinting
-    public static final DeferredChemical<Chemical> HYDROGEN_GAS = CHEMICALS.register("element_hydrogen", 0xB3DFFF);
-    public static final DeferredChemical<Chemical> OXYGEN_GAS = CHEMICALS.register("element_oxygen", 0xFF8080);
-    public static final DeferredChemical<Chemical> NITROGEN_GAS = CHEMICALS.register("element_nitrogen", 0x7F7FFF);
-    public static final DeferredChemical<Chemical> CHLORINE_GAS = CHEMICALS.register("element_chlorine", 0xFFFF00);
-    public static final DeferredChemical<Chemical> HELIUM_GAS = CHEMICALS.register("element_helium", 0xFFE4B5);
-    public static final DeferredChemical<Chemical> URANIUM_GAS = CHEMICALS.register("element_uranium", 0x32FF32);
+    // Color mapping for ChemLib chemical colors
+    private static final Map<String, Integer> CHEMLIB_COLORS = new HashMap<>();
 
-    // Gas Compounds - Using Mekanism's default liquid texture with color tinting
-    public static final DeferredChemical<Chemical> WATER_VAPOR = CHEMICALS.register("compound_water_vapor", 0x87CEEB);
-    public static final DeferredChemical<Chemical> CARBON_DIOXIDE = CHEMICALS.register("compound_carbon_dioxide", 0x32C832);
-    public static final DeferredChemical<Chemical> METHANE = CHEMICALS.register("compound_methane", 0x5C5C5C);
-    public static final DeferredChemical<Chemical> AMMONIA = CHEMICALS.register("compound_ammonia", 0x87CEEB);
-    public static final DeferredChemical<Chemical> HYDROGEN_CHLORIDE_GAS = CHEMICALS.register("compound_hydrogen_chloride", 0xB3FFB3);
-    public static final DeferredChemical<Chemical> ETHANE = CHEMICALS.register("compound_ethane", 0x4F4F4F);
-    public static final DeferredChemical<Chemical> PROPANE = CHEMICALS.register("compound_propane", 0xFFE4B5);
-    public static final DeferredChemical<Chemical> BUTANE = CHEMICALS.register("compound_butane", 0xFFDAB9);
-    public static final DeferredChemical<Chemical> CHLORINE_COMPOUND_GAS = CHEMICALS.register("compound_chlorine_gas", 0xFFFF7F);
-    public static final DeferredChemical<Chemical> SULFUR_DIOXIDE_GAS = CHEMICALS.register("compound_sulfur_dioxide", 0xFFFF80);
+    // Initialize ChemLib color mapping
+    static {
+        loadChemLibColors();
+    }
+
+    // Gas Elements - Using ChemLib colors dynamically
+    public static final DeferredChemical<Chemical> HYDROGEN_GAS = CHEMICALS.register("element_hydrogen", getChemLibColor("hydrogen", 0xB3DFFF));
+    public static final DeferredChemical<Chemical> OXYGEN_GAS = CHEMICALS.register("element_oxygen", getChemLibColor("oxygen", 0xFF8080));
+    public static final DeferredChemical<Chemical> NITROGEN_GAS = CHEMICALS.register("element_nitrogen", getChemLibColor("nitrogen", 0x7F7FFF));
+    public static final DeferredChemical<Chemical> CHLORINE_GAS = CHEMICALS.register("element_chlorine", getChemLibColor("chlorine", 0xFFFF00));
+    public static final DeferredChemical<Chemical> HELIUM_GAS = CHEMICALS.register("element_helium", getChemLibColor("helium", 0xFFE4B5));
+    public static final DeferredChemical<Chemical> URANIUM_GAS = CHEMICALS.register("element_uranium", getChemLibColor("uranium", 0x32FF32));
+
+    // Gas Compounds - Using ChemLib colors dynamically
+    public static final DeferredChemical<Chemical> WATER_VAPOR = CHEMICALS.register("compound_water_vapor", getChemLibColor("water_vapor", 0x87CEEB));
+    public static final DeferredChemical<Chemical> CARBON_DIOXIDE = CHEMICALS.register("compound_carbon_dioxide", getChemLibColor("carbon_dioxide", 0x32C832));
+    public static final DeferredChemical<Chemical> METHANE = CHEMICALS.register("compound_methane", getChemLibColor("methane", 0x5C5C5C));
+    public static final DeferredChemical<Chemical> AMMONIA = CHEMICALS.register("compound_ammonia", getChemLibColor("ammonia", 0x87CEEB));
+    public static final DeferredChemical<Chemical> HYDROGEN_CHLORIDE_GAS = CHEMICALS.register("compound_hydrogen_chloride", getChemLibColor("hydrogen_chloride", 0xB3FFB3));
+    public static final DeferredChemical<Chemical> ETHANE = CHEMICALS.register("compound_ethane", getChemLibColor("ethane", 0x4F4F4F));
+    public static final DeferredChemical<Chemical> PROPANE = CHEMICALS.register("compound_propane", getChemLibColor("propane", 0xFFE4B5));
+    public static final DeferredChemical<Chemical> BUTANE = CHEMICALS.register("compound_butane", getChemLibColor("butane", 0xFFDAB9));
+    public static final DeferredChemical<Chemical> CHLORINE_COMPOUND_GAS = CHEMICALS.register("compound_chlorine_gas", getChemLibColor("chlorine_gas", 0xFFFF7F));
+    public static final DeferredChemical<Chemical> SULFUR_DIOXIDE_GAS = CHEMICALS.register("compound_sulfur_dioxide", getChemLibColor("sulfur_dioxide", 0xFFFF80));
 
     /**
      * Get element gas chemical by name.
@@ -96,6 +109,73 @@ public class ChemlibMekanizedChemicals {
      */
     public static boolean hasCompoundGas(String compoundName) {
         return getCompoundGas(compoundName) != null;
+    }
+
+    /**
+     * Load ChemLib colors from extracted data.
+     */
+    private static void loadChemLibColors() {
+        // Load element colors
+        List<ChemLibDataExtractor.ElementData> elements = ChemLibDataExtractor.extractElements();
+        for (ChemLibDataExtractor.ElementData element : elements) {
+            if (element.color != null && !element.color.isEmpty()) {
+                try {
+                    int color = (int) Long.parseLong(element.color, 16);
+                    if (element.color.length() == 6) {
+                        color |= 0xFF000000; // Add full alpha if not specified
+                    }
+                    CHEMLIB_COLORS.put(element.name, color);
+                } catch (NumberFormatException e) {
+                    ChemlibMekanized.LOGGER.warn("Invalid color format for element {}: {}", element.name, element.color);
+                }
+            }
+        }
+
+        // Load compound colors
+        List<ChemLibDataExtractor.CompoundData> compounds = ChemLibDataExtractor.extractCompounds();
+        for (ChemLibDataExtractor.CompoundData compound : compounds) {
+            if (compound.color != null && !compound.color.isEmpty()) {
+                try {
+                    int color = (int) Long.parseLong(compound.color, 16);
+                    if (compound.color.length() == 6) {
+                        color |= 0xFF000000; // Add full alpha if not specified
+                    }
+                    CHEMLIB_COLORS.put(compound.name, color);
+                } catch (NumberFormatException e) {
+                    ChemlibMekanized.LOGGER.warn("Invalid color format for compound {}: {}", compound.name, compound.color);
+                }
+            }
+        }
+
+        ChemlibMekanized.LOGGER.info("Loaded {} ChemLib colors for chemical consistency", CHEMLIB_COLORS.size());
+    }
+
+    /**
+     * Get ChemLib color for a chemical, with fallback.
+     *
+     * @param name The chemical name
+     * @param fallback Fallback color if not found in ChemLib
+     * @return The color as integer
+     */
+    private static int getChemLibColor(String name, int fallback) {
+        Integer color = CHEMLIB_COLORS.get(name);
+        if (color != null) {
+            ChemlibMekanized.LOGGER.debug("Using ChemLib color for {}: 0x{}", name, Integer.toHexString(color));
+            return color;
+        } else {
+            ChemlibMekanized.LOGGER.debug("No ChemLib color found for {}, using fallback: 0x{}", name, Integer.toHexString(fallback));
+            return fallback;
+        }
+    }
+
+    /**
+     * Get the ChemLib color for a chemical (public method for fluid registry).
+     *
+     * @param name The chemical name
+     * @return The color as integer, or null if not found
+     */
+    public static Integer getChemLibColorForFluid(String name) {
+        return CHEMLIB_COLORS.get(name);
     }
 
     /**
