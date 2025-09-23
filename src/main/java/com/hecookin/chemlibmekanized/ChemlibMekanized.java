@@ -3,16 +3,14 @@ package com.hecookin.chemlibmekanized;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
+import com.hecookin.chemlibmekanized.registry.ChemlibMekanizedChemicals;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
-import com.hecookin.chemlibmekanized.integration.ChemicalIntegration;
-import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
-import com.hecookin.chemlibmekanized.recipes.ChemicalConversionRecipes;
-import com.hecookin.chemlibmekanized.recipes.DecompositionRecipeConverter;
-import com.hecookin.chemlibmekanized.recipes.SynthesisRecipeConverter;
+import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 
+import mekanism.api.MekanismAPI;
+import mekanism.api.chemical.Chemical;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -22,6 +20,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 
 @Mod(ChemlibMekanized.MODID)
 public class ChemlibMekanized {
@@ -30,10 +29,14 @@ public class ChemlibMekanized {
 
     public ChemlibMekanized(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerChemicals);
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         LOGGER.info("ChemLibMekanized mod initialization started");
+
+        // Register Mekanism chemicals
+        ChemlibMekanizedChemicals.CHEMICALS.register(modEventBus);
 
         ChemLibItemRegistry.ITEMS.register(modEventBus);
         ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);
@@ -46,25 +49,22 @@ public class ChemlibMekanized {
         ChemLibFluidRegistry.registerAll();
     }
 
+    private void registerChemicals(RegisterEvent event) {
+        if (event.getRegistryKey().equals(MekanismAPI.CHEMICAL_REGISTRY_NAME)) {
+            LOGGER.info("Registering Mekanism chemicals for ChemLib integration");
+            ChemlibMekanizedChemicals.init();
+        }
+    }
+
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("ChemLibMekanized common setup starting");
         event.enqueueWork(() -> {
             LOGGER.info("Initializing extracted ChemLib content with Mekanism integration");
 
-            MekanismChemicalRegistry.init();
             MekanismChemLibIntegration.initializeChemicalMappings();
-
-            LOGGER.info("Initializing legacy chemical integration for compatibility");
-            ChemicalIntegration.registerAllElements();
-            ChemicalIntegration.registerAllCompounds();
-
-            LOGGER.info("Initializing recipe conversion systems");
-            ChemicalConversionRecipes.initializeConversions();
-            DecompositionRecipeConverter.initializeDecompositionRecipes();
-            SynthesisRecipeConverter.initializeSynthesisRecipes();
-
-            LOGGER.info("Initializing mod integrations");
             ImmersiveEngineeringIntegration.initializeIntegration();
+
+            LOGGER.info("Mekanism gas chemical integration completed successfully");
         });
     }
 
