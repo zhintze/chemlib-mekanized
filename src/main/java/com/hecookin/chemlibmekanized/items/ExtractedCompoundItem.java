@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.client.Minecraft;
+import org.lwjgl.glfw.GLFW;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -64,7 +66,6 @@ public class ExtractedCompoundItem extends Item implements Chemical {
                                               .withStyle(ChatFormatting.DARK_PURPLE));
             }
         }
-
     }
 
     @Override

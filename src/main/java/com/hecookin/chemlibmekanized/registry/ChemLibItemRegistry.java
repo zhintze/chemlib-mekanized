@@ -121,6 +121,7 @@ public class ChemLibItemRegistry {
             .build()
     );
 
+
     public static void registerElements() {
         List<ChemLibDataExtractor.ElementData> elements = ChemLibDataExtractor.extractElements();
 

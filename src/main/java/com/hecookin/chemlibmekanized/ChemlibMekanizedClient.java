@@ -1,8 +1,8 @@
 package com.hecookin.chemlibmekanized;
 
 import com.hecookin.chemlibmekanized.client.ChemLibColorProviders;
+import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -10,10 +10,12 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import org.jetbrains.annotations.NotNull;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = ChemlibMekanized.MODID, dist = Dist.CLIENT)
@@ -41,26 +43,46 @@ public class ChemlibMekanizedClient {
         ChemlibMekanized.LOGGER.info("ChemLib item color providers registered");
     }
 
-    // Commenting out model registration for now - template models should be loaded automatically
-    // when referenced by individual chemical models
-    /*
     @SubscribeEvent
-    static void onModelRegister(ModelEvent.RegisterAdditional event) {
-        ChemlibMekanized.LOGGER.info("Registering ChemLib template models");
-
-        // Register element template models
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_solid_model"), "inventory"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_liquid_model"), "inventory"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_gas_model"), "inventory"));
-
-        // Register compound template models
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_solid_model"), "inventory"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_liquid_model"), "inventory"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_gas_model"), "inventory"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_dust_model"), "inventory"));
-
-        ChemlibMekanized.LOGGER.info("ChemLib template models registered");
+    static void onRegisterClientExtensions(RegisterClientExtensionsEvent event) {
+        ChemlibMekanized.LOGGER.info("Registering ChemLib fluid extensions");
+        registerFluidExtensions(event);
+        ChemlibMekanized.LOGGER.info("ChemLib fluid extensions registered");
     }
-    */
+
+    /**
+     * Registers client fluid type extensions for ChemLib fluids
+     * Following ImmersiveEngineering's proven approach
+     */
+    private static void registerFluidExtensions(RegisterClientExtensionsEvent event) {
+        // Register extensions for all our ChemLib fluids
+        for (ChemLibFluidRegistry.ChemLibFluidEntry fluidEntry : ChemLibFluidRegistry.getAllFluids()) {
+            event.registerFluidType(
+                new IClientFluidTypeExtensions() {
+                    @NotNull
+                    @Override
+                    public ResourceLocation getStillTexture() {
+                        return fluidEntry.stillTexture();
+                    }
+
+                    @NotNull
+                    @Override
+                    public ResourceLocation getFlowingTexture() {
+                        return fluidEntry.flowingTexture();
+                    }
+
+                    @Override
+                    public int getTintColor() {
+                        return fluidEntry.color();
+                    }
+                },
+                fluidEntry.fluidType().value()
+            );
+
+            ChemlibMekanized.LOGGER.debug("Registered client extension for fluid: {}", fluidEntry.name());
+        }
+    }
+
+    // Model registration not needed for fluids - texture paths are handled by client extensions
 
 }

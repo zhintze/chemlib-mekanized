@@ -223,8 +223,14 @@ public class ChemLibDataExtractor {
                 String name = compoundObj.get("name").getAsString();
                 String matterState = compoundObj.get("matter_state").getAsString();
                 boolean hasItem = compoundObj.has("has_item") && compoundObj.get("has_item").getAsBoolean();
+                boolean hasFluid = compoundObj.has("has_fluid") && compoundObj.get("has_fluid").getAsBoolean();
                 String description = compoundObj.has("description") ? compoundObj.get("description").getAsString() : "";
                 String color = compoundObj.get("color").getAsString();
+
+                // Skip compounds that already have fluids (like water which uses vanilla)
+                if (hasFluid) {
+                    continue;
+                }
 
                 FluidProperties fluidProps = null;
                 if (compoundObj.has("fluid_properties")) {

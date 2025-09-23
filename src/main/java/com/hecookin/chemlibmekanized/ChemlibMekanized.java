@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.MekanismChemicalRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
+import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
 import com.hecookin.chemlibmekanized.integration.ChemicalIntegration;
 import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
@@ -37,12 +38,19 @@ public class ChemlibMekanized {
         ChemLibItemRegistry.ITEMS.register(modEventBus);
         ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);
         ChemLibItemRegistry.initializeRegistries();
+
+        // Register standard NeoForge fluid system (no buckets)
+        ChemLibFluidRegistry.FLUIDS.register(modEventBus);
+        ChemLibFluidRegistry.FLUID_TYPES.register(modEventBus);
+        ChemLibFluidRegistry.BLOCKS.register(modEventBus);
+        ChemLibFluidRegistry.registerAll();
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("ChemLibMekanized common setup starting");
         event.enqueueWork(() -> {
             LOGGER.info("Initializing extracted ChemLib content with Mekanism integration");
+
             MekanismChemicalRegistry.init();
             MekanismChemLibIntegration.initializeChemicalMappings();
 

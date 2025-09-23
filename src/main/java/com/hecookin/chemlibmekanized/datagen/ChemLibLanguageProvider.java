@@ -2,6 +2,7 @@ package com.hecookin.chemlibmekanized.datagen;
 
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
 import com.hecookin.chemlibmekanized.extraction.ChemLibDataExtractor;
+import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -20,6 +21,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         addCreativeTabTranslations();
         addElementTranslations();
         addCompoundTranslations();
+        addFluidTranslations();
 
         ChemlibMekanized.LOGGER.info("Completed generating translations");
     }
@@ -51,6 +53,15 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             String displayName = formatChemicalName(compound.name);
             add(translationKey, displayName);
 
+        }
+    }
+
+    private void addFluidTranslations() {
+        List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
+
+        for (ChemLibFluidRegistry.ChemLibFluidEntry fluid : fluids) {
+            String fluidTypeName = formatChemicalName(fluid.name());
+            add("fluid_type." + ChemlibMekanized.MODID + "." + fluid.name(), fluidTypeName);
         }
     }
 
