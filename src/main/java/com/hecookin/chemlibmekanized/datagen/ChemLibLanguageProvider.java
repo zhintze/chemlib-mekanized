@@ -22,6 +22,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         addElementTranslations();
         addCompoundTranslations();
         addFluidTranslations();
+        addChemicalTranslations();
 
         ChemlibMekanized.LOGGER.info("Completed generating translations");
     }
@@ -63,6 +64,28 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             String fluidTypeName = formatChemicalName(fluid.name());
             add("fluid_type." + ChemlibMekanized.MODID + "." + fluid.name(), fluidTypeName);
         }
+    }
+
+    private void addChemicalTranslations() {
+        // Gas Elements - following Mekanism's chemical.{modid}.{name} pattern
+        add("chemical." + ChemlibMekanized.MODID + ".element_hydrogen", "Hydrogen");
+        add("chemical." + ChemlibMekanized.MODID + ".element_oxygen", "Oxygen");
+        add("chemical." + ChemlibMekanized.MODID + ".element_nitrogen", "Nitrogen");
+        add("chemical." + ChemlibMekanized.MODID + ".element_chlorine", "Chlorine");
+        add("chemical." + ChemlibMekanized.MODID + ".element_helium", "Helium");
+        add("chemical." + ChemlibMekanized.MODID + ".element_uranium", "Uranium");
+
+        // Gas Compounds - following Mekanism's chemical.{modid}.{name} pattern
+        add("chemical." + ChemlibMekanized.MODID + ".compound_water_vapor", "Water Vapor");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_carbon_dioxide", "Carbon Dioxide");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_methane", "Methane");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_ammonia", "Ammonia");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_hydrogen_chloride", "Hydrogen Chloride");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_ethane", "Ethane");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_propane", "Propane");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_butane", "Butane");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_chlorine_gas", "Chlorine Gas");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_sulfur_dioxide", "Sulfur Dioxide");
     }
 
     private String formatChemicalName(String name) {
