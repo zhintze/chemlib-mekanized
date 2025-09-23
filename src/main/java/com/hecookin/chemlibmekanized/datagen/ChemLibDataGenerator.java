@@ -27,6 +27,8 @@ public class ChemLibDataGenerator {
 
         generator.addProvider(event.includeClient(), new ChemLibLanguageProvider(packOutput));
 
+        generator.addProvider(event.includeClient(), new ChemLibSpriteSourceProvider(packOutput, lookupProvider, existingFileHelper));
+
         ChemlibMekanized.LOGGER.info("ChemLib data generation providers registered");
     }
 }

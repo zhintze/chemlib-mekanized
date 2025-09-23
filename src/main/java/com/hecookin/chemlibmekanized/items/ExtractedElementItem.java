@@ -3,7 +3,6 @@ package com.hecookin.chemlibmekanized.items;
 import com.hecookin.chemlibmekanized.api.Chemical;
 import com.hecookin.chemlibmekanized.api.ChemicalType;
 import com.hecookin.chemlibmekanized.api.MatterState;
-import com.hecookin.chemlibmekanized.client.renderer.AbbreviationRenderer;
 import com.hecookin.chemlibmekanized.extraction.ChemLibDataExtractor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -12,11 +11,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ExtractedElementItem extends Item implements Chemical {
     private final ChemLibDataExtractor.ElementData elementData;
@@ -137,8 +134,4 @@ public class ExtractedElementItem extends Item implements Chemical {
         return elementData;
     }
 
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(AbbreviationRenderer.RENDERER);
-    }
 }

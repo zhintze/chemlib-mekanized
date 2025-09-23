@@ -39,11 +39,20 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
                            MultiBufferSource buffer, int light, int overlay) {
 
         if (!(stack.getItem() instanceof Chemical chemical)) {
+            ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Item is not a Chemical: {}", stack.getItem());
             return;
         }
 
+        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Rendering chemical {} in context {}",
+                                    chemical.getChemicalName(), context);
+
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         BakedModel model = getModelForItem(stack, chemical);
+
+        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Got model for {}: {} (missing={})",
+                                    chemical.getChemicalName(),
+                                    model != null ? model.getClass().getSimpleName() : "null",
+                                    model != null && model == Minecraft.getInstance().getModelManager().getMissingModel());
 
         if (model != null) {
             poseStack.pushPose();
@@ -52,48 +61,70 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
             applyContextTransformations(poseStack, context);
 
             // Render the base model
+            ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Rendering base model for {}", chemical.getChemicalName());
             itemRenderer.render(stack, context, false, poseStack, buffer, light, overlay, model);
 
             // Render abbreviation overlay if configured
             renderAbbreviation(chemical, poseStack, context, buffer, light);
 
             poseStack.popPose();
+        } else {
+            ChemlibMekanized.LOGGER.warn("AbbreviationRenderer: No model found for chemical {}", chemical.getChemicalName());
         }
     }
 
     private BakedModel getModelForItem(ItemStack stack, Chemical chemical) {
         Minecraft minecraft = Minecraft.getInstance();
-        ModelResourceLocation modelLocation = null;
 
-        ChemicalType type = chemical.getChemicalType();
-        MatterState state = chemical.getMatterState();
+        // Get the item's registry name for debugging
+        ResourceLocation itemId = minecraft.level != null ?
+            minecraft.level.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ITEM)
+                .getKey(stack.getItem()) : null;
 
-        // Select model based on chemical type and matter state
-        if (type == ChemicalType.ELEMENT) {
-            modelLocation = switch (state) {
-                case SOLID -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_solid_model"), "standalone");
-                case LIQUID -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_liquid_model"), "standalone");
-                case GAS -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_gas_model"), "standalone");
-            };
-        } else if (type == ChemicalType.COMPOUND) {
-            modelLocation = switch (state) {
-                case SOLID -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_solid_model"), "standalone");
-                case LIQUID -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_liquid_model"), "standalone");
-                case GAS -> new ModelResourceLocation(
-                    ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_gas_model"), "standalone");
-            };
+        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Getting model for item: {} ({})",
+                                    itemId, chemical.getChemicalName());
+
+        // Build template model name based on chemical type and matter state
+        String templateName = getTemplateModelName(chemical);
+
+        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Using template model: {} for {}",
+                                    templateName, chemical.getChemicalName());
+
+        // Get the template model directly from model manager
+        ModelResourceLocation templateLocation = new ModelResourceLocation(
+            ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, templateName), "inventory");
+
+        BakedModel model = minecraft.getModelManager().getModel(templateLocation);
+
+        ChemlibMekanized.LOGGER.debug("AbbreviationRenderer: Got template model: {} for {} (missing={})",
+                                    model != null ? model.getClass().getSimpleName() : "null",
+                                    chemical.getChemicalName(),
+                                    model != null && model == minecraft.getModelManager().getMissingModel());
+
+        return model;
+    }
+
+    private String getTemplateModelName(Chemical chemical) {
+        // Determine template based on chemical type and matter state
+        String prefix = chemical.getChemicalType() == ChemicalType.ELEMENT ? "element" : "compound";
+        String suffix = switch (chemical.getMatterState()) {
+            case SOLID -> "solid";
+            case LIQUID -> "liquid";
+            case GAS -> "gas";
+        };
+
+        // Handle special compound dust state (used by some compounds)
+        if (chemical.getChemicalType() == ChemicalType.COMPOUND) {
+            // Some compounds use "dust" instead of "solid" - could be improved with better logic
+            String chemicalName = chemical.getChemicalName().toLowerCase();
+            if (chemicalName.contains("oxide") || chemicalName.contains("sulfate") ||
+                chemicalName.contains("chromate") || chemicalName.contains("purple") ||
+                chemicalName.contains("iodide")) {
+                suffix = "dust";
+            }
         }
 
-        if (modelLocation != null) {
-            return minecraft.getModelManager().getModel(modelLocation);
-        }
-
-        return minecraft.getItemRenderer().getModel(stack, null, null, 0);
+        return prefix + "_" + suffix + "_model";
     }
 
     private void applyContextTransformations(PoseStack poseStack, ItemDisplayContext context) {

@@ -41,19 +41,26 @@ public class ChemlibMekanizedClient {
         ChemlibMekanized.LOGGER.info("ChemLib item color providers registered");
     }
 
+    // Commenting out model registration for now - template models should be loaded automatically
+    // when referenced by individual chemical models
+    /*
     @SubscribeEvent
     static void onModelRegister(ModelEvent.RegisterAdditional event) {
         ChemlibMekanized.LOGGER.info("Registering ChemLib template models");
 
-        // Register all template models (NeoForge 1.21.1 requires "standalone" variant for side-loaded models)
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_solid_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_liquid_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_gas_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_solid_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_liquid_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_gas_model"), "standalone"));
-        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_dust_model"), "standalone"));
+        // Register element template models
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_solid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_liquid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "element_gas_model"), "inventory"));
 
-        ChemlibMekanized.LOGGER.info("ChemLib template models registered: 7 models");
+        // Register compound template models
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_solid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_liquid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_gas_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "compound_dust_model"), "inventory"));
+
+        ChemlibMekanized.LOGGER.info("ChemLib template models registered");
     }
+    */
+
 }
