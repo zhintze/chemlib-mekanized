@@ -12,6 +12,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.List;
+import java.util.Map;
 
 public class ChemLibItemModelProvider extends ItemModelProvider {
 
@@ -25,6 +26,9 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
 
         generateElementModels();
         generateCompoundModels();
+        generateMetalIngotModels();
+        generateMetalNuggetModels();
+        generateMetalPlateModels();
 
         ChemlibMekanized.LOGGER.info("Completed generating item models");
     }
@@ -71,6 +75,45 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
 
         ItemModelBuilder model = withExistingParent(compound.name, parentModel);
 
+    }
+
+    private void generateMetalIngotModels() {
+        for (Map.Entry<String, DeferredHolder<Item, Item>> entry : ChemLibItemRegistry.METAL_INGOT_ITEMS.entrySet()) {
+            String metalName = entry.getKey();
+            String ingotName = metalName + "_ingot";
+
+            // Generate simple textured model using the ingot template
+            singleTexture(ingotName,
+                         ResourceLocation.fromNamespaceAndPath("minecraft", "item/generated"),
+                         "layer0",
+                         modLoc("items/ingot"));
+        }
+    }
+
+    private void generateMetalNuggetModels() {
+        for (Map.Entry<String, DeferredHolder<Item, Item>> entry : ChemLibItemRegistry.METAL_NUGGET_ITEMS.entrySet()) {
+            String metalName = entry.getKey();
+            String nuggetName = metalName + "_nugget";
+
+            // Generate simple textured model using the nugget template
+            singleTexture(nuggetName,
+                         ResourceLocation.fromNamespaceAndPath("minecraft", "item/generated"),
+                         "layer0",
+                         modLoc("items/nugget"));
+        }
+    }
+
+    private void generateMetalPlateModels() {
+        for (Map.Entry<String, DeferredHolder<Item, Item>> entry : ChemLibItemRegistry.METAL_PLATE_ITEMS.entrySet()) {
+            String metalName = entry.getKey();
+            String plateName = metalName + "_plate";
+
+            // Generate simple textured model using the plate template
+            singleTexture(plateName,
+                         ResourceLocation.fromNamespaceAndPath("minecraft", "item/generated"),
+                         "layer0",
+                         modLoc("items/plate"));
+        }
     }
 
     public ResourceLocation modLoc(String path) {

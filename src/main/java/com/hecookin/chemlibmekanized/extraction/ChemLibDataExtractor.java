@@ -209,6 +209,26 @@ public class ChemLibDataExtractor {
         return elements;
     }
 
+    /**
+     * Extract metallic elements and metalloids from ChemLib data.
+     * @return List of metallic elements and metalloids (solid metals and metalloids only)
+     */
+    public static List<ElementData> extractMetals() {
+        List<ElementData> allElements = extractElements();
+        List<ElementData> metals = new ArrayList<>();
+
+        for (ElementData element : allElements) {
+            // Filter for metals and metalloids that are solid (suitable for ingots/nuggets/plates/blocks)
+            if (("metal".equals(element.metalType) || "metalloid".equals(element.metalType)) &&
+                "solid".equals(element.matterState)) {
+                metals.add(element);
+            }
+        }
+
+        ChemlibMekanized.LOGGER.info("Extracted {} solid metals and metalloids from ChemLib for item generation", metals.size());
+        return metals;
+    }
+
     public static List<CompoundData> extractCompounds() {
         List<CompoundData> compounds = new ArrayList<>();
         Path compoundsPath = Paths.get(CHEMLIB_PATH + "compounds.json");

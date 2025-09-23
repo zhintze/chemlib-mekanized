@@ -21,6 +21,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         addCreativeTabTranslations();
         addElementTranslations();
         addCompoundTranslations();
+        addMetalItemTranslations();
         addFluidTranslations();
         addChemicalTranslations();
 
@@ -57,6 +58,26 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         }
     }
 
+    private void addMetalItemTranslations() {
+        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
+
+        for (ChemLibDataExtractor.ElementData metal : metals) {
+            String elementName = formatChemicalName(metal.name);
+
+            // Ingot translations
+            String ingotKey = "item." + ChemlibMekanized.MODID + "." + metal.name + "_ingot";
+            add(ingotKey, elementName + " Ingot");
+
+            // Nugget translations
+            String nuggetKey = "item." + ChemlibMekanized.MODID + "." + metal.name + "_nugget";
+            add(nuggetKey, elementName + " Nugget");
+
+            // Plate translations
+            String plateKey = "item." + ChemlibMekanized.MODID + "." + metal.name + "_plate";
+            add(plateKey, elementName + " Plate");
+        }
+    }
+
     private void addFluidTranslations() {
         List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
 
@@ -72,11 +93,16 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         add("chemical." + ChemlibMekanized.MODID + ".element_oxygen", "Oxygen");
         add("chemical." + ChemlibMekanized.MODID + ".element_nitrogen", "Nitrogen");
         add("chemical." + ChemlibMekanized.MODID + ".element_chlorine", "Chlorine");
+        add("chemical." + ChemlibMekanized.MODID + ".element_fluorine", "Fluorine");
         add("chemical." + ChemlibMekanized.MODID + ".element_helium", "Helium");
+        add("chemical." + ChemlibMekanized.MODID + ".element_neon", "Neon");
+        add("chemical." + ChemlibMekanized.MODID + ".element_argon", "Argon");
+        add("chemical." + ChemlibMekanized.MODID + ".element_krypton", "Krypton");
+        add("chemical." + ChemlibMekanized.MODID + ".element_xenon", "Xenon");
+        add("chemical." + ChemlibMekanized.MODID + ".element_radon", "Radon");
         add("chemical." + ChemlibMekanized.MODID + ".element_uranium", "Uranium");
 
         // Gas Compounds - following Mekanism's chemical.{modid}.{name} pattern
-        add("chemical." + ChemlibMekanized.MODID + ".compound_water_vapor", "Water Vapor");
         add("chemical." + ChemlibMekanized.MODID + ".compound_carbon_dioxide", "Carbon Dioxide");
         add("chemical." + ChemlibMekanized.MODID + ".compound_methane", "Methane");
         add("chemical." + ChemlibMekanized.MODID + ".compound_ammonia", "Ammonia");
@@ -84,7 +110,12 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         add("chemical." + ChemlibMekanized.MODID + ".compound_ethane", "Ethane");
         add("chemical." + ChemlibMekanized.MODID + ".compound_propane", "Propane");
         add("chemical." + ChemlibMekanized.MODID + ".compound_butane", "Butane");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_chlorine_gas", "Chlorine Gas");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_acetylene", "Acetylene");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_ethylene", "Ethylene");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_hydrogen_sulfide", "Hydrogen Sulfide");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_nitrogen_dioxide", "Nitrogen Dioxide");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_carbon_monoxide", "Carbon Monoxide");
+        add("chemical." + ChemlibMekanized.MODID + ".compound_nitric_oxide", "Nitric Oxide");
         add("chemical." + ChemlibMekanized.MODID + ".compound_sulfur_dioxide", "Sulfur Dioxide");
     }
 

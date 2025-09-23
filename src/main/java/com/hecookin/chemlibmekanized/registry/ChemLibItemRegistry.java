@@ -4,6 +4,9 @@ import com.hecookin.chemlibmekanized.ChemlibMekanized;
 import com.hecookin.chemlibmekanized.extraction.ChemLibDataExtractor;
 import com.hecookin.chemlibmekanized.items.ExtractedElementItem;
 import com.hecookin.chemlibmekanized.items.ExtractedCompoundItem;
+import com.hecookin.chemlibmekanized.items.MetalIngotItem;
+import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
+import com.hecookin.chemlibmekanized.items.MetalPlateItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +26,9 @@ public class ChemLibItemRegistry {
 
     public static final Map<String, DeferredHolder<Item, Item>> ELEMENT_ITEMS = new HashMap<>();
     public static final Map<String, DeferredHolder<Item, Item>> COMPOUND_ITEMS = new HashMap<>();
+    public static final Map<String, DeferredHolder<Item, Item>> METAL_INGOT_ITEMS = new HashMap<>();
+    public static final Map<String, DeferredHolder<Item, Item>> METAL_NUGGET_ITEMS = new HashMap<>();
+    public static final Map<String, DeferredHolder<Item, Item>> METAL_PLATE_ITEMS = new HashMap<>();
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ELEMENTS_TAB = CREATIVE_TABS.register("elements",
         () -> CreativeModeTab.builder()
@@ -66,6 +72,7 @@ public class ChemLibItemRegistry {
                 return ironItem != null ? new ItemStack(ironItem.get()) : ItemStack.EMPTY;
             })
             .displayItems((parameters, output) -> {
+                // Add metal element items
                 ELEMENT_ITEMS.values().forEach(item -> {
                     if (item != null && item.get() != null) {
                         Item itemInstance = item.get();
@@ -74,6 +81,38 @@ public class ChemLibItemRegistry {
                             output.accept(itemInstance);
                         }
                     }
+                });
+
+                // Add metal ingot, nugget, and plate items (metals only)
+                METAL_INGOT_ITEMS.entrySet().forEach(entry -> {
+                    String metalName = entry.getKey();
+                    // Check if this is a metal (not metalloid)
+                    ELEMENT_ITEMS.values().forEach(elementItem -> {
+                        if (elementItem != null && elementItem.get() != null) {
+                            Item elementInstance = elementItem.get();
+                            if (elementInstance instanceof ExtractedElementItem elementData &&
+                                elementData.getElementData().name.equals(metalName) &&
+                                "metal".equals(elementData.getMetalType())) {
+
+                                // Add ingot
+                                if (entry.getValue() != null && entry.getValue().get() != null) {
+                                    output.accept(entry.getValue().get());
+                                }
+
+                                // Add nugget
+                                var nugget = METAL_NUGGET_ITEMS.get(metalName);
+                                if (nugget != null && nugget.get() != null) {
+                                    output.accept(nugget.get());
+                                }
+
+                                // Add plate
+                                var plate = METAL_PLATE_ITEMS.get(metalName);
+                                if (plate != null && plate.get() != null) {
+                                    output.accept(plate.get());
+                                }
+                            }
+                        }
+                    });
                 });
             })
             .build()
@@ -108,6 +147,7 @@ public class ChemLibItemRegistry {
                 return siliconItem != null ? new ItemStack(siliconItem.get()) : ItemStack.EMPTY;
             })
             .displayItems((parameters, output) -> {
+                // Add metalloid element items
                 ELEMENT_ITEMS.values().forEach(item -> {
                     if (item != null && item.get() != null) {
                         Item itemInstance = item.get();
@@ -116,6 +156,38 @@ public class ChemLibItemRegistry {
                             output.accept(itemInstance);
                         }
                     }
+                });
+
+                // Add metalloid ingot, nugget, and plate items
+                METAL_INGOT_ITEMS.entrySet().forEach(entry -> {
+                    String metalName = entry.getKey();
+                    // Check if this is a metalloid
+                    ELEMENT_ITEMS.values().forEach(elementItem -> {
+                        if (elementItem != null && elementItem.get() != null) {
+                            Item elementInstance = elementItem.get();
+                            if (elementInstance instanceof ExtractedElementItem elementData &&
+                                elementData.getElementData().name.equals(metalName) &&
+                                "metalloid".equals(elementData.getMetalType())) {
+
+                                // Add ingot
+                                if (entry.getValue() != null && entry.getValue().get() != null) {
+                                    output.accept(entry.getValue().get());
+                                }
+
+                                // Add nugget
+                                var nugget = METAL_NUGGET_ITEMS.get(metalName);
+                                if (nugget != null && nugget.get() != null) {
+                                    output.accept(nugget.get());
+                                }
+
+                                // Add plate
+                                var plate = METAL_PLATE_ITEMS.get(metalName);
+                                if (plate != null && plate.get() != null) {
+                                    output.accept(plate.get());
+                                }
+                            }
+                        }
+                    });
                 });
             })
             .build()
@@ -144,11 +216,54 @@ public class ChemLibItemRegistry {
         }
     }
 
+    public static void registerMetalIngots() {
+        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
+
+        for (ChemLibDataExtractor.ElementData metal : metals) {
+            String ingotName = metal.name + "_ingot";
+            DeferredHolder<Item, Item> ingotItem = ITEMS.register(ingotName,
+                () -> new MetalIngotItem(metal));
+            METAL_INGOT_ITEMS.put(metal.name, ingotItem);
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered {} metal ingots", METAL_INGOT_ITEMS.size());
+    }
+
+    public static void registerMetalNuggets() {
+        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
+
+        for (ChemLibDataExtractor.ElementData metal : metals) {
+            String nuggetName = metal.name + "_nugget";
+            DeferredHolder<Item, Item> nuggetItem = ITEMS.register(nuggetName,
+                () -> new MetalNuggetItem(metal));
+            METAL_NUGGET_ITEMS.put(metal.name, nuggetItem);
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered {} metal nuggets", METAL_NUGGET_ITEMS.size());
+    }
+
+    public static void registerMetalPlates() {
+        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
+
+        for (ChemLibDataExtractor.ElementData metal : metals) {
+            String plateName = metal.name + "_plate";
+            DeferredHolder<Item, Item> plateItem = ITEMS.register(plateName,
+                () -> new MetalPlateItem(metal));
+            METAL_PLATE_ITEMS.put(metal.name, plateItem);
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered {} metal plates", METAL_PLATE_ITEMS.size());
+    }
+
     public static void initializeRegistries() {
         ChemlibMekanized.LOGGER.info("Initializing ChemLib content extraction and registration");
         registerElements();
         registerCompounds();
-        ChemlibMekanized.LOGGER.info("ChemLib content extraction completed - {} elements, {} compounds",
-                                   ELEMENT_ITEMS.size(), COMPOUND_ITEMS.size());
+        registerMetalIngots();
+        registerMetalNuggets();
+        registerMetalPlates();
+        ChemlibMekanized.LOGGER.info("ChemLib content extraction completed - {} elements, {} compounds, {} metal ingots, {} nuggets, {} plates",
+                                   ELEMENT_ITEMS.size(), COMPOUND_ITEMS.size(), METAL_INGOT_ITEMS.size(),
+                                   METAL_NUGGET_ITEMS.size(), METAL_PLATE_ITEMS.size());
     }
 }

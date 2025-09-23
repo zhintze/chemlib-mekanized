@@ -112,6 +112,10 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
+    //JADE (Optional UI enhancement)
+    localRuntime "curse.maven:jade-324717:6011258"
+    localRuntime "curse.maven:jadeAddOns-583345:5829251"
+
     // Mekanism (homebaked JARs from mooStack) - temporarily reduced to core only
     implementation "blank:Mekanism-1.21.1-${mekanism_version}"
     // implementation "blank:MekanismAdditions-1.21.1-${mekanism_version}"

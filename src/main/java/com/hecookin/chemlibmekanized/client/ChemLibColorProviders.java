@@ -3,6 +3,9 @@ package com.hecookin.chemlibmekanized.client;
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
 import com.hecookin.chemlibmekanized.items.ExtractedElementItem;
 import com.hecookin.chemlibmekanized.items.ExtractedCompoundItem;
+import com.hecookin.chemlibmekanized.items.MetalIngotItem;
+import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
+import com.hecookin.chemlibmekanized.items.MetalPlateItem;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
@@ -13,6 +16,9 @@ public class ChemLibColorProviders {
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
         int elementCount = 0;
         int compoundCount = 0;
+        int metalIngotCount = 0;
+        int metalNuggetCount = 0;
+        int metalPlateCount = 0;
 
         // Register color providers for all element items
         for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.ELEMENT_ITEMS.values()) {
@@ -32,6 +38,34 @@ public class ChemLibColorProviders {
             }
         }
 
-        ChemlibMekanized.LOGGER.info("Registered color handlers for {} elements and {} compounds", elementCount, compoundCount);
+        // Register color providers for all metal ingot items
+        for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.METAL_INGOT_ITEMS.values()) {
+            Item item = itemHolder.get();
+            if (item instanceof MetalIngotItem metalIngotItem) {
+                event.register(metalIngotItem::getColor, item);
+                metalIngotCount++;
+            }
+        }
+
+        // Register color providers for all metal nugget items
+        for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.METAL_NUGGET_ITEMS.values()) {
+            Item item = itemHolder.get();
+            if (item instanceof MetalNuggetItem metalNuggetItem) {
+                event.register(metalNuggetItem::getColor, item);
+                metalNuggetCount++;
+            }
+        }
+
+        // Register color providers for all metal plate items
+        for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.METAL_PLATE_ITEMS.values()) {
+            Item item = itemHolder.get();
+            if (item instanceof MetalPlateItem metalPlateItem) {
+                event.register(metalPlateItem::getColor, item);
+                metalPlateCount++;
+            }
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered color handlers for {} elements, {} compounds, {} metal ingots, {} nuggets, {} plates",
+                                   elementCount, compoundCount, metalIngotCount, metalNuggetCount, metalPlateCount);
     }
 }
