@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:book"
+  },
+  "chemical_input": {
+    "amount": 1500,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "output": {
+    "amount": 9000,
+    "id": "mekanism:carbon"
+  },
+  "per_tick_usage": true
+}

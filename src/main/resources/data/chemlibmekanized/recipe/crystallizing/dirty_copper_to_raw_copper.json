@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "slurry",
+  "input": {
+    "amount": 3000,
+    "chemical": "chemlibmekanized:compound_dirty_copper"
+  },
+  "output": {
+    "id": "minecraft:raw_copper"
+  }
+}

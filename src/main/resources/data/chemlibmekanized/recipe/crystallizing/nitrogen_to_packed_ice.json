@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 8000,
+    "chemical": "chemlibmekanized:element_nitrogen"
+  },
+  "output": {
+    "id": "minecraft:packed_ice"
+  }
+}

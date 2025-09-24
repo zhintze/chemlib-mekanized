@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 2000,
+    "chemical": "chemlibmekanized:element_krypton"
+  },
+  "output": {
+    "id": "minecraft:prismarine_crystals"
+  }
+}

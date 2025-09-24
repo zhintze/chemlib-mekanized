@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 1000,
+    "chemical": "chemlibmekanized:element_neon"
+  },
+  "output": {
+    "id": "minecraft:orange_dye"
+  }
+}

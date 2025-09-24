@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:sugar_cane"
+  },
+  "chemical_input": {
+    "amount": 500,
+    "chemical": "mekanism:water_vapor"
+  },
+  "output": {
+    "amount": 6000,
+    "id": "mekanism:carbon"
+  },
+  "per_tick_usage": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 2000,
+    "chemical": "chemlibmekanized:compound_ammonia"
+  },
+  "output": {
+    "id": "minecraft:bone_meal"
+  }
+}

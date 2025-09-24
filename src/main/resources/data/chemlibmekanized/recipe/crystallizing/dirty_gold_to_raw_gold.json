@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "slurry",
+  "input": {
+    "amount": 2000,
+    "chemical": "chemlibmekanized:compound_dirty_gold"
+  },
+  "output": {
+    "id": "minecraft:raw_gold"
+  }
+}
