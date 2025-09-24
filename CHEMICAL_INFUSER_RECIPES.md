@@ -2,6 +2,7 @@
 
 ## Overview
 This document tracks the implementation of Chemical Infuser recipes for ChemLibMekanized.
+**Total Implemented: 31 recipes** (Batch 1: 19, Batch 2: 12)
 
 ## Recipe Format
 All recipes follow the Mekanism Chemical Infuser JSON format:
@@ -60,13 +61,42 @@ All recipes follow the Mekanism Chemical Infuser JSON format:
 - **From Mekanism (10)**: hydrogen, oxygen, fluorine, sodium, carbon, water_vapor, steam, sulfur_dioxide, sulfur_trioxide, hydrofluoric_acid, sulfuric_acid, brine, ethene
 - **From ChemLibMekanized (7)**: nitrogen, ammonia, methane, acetylene, ethylene, hydrogen_sulfide, carbon_monoxide, carbon_dioxide, nitric_oxide, nitrogen_dioxide
 
-## Next Batches (Planned)
+## Batch 2: Advanced Compounds (✅ Complete - 12 recipes)
+*Generated: 2024-12-23*
 
-### Batch 2: Advanced Organic Compounds (20 recipes)
-- Alcohols (methanol, ethanol, propanol)
-- Organic acids (acetic acid, formic acid)
-- Esters and ethers
-- Aromatic compounds
+### Currently Implemented Recipes (12 total):
+
+#### Noble Gas Compounds:
+1. **xenon_difluoride**: Xe + 2 F₂ → XeF₂
+2. **krypton_difluoride**: Kr + 2 F₂ → KrF₂
+3. **radon_difluoride**: Rn + 2 F₂ → RnF₂
+
+#### Advanced Organic Compounds:
+4. **hydrogen_cyanide_formation**: CH₄ + NH₃ → HCN (Andrussow process)
+5. **formaldehyde_formation**: CH₄ + O₂ → CH₂O (partial oxidation)
+
+#### Halogen Compounds:
+6. **chlorine_monoxide_formation**: Cl₂ + O₂ → Cl₂O
+7. **chlorine_dioxide_formation**: 2 Cl₂ + 2 O₂ → 2 ClO₂
+8. **phosgene_formation**: CO + Cl₂ → COCl₂
+9. **chlorine_trifluoride_formation**: Cl₂ + 3 F₂ → ClF₃
+
+#### Other Compounds:
+10. **nitrous_oxide_formation**: 2 N₂ + O₂ → N₂O
+11. **hydrogen_peroxide_formation**: 2 H₂ + 2 O₂ → H₂O₂
+12. **carbon_oxysulfide_formation**: CO + SO₂ → COS
+
+### New Chemicals Created:
+- **Noble gas fluorides**: xenon_difluoride, krypton_difluoride, radon_difluoride
+- **Toxic compounds**: hydrogen_cyanide, phosgene
+- **Industrial chemicals**: formaldehyde, chlorine_monoxide, chlorine_dioxide, chlorine_trifluoride
+- **Others**: nitrous_oxide, hydrogen_peroxide, carbon_oxysulfide
+
+### Skipped Recipes:
+- Several recipes requiring chemicals not yet registered (ethylene, benzene, acetylene, nitrogen_dioxide)
+- Ozone formation (requires special catalyst handling)
+
+## Next Batches (Planned)
 
 ### Batch 3: Inorganic Compounds (20 recipes)
 - Metal hydrides

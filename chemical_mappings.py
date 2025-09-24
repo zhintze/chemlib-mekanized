@@ -73,6 +73,38 @@ CHEMLIB_CHEMICALS = {
     "nitrogen": "chemlibmekanized:element_nitrogen"
 }
 
+# New compounds created by our recipes (will need to be registered)
+NEW_COMPOUNDS = {
+    # Noble gas compounds
+    "xenon_difluoride": "chemlibmekanized:compound_xenon_difluoride",
+    "krypton_difluoride": "chemlibmekanized:compound_krypton_difluoride",
+    "radon_difluoride": "chemlibmekanized:compound_radon_difluoride",
+
+    # Organic compounds
+    "hydrogen_cyanide": "chemlibmekanized:compound_hydrogen_cyanide",
+    "formaldehyde": "chemlibmekanized:compound_formaldehyde",
+    "vinyl_chloride": "chemlibmekanized:compound_vinyl_chloride",
+    "ethylene_oxide": "chemlibmekanized:compound_ethylene_oxide",
+    "benzene": "chemlibmekanized:compound_benzene",
+    "toluene": "chemlibmekanized:compound_toluene",
+
+    # Chlorine/fluorine compounds
+    "chlorine_monoxide": "chemlibmekanized:compound_chlorine_monoxide",
+    "chlorine_dioxide": "chemlibmekanized:compound_chlorine_dioxide",
+    "phosgene": "chemlibmekanized:compound_phosgene",
+    "chlorine_trifluoride": "chemlibmekanized:compound_chlorine_trifluoride",
+
+    # Nitrogen oxides
+    "nitrous_oxide": "chemlibmekanized:compound_nitrous_oxide",
+    "nitrogen_trioxide": "chemlibmekanized:compound_nitrogen_trioxide",
+    "dinitrogen_tetroxide": "chemlibmekanized:compound_dinitrogen_tetroxide",
+
+    # Others
+    "hydrogen_peroxide": "chemlibmekanized:compound_hydrogen_peroxide",
+    "ozone": "chemlibmekanized:compound_ozone",
+    "carbon_oxysulfide": "chemlibmekanized:compound_carbon_oxysulfide"
+}
+
 def get_chemical_id(name):
     """Get the proper chemical ID, preferring Mekanism where available."""
     # Check Mekanism first
@@ -81,6 +113,9 @@ def get_chemical_id(name):
     # Then check our chemicals
     elif name.lower() in CHEMLIB_CHEMICALS:
         return CHEMLIB_CHEMICALS[name.lower()]
+    # Check new compounds from our recipes
+    elif name.lower() in NEW_COMPOUNDS:
+        return NEW_COMPOUNDS[name.lower()]
     # Default to our namespace if not found
     else:
-        return f"chemlibmekanized:{name.lower()}"
+        return f"chemlibmekanized:compound_{name.lower()}"

@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 1000,
+    "chemical": "chemlibmekanized:element_krypton"
+  },
+  "right_input": {
+    "amount": 2000,
+    "chemical": "mekanism:fluorine"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:compound_krypton_difluoride"
+  }
+}
