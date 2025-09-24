@@ -153,15 +153,15 @@ public class ChemLibSlurries {
      * Register a slurry pair (dirty and clean) for a material
      */
     private static SlurryRegistryObject<Chemical, Chemical> registerSlurry(String name, int tint) {
-        // Register dirty slurry
+        // Register dirty slurry using Mekanism's dirty slurry texture
         DeferredChemical<Chemical> dirtySlurry = CHEMICALS.register("dirty_" + name, () ->
-            new Chemical(ChemicalBuilder.builder(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "slurry/dirty"))
+            new Chemical(ChemicalBuilder.dirtySlurry()
                 .tint(tint))
         );
 
-        // Register clean slurry
+        // Register clean slurry using Mekanism's clean slurry texture
         DeferredChemical<Chemical> cleanSlurry = CHEMICALS.register("clean_" + name, () ->
-            new Chemical(ChemicalBuilder.builder(ResourceLocation.fromNamespaceAndPath(ChemlibMekanized.MODID, "slurry/clean"))
+            new Chemical(ChemicalBuilder.cleanSlurry()
                 .tint(tint))
         );
 
