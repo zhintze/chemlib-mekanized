@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:glistering_melon_slice"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:dirty_gold"
+  },
+  "per_tick_usage": true
+}

@@ -1,18 +1,18 @@
 # ChemLibMekanized Complete Recipe List
 
 ## Summary Statistics
-**Total Recipes Implemented: 153** ✅ All Working!
+**Total Recipes Implemented: 224** (134 working + 90 pending chemicals)
 
 ### By Machine Type:
-- **Chemical Infuser**: 30 recipes (18 working + 12 pending chemicals)
-- **Chemical Dissolution Chamber**: 64 recipes ✅
-- **Chemical Crystallizer**: 37 recipes ✅
+- **Chemical Infuser**: 50 recipes (21 working + 29 pending chemicals)
+- **Chemical Dissolution Chamber**: 84 recipes (71 working + 13 pending slurries)
+- **Chemical Crystallizer**: 49 recipes ✅ (all working)
 - **Rotary Condensentrator**: 2 recipes ✅ (limited - awaiting liquid registration)
-- **Pressurized Reaction Chamber**: 20 recipes ✅
+- **Pressurized Reaction Chamber**: 39 recipes ✅ (all working)
 
 ## Implementation Progress
 
-### ✅ Chemical Infuser (30 recipes)
+### ✅ Chemical Infuser (50 recipes)
 **Batch 1**: 18 working recipes
 - Basic gas combinations (H₂ + O₂, N₂ + H₂, etc.)
 - Halogen compounds (HCl, HF, HBr, HI)
@@ -23,7 +23,13 @@
 - Metal hydrides
 - Phosphorus compounds
 
-### ✅ Chemical Dissolution Chamber (64 recipes)
+**Batch 3**: 20 recipes (3 working + 17 pending)
+- Acid anhydrides and hydration reactions
+- Noble gas fluorides (XeF₂, XeF₄, KrF₂)
+- Phosphorus, boron, and silicon halides
+- Mixed halogen compounds
+
+### ✅ Chemical Dissolution Chamber (84 recipes)
 **Batch 1**: 14 recipes
 - Organic materials → Carbon
 - Minerals → Various chemicals
@@ -41,18 +47,30 @@
 - Mob drops
 - Dyes and decorative items
 
-### ✅ Chemical Crystallizer (37 recipes)
+**Batch 4**: 20 recipes (7 working + 13 pending slurries)
+- Redstone components
+- Precious materials (golden items)
+- Brewing ingredients
+- Construction materials
+
+### ✅ Chemical Crystallizer (49 recipes)
 **Batch 1**: 17 recipes
 - Carbon conversions (coal, charcoal, diamond, dyes)
 - Metal slurries → Raw ores
 - Noble gases → Special items
 - Compound gases → Useful items
 
-**Batch 2**: 20 recipes
+**Batch 2**: 17 recipes (removed 3)
 - Alternative carbon outputs
-- Gas → Dye conversions (all 16 colors)
+- Gas → Dye conversions (14 colors, removed oxygen→blue and helium→feather)
 - Noble gas specialties
-- Other unique conversions
+- Changed hydrogen→slime_ball to CO₂→slime_ball
+
+**Batch 3**: 15 recipes (removed 5)
+- Removed: silicon→sand, oxygen→ice, nitrogen→wheat, oxygen→emerald, xenon→prismarine_shard
+- Food and agriculture items
+- Precious gems and rare items
+- Nether and ocean materials
 
 ### ✅ Rotary Condensentrator (2 recipes)
 **Batch 1**: 2 working recipes
@@ -62,7 +80,7 @@
 *Note: Fixed format to use `chemical_output` instead of `gas_output`*
 *Full implementation requires liquid chemical registration for gas↔liquid conversions*
 
-### ✅ Pressurized Reaction Chamber (20 recipes)
+### ✅ Pressurized Reaction Chamber (39 recipes)
 **Batch 1**: 20 recipes
 - Water-based reactions (2)
 - Metal processing (2)
@@ -74,6 +92,17 @@
 - Polymerization (1)
 - Halogenation (2)
 - Special exotic reactions (3)
+
+**Batch 2**: 19 recipes (removed elytra_repair)
+- Advanced metallurgy (2)
+- Gem enhancement (2)
+- Explosive synthesis (2)
+- Biological synthesis (3)
+- Fuel processing (2)
+- Enchanting materials (2)
+- Construction materials (3)
+- Redstone technology (2)
+- Special items (1 - removed elytra repair)
 
 ## Next Steps
 
@@ -145,4 +174,9 @@
 
 ---
 *Last Updated: 2024-12-23*
-*Status: All 153 recipes loading and working correctly in JEI*
+*Status: 224 total recipes - 134 working correctly in JEI, 90 pending chemical registration*
+
+### Changes Applied:
+- Removed 9 recipes as requested by user
+- Changed slime_ball recipe from hydrogen to CO₂ input
+- Renamed hydrogen_to_slime_ball.json to carbon_dioxide_to_slime_ball.json

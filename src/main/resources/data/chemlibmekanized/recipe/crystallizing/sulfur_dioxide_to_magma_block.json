@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 4000,
+    "chemical": "mekanism:sulfur_dioxide"
+  },
+  "output": {
+    "id": "minecraft:magma_block"
+  }
+}

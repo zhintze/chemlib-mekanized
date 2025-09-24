@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:white_concrete_powder"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:water_vapor"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:dirty_calcium"
+  },
+  "per_tick_usage": true
+}

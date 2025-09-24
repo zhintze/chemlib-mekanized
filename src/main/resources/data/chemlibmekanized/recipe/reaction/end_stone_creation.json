@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:chorus_fruit"
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "chemlibmekanized:element_radon"
+  },
+  "energy_required": 3000.0,
+  "duration": 300,
+  "item_output": {
+    "id": "minecraft:end_stone"
+  }
+}

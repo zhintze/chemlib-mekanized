@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:beacon"
+  },
+  "chemical_input": {
+    "amount": 500,
+    "chemical": "chemlibmekanized:compound_hydrogen_fluoride"
+  },
+  "output": {
+    "amount": 3000,
+    "id": "chemlibmekanized:dirty_obsidian"
+  },
+  "per_tick_usage": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 16000,
+    "chemical": "chemlibmekanized:compound_carbon_dioxide"
+  },
+  "output": {
+    "id": "minecraft:slime_ball"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 1000,
+    "chemical": "mekanism:chlorine"
+  },
+  "right_input": {
+    "amount": 3000,
+    "chemical": "mekanism:fluorine"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:compound_chlorine_trifluoride"
+  }
+}

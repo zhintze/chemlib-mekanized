@@ -5,12 +5,12 @@
     "item": "minecraft:magma_cream"
   },
   "chemical_input": {
-    "amount": 1000,
-    "chemical": "mekanism:sulfuric_acid"
+    "amount": 100,
+    "chemical": "mekanism:water_vapor"
   },
   "output": {
-    "amount": 2000,
-    "id": "chemlibmekanized:compound_sulfur"
+    "amount": 1000,
+    "id": "mekanism:sulfur_dioxide"
   },
   "per_tick_usage": true
 }

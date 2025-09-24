@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 1000,
+    "chemical": "chemlibmekanized:slurry_silicon"
+  },
+  "right_input": {
+    "amount": 4000,
+    "chemical": "mekanism:fluorine"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:compound_silicon_tetrafluoride"
+  }
+}

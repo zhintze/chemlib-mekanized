@@ -9,7 +9,7 @@
     "chemical": "mekanism:oxygen"
   },
   "output": {
-    "amount": 1000,
+    "amount": 2000,
     "id": "chemlibmekanized:compound_nitrous_oxide"
   }
 }

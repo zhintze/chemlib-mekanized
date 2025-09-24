@@ -1,0 +1,25 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:coal"
+  },
+  "fluid_input": {
+    "amount": 500,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 2000,
+    "chemical": "mekanism:hydrogen"
+  },
+  "energy_required": 3000.0,
+  "duration": 300,
+  "fluid_output": {
+    "amount": 100,
+    "fluid": "minecraft:lava"
+  },
+  "chemical_output": {
+    "amount": 500,
+    "id": "chemlibmekanized:compound_methane"
+  }
+}

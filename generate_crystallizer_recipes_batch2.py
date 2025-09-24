@@ -80,13 +80,6 @@ BATCH_2_RECIPES = [
     },
 
     # === Noble Gas Alternatives ===
-    {
-        "name": "helium_to_feather",
-        "chemical_type": "gas",
-        "input": ("helium", 4),
-        "output": "minecraft:feather",
-        "note": "Lighter than air"
-    },
 
     {
         "name": "radon_to_spider_eye",
@@ -104,13 +97,13 @@ BATCH_2_RECIPES = [
         "note": "Xenon lamp technology"
     },
 
-    # === Hydrogen Compounds ===
+    # === Carbon Compounds ===
     {
-        "name": "hydrogen_to_slime_ball",
+        "name": "carbon_dioxide_to_slime_ball",
         "chemical_type": "gas",
-        "input": ("hydrogen", 16),
+        "input": ("carbon_dioxide", 16),
         "output": "minecraft:slime_ball",
-        "note": "Hydrogenated polymer"
+        "note": "CO2 polymer gel"
     },
 
     {
@@ -164,13 +157,6 @@ BATCH_2_RECIPES = [
         "note": "Natural gas residue"
     },
 
-    {
-        "name": "oxygen_to_blue_dye",
-        "chemical_type": "gas",
-        "input": ("oxygen", 2),
-        "output": "minecraft:blue_dye",
-        "note": "Liquid oxygen blue"
-    },
 
     {
         "name": "large_nitrogen_to_blue_ice",
@@ -258,8 +244,8 @@ def main():
     print("\n📊 Recipe categories:")
     print("  - Alternative carbon outputs: 5")
     print("  - Gas to dye conversions: 10")
-    print("  - Noble gas specialties: 3")
-    print("  - Other conversions: 2")
+    print("  - Noble gas specialties: 2")
+    print("  - Other conversions: 1")
 
 if __name__ == "__main__":
     main()

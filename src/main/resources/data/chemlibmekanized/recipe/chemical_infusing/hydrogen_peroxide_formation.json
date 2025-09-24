@@ -1,7 +1,7 @@
 {
   "type": "mekanism:chemical_infusing",
   "left_input": {
-    "amount": 2000,
+    "amount": 1000,
     "chemical": "mekanism:hydrogen"
   },
   "right_input": {

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 2000,
+    "chemical": "mekanism:sulfur_trioxide"
+  },
+  "output": {
+    "id": "minecraft:blaze_powder"
+  }
+}

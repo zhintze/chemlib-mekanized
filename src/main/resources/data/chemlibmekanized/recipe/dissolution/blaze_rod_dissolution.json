@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:blaze_rod"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "mekanism:oxygen"
+  },
+  "output": {
+    "amount": 2000,
+    "id": "mekanism:sulfur_dioxide"
+  },
+  "per_tick_usage": true
+}

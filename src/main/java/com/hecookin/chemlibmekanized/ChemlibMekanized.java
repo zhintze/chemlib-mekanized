@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.ChemlibMekanizedChemicals;
+import com.hecookin.chemlibmekanized.registry.ChemLibSlurries;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
 import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
@@ -37,6 +38,9 @@ public class ChemlibMekanized {
 
         // Register Mekanism chemicals
         ChemlibMekanizedChemicals.CHEMICALS.register(modEventBus);
+
+        // Register metal slurries
+        ChemLibSlurries.CHEMICALS.register(modEventBus);
 
         ChemLibItemRegistry.ITEMS.register(modEventBus);
         ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);

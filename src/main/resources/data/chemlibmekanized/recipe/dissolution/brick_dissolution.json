@@ -5,12 +5,12 @@
     "item": "minecraft:brick"
   },
   "chemical_input": {
-    "amount": 1000,
-    "chemical": "mekanism:hydrofluoric_acid"
+    "amount": 100,
+    "chemical": "chemlibmekanized:compound_hydrogen_fluoride"
   },
   "output": {
     "amount": 1000,
-    "id": "chemlibmekanized:compound_aluminum"
+    "id": "chemlibmekanized:dirty_silicon"
   },
   "per_tick_usage": true
 }

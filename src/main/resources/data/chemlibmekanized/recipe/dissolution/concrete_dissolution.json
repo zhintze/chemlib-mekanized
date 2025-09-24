@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:gray_concrete"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "output": {
+    "amount": 2000,
+    "id": "chemlibmekanized:dirty_calcium"
+  },
+  "per_tick_usage": true
+}

@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:golden_apple"
+  },
+  "chemical_input": {
+    "amount": 400,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "output": {
+    "amount": 8000,
+    "id": "chemlibmekanized:dirty_gold"
+  },
+  "per_tick_usage": true
+}

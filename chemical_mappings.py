@@ -116,11 +116,82 @@ NEW_COMPOUNDS = {
     "carbon_oxysulfide": "chemlibmekanized:compound_carbon_oxysulfide"
 }
 
+# Our registered slurries (excluding Mekanism duplicates: iron, gold, copper, tin, lead, uranium, osmium)
+CHEMLIB_SLURRIES = {
+    # Metals not in Mekanism
+    "aluminum": "chemlibmekanized:dirty_aluminum",
+    "titanium": "chemlibmekanized:dirty_titanium",
+    "zinc": "chemlibmekanized:dirty_zinc",
+    "nickel": "chemlibmekanized:dirty_nickel",
+    "silver": "chemlibmekanized:dirty_silver",
+    "platinum": "chemlibmekanized:dirty_platinum",
+
+    # Metalloids and special elements
+    "silicon": "chemlibmekanized:dirty_silicon",
+    "calcium": "chemlibmekanized:dirty_calcium",
+    "sodium": "chemlibmekanized:dirty_sodium",
+    "germanium": "chemlibmekanized:dirty_germanium",
+    "antimony": "chemlibmekanized:dirty_antimony",
+    "bismuth": "chemlibmekanized:dirty_bismuth",
+    "boron": "chemlibmekanized:dirty_boron",
+    "arsenic": "chemlibmekanized:dirty_arsenic",
+    "tellurium": "chemlibmekanized:dirty_tellurium",
+
+    # Special materials (not metals)
+    "emerald": "chemlibmekanized:dirty_emerald",
+    "quartz": "chemlibmekanized:dirty_quartz",
+    "lapis": "chemlibmekanized:dirty_lapis",
+    "coal_slurry": "chemlibmekanized:dirty_coal",
+    "netherite_scrap": "chemlibmekanized:dirty_netherite_scrap",
+
+    # Additional metals
+    "beryllium": "chemlibmekanized:dirty_beryllium",
+    "magnesium": "chemlibmekanized:dirty_magnesium",
+    "scandium": "chemlibmekanized:dirty_scandium",
+    "vanadium": "chemlibmekanized:dirty_vanadium",
+    "chromium": "chemlibmekanized:dirty_chromium",
+    "manganese": "chemlibmekanized:dirty_manganese",
+    "cobalt": "chemlibmekanized:dirty_cobalt",
+    "gallium": "chemlibmekanized:dirty_gallium",
+    "rubidium": "chemlibmekanized:dirty_rubidium",
+    "strontium": "chemlibmekanized:dirty_strontium",
+    "yttrium": "chemlibmekanized:dirty_yttrium",
+    "zirconium": "chemlibmekanized:dirty_zirconium",
+    "niobium": "chemlibmekanized:dirty_niobium",
+    "molybdenum": "chemlibmekanized:dirty_molybdenum",
+    "technetium": "chemlibmekanized:dirty_technetium",
+    "ruthenium": "chemlibmekanized:dirty_ruthenium",
+    "rhodium": "chemlibmekanized:dirty_rhodium",
+    "palladium": "chemlibmekanized:dirty_palladium",
+    "cadmium": "chemlibmekanized:dirty_cadmium",
+    "indium": "chemlibmekanized:dirty_indium",
+    "cesium": "chemlibmekanized:dirty_cesium",
+    "barium": "chemlibmekanized:dirty_barium",
+    "lanthanum": "chemlibmekanized:dirty_lanthanum",
+    "cerium": "chemlibmekanized:dirty_cerium",
+    "neodymium": "chemlibmekanized:dirty_neodymium",
+    "europium": "chemlibmekanized:dirty_europium",
+    "gadolinium": "chemlibmekanized:dirty_gadolinium",
+    "hafnium": "chemlibmekanized:dirty_hafnium",
+    "tantalum": "chemlibmekanized:dirty_tantalum",
+    "tungsten": "chemlibmekanized:dirty_tungsten",
+    "rhenium": "chemlibmekanized:dirty_rhenium",
+    "iridium": "chemlibmekanized:dirty_iridium",
+    "mercury": "chemlibmekanized:dirty_mercury",
+    "thallium": "chemlibmekanized:dirty_thallium",
+    "bismuth": "chemlibmekanized:dirty_bismuth",
+    "polonium_slurry": "chemlibmekanized:dirty_polonium",
+    "thorium": "chemlibmekanized:dirty_thorium",
+}
+
 def get_chemical_id(name):
     """Get the proper chemical ID, preferring Mekanism where available."""
     # Check Mekanism first
     if name.lower() in MEKANISM_CHEMICAL_MAPPINGS:
         return MEKANISM_CHEMICAL_MAPPINGS[name.lower()]
+    # Check our slurries
+    elif name.lower() in CHEMLIB_SLURRIES:
+        return CHEMLIB_SLURRIES[name.lower()]
     # Then check our chemicals
     elif name.lower() in CHEMLIB_CHEMICALS:
         return CHEMLIB_CHEMICALS[name.lower()]

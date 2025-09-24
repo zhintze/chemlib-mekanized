@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:enchanting_table"
+  },
+  "chemical_input": {
+    "amount": 400,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "output": {
+    "amount": 2000,
+    "id": "mekanism:diamond"
+  },
+  "per_tick_usage": true
+}

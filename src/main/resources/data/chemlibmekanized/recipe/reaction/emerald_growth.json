@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 4,
+    "item": "minecraft:prismarine_shard"
+  },
+  "fluid_input": {
+    "amount": 500,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "chemlibmekanized:element_xenon"
+  },
+  "energy_required": 8000.0,
+  "duration": 800,
+  "item_output": {
+    "id": "minecraft:emerald"
+  }
+}

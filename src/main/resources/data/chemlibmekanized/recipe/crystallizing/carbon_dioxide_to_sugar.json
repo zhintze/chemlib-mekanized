@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 3000,
+    "chemical": "chemlibmekanized:compound_carbon_dioxide"
+  },
+  "output": {
+    "id": "minecraft:sugar"
+  }
+}

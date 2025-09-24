@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:glass_bottle"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "chemlibmekanized:compound_hydrogen_fluoride"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:dirty_silicon"
+  },
+  "per_tick_usage": true
+}

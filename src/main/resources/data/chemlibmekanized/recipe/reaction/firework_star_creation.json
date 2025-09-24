@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:gunpowder"
+  },
+  "fluid_input": {
+    "amount": 50,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "mekanism:sulfur_dioxide"
+  },
+  "energy_required": 1000.0,
+  "duration": 100,
+  "item_output": {
+    "id": "minecraft:firework_star"
+  }
+}

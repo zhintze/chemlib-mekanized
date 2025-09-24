@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:repeater"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "output": {
+    "amount": 2000,
+    "id": "mekanism:redstone"
+  },
+  "per_tick_usage": true
+}

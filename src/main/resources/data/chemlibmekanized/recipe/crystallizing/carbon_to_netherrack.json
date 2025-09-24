@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "infusion",
+  "input": {
+    "amount": 8000,
+    "chemical": "mekanism:carbon"
+  },
+  "output": {
+    "id": "minecraft:netherrack"
+  }
+}

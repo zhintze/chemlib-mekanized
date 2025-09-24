@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:golden_carrot"
+  },
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:dirty_gold"
+  },
+  "per_tick_usage": true
+}

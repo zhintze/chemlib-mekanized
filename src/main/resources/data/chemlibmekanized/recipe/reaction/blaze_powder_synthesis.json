@@ -1,0 +1,21 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:magma_cream"
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:lava"
+  },
+  "chemical_input": {
+    "amount": 500,
+    "chemical": "mekanism:sulfur_trioxide"
+  },
+  "energy_required": 2500.0,
+  "duration": 250,
+  "item_output": {
+    "id": "minecraft:blaze_powder",
+    "count": 2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:coal_block"
+  },
+  "fluid_input": {
+    "amount": 1000,
+    "tag": "minecraft:lava"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:oxygen"
+  },
+  "energy_required": 20000.0,
+  "duration": 2000,
+  "item_output": {
+    "id": "minecraft:diamond"
+  }
+}
