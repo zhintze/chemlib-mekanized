@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "chemlibmekanized:thorium_crystal"
+  },
+  "result": {
+    "count": 1,
+    "id": "chemlibmekanized:thorium_ingot"
+  }
+}

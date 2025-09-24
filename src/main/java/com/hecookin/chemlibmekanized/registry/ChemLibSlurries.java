@@ -25,97 +25,97 @@ public class ChemLibSlurries {
     // Define metals with their colors (from ChemLib's element colors)
     public enum ChemLibMetal {
         // Common metals (excluding those in Mekanism: iron, gold, copper, tin, lead, uranium, osmium)
-        ALUMINUM("aluminum", 0xFF999999),
-        TITANIUM("titanium", 0xFF778899),
-        ZINC("zinc", 0xFF7D7D7D),
-        NICKEL("nickel", 0xFF727472),
-        SILVER("silver", 0xFFC0C0C0),
-        PLATINUM("platinum", 0xFFE5E5E5),
+        ALUMINUM("aluminum", 0xFFD9D9D9),
+        TITANIUM("titanium", 0xFF6375FF),
+        ZINC("zinc", 0xFFA0997D),
+        NICKEL("nickel", 0xFF62764C),
+        SILVER("silver", 0xFFC1C7C7),
+        PLATINUM("platinum", 0xFFD2D3D3),
 
         // Rare metals
-        TUNGSTEN("tungsten", 0xFF606060),
-        CHROMIUM("chromium", 0xFF8B8B8B),
-        MANGANESE("manganese", 0xFF9C7AC7),
-        COBALT("cobalt", 0xFF3333BB),
-        CADMIUM("cadmium", 0xFFFF7E00),
-        MERCURY("mercury", 0xFFB8B8D0),
+        TUNGSTEN("tungsten", 0xFF2B313E),
+        CHROMIUM("chromium", 0xFF481A5D),
+        MANGANESE("manganese", 0xFFC7A385),
+        COBALT("cobalt", 0xFF6666FF),
+        CADMIUM("cadmium", 0xFF9A2B34),
+        MERCURY("mercury", 0xFF9D9F9F),
 
         // Precious metals (beyond vanilla gold)
-        PALLADIUM("palladium", 0xFFEDE7E0),
-        RHODIUM("rhodium", 0xFFC0C0C0),
-        IRIDIUM("iridium", 0xFFF0F0F0),
-        RUTHENIUM("ruthenium", 0xFFE5E5E5),
+        PALLADIUM("palladium", 0xFF704158),
+        RHODIUM("rhodium", 0xFF827569),
+        IRIDIUM("iridium", 0xFF2F5EEF),
+        RUTHENIUM("ruthenium", 0xFF715F63),
 
         // Radioactive metals (excluding uranium which Mekanism has)
-        THORIUM("thorium", 0xFF3D3D3D),
+        THORIUM("thorium", 0xFF5F4533),
 
         // Alkali/Alkaline metals
-        LITHIUM("lithium", 0xFFCCCCCC),
-        SODIUM("sodium", 0xFFFFCC99),
-        POTASSIUM("potassium", 0xFFB3B3CC),
-        CALCIUM("calcium", 0xFFDDDDDD),
-        MAGNESIUM("magnesium", 0xFF8F8F8F),
-        BARIUM("barium", 0xFF707070),
-        STRONTIUM("strontium", 0xFFFFFF99),
+        LITHIUM("lithium", 0xFF8F243E),
+        SODIUM("sodium", 0xFFD3C683),
+        POTASSIUM("potassium", 0xFFC6985F),
+        CALCIUM("calcium", 0xFFDBD2C7),
+        MAGNESIUM("magnesium", 0xFFEDADEC),
+        BARIUM("barium", 0xFFC7BCA8),
+        STRONTIUM("strontium", 0xFF536998),
 
         // Metalloids that act like metals
-        SILICON("silicon", 0xFF888888),
-        GERMANIUM("germanium", 0xFF666666),
-        ANTIMONY("antimony", 0xFF666666),
-        BISMUTH("bismuth", 0xFF9E9E9E),
+        SILICON("silicon", 0xFFADB279),
+        GERMANIUM("germanium", 0xFFCCD4C0),
+        ANTIMONY("antimony", 0xFF855770),
+        BISMUTH("bismuth", 0xFF3D9185),
 
         // Lanthanides (Rare Earth)
-        CERIUM("cerium", 0xFFFFFF99),
-        NEODYMIUM("neodymium", 0xFFCCCCCC),
-        LANTHANUM("lanthanum", 0xFFE6E6E6),
-        GADOLINIUM("gadolinium", 0xFFDDDDDD),
-        EUROPIUM("europium", 0xFFE6E6E6),
+        CERIUM("cerium", 0xFF662C5E),
+        NEODYMIUM("neodymium", 0xFF8C696B),
+        LANTHANUM("lanthanum", 0xFFBA9160),
+        GADOLINIUM("gadolinium", 0xFF915536),
+        EUROPIUM("europium", 0xFFCE81B3),
 
         // Other useful metals
-        INDIUM("indium", 0xFFA0A0A0),
-        GALLIUM("gallium", 0xFFC0C0C0),
-        HAFNIUM("hafnium", 0xFFE6E6E6),
-        TANTALUM("tantalum", 0xFF999999),
-        RHENIUM("rhenium", 0xFF7F7F7F),
-        MOLYBDENUM("molybdenum", 0xFF5C5C5C),
-        VANADIUM("vanadium", 0xFF808080),
-        NIOBIUM("niobium", 0xFF737373),
-        BERYLLIUM("beryllium", 0xFF969696),
-        ZIRCONIUM("zirconium", 0xFFC0C0C0),
-        SCANDIUM("scandium", 0xFFE6E6E6),
-        YTTRIUM("yttrium", 0xFF94FFFF),
+        INDIUM("indium", 0xFF86847F),
+        GALLIUM("gallium", 0xFFA1A8C1),
+        HAFNIUM("hafnium", 0xFF243267),
+        TANTALUM("tantalum", 0xFFA81E20),
+        RHENIUM("rhenium", 0xFF1B1D1B),
+        MOLYBDENUM("molybdenum", 0xFF6D7E9A),
+        VANADIUM("vanadium", 0xFF647689),
+        NIOBIUM("niobium", 0xFF734D54),
+        BERYLLIUM("beryllium", 0xFF21A17E),
+        ZIRCONIUM("zirconium", 0xFFD3BB8F),
+        SCANDIUM("scandium", 0xFFFCFF63),
+        YTTRIUM("yttrium", 0xFFB366C4),
 
         // Additional metals (excluding tin, lead, osmium which Mekanism has)
-        THALLIUM("thallium", 0xFFA6544D),
-        POLONIUM("polonium", 0xFF673E3E),
-        TECHNETIUM("technetium", 0xFF878787),
-        RUBIDIUM("rubidium", 0xFF702EB0),
-        CESIUM("cesium", 0xFF57178F),
-        FRANCIUM("francium", 0xFF420A0A),
-        RADIUM("radium", 0xFF007D00),
+        THALLIUM("thallium", 0xFF785445),
+        POLONIUM("polonium", 0xFF29443F),
+        TECHNETIUM("technetium", 0xFF758489),
+        RUBIDIUM("rubidium", 0xFFEE88FD),
+        CESIUM("cesium", 0xFFCBAC2A),
+        FRANCIUM("francium", 0xFF9A410C),
+        RADIUM("radium", 0xFF3C9C6F),
 
         // Additional metalloids
-        ARSENIC("arsenic", 0xFF3B3B3B),
-        TELLURIUM("tellurium", 0xFFD47A00),
-        BORON("boron", 0xFFFFB5B5),
-        ASTATINE("astatine", 0xFF662233),
+        ARSENIC("arsenic", 0xFF8C3F31),
+        TELLURIUM("tellurium", 0xFF275B1A),
+        BORON("boron", 0xFF3E4A60),
+        ASTATINE("astatine", 0xFF9FC413),
 
         // Post-transition metals
-        ALUMINUM_ALT("aluminium", 0xFF999999),  // Alternative spelling
+        ALUMINUM_ALT("aluminium", 0xFFD9D9D9),  // Alternative spelling
         GALLIUM_ARSENIDE("gallium_arsenide", 0xFF8F8F8F),  // Compound but useful
 
         // Actinides (besides Thorium and Uranium)
-        ACTINIUM("actinium", 0xFF70ABFA),
-        PROTACTINIUM("protactinium", 0xFFA78E4E),
-        NEPTUNIUM("neptunium", 0xFF0080FF),
-        PLUTONIUM("plutonium", 0xFF006BFF),
-        AMERICIUM("americium", 0xFF545CF2),
-        CURIUM("curium", 0xFF785CE3),
-        BERKELIUM("berkelium", 0xFF8A4FBE),
-        CALIFORNIUM("californium", 0xFFA136A5),
+        ACTINIUM("actinium", 0xFF7781F9),
+        PROTACTINIUM("protactinium", 0xFF3E8863),
+        NEPTUNIUM("neptunium", 0xFF657065),
+        PLUTONIUM("plutonium", 0xFFDB6E22),
+        AMERICIUM("americium", 0xFFAB8040),
+        CURIUM("curium", 0xFF920133),
+        BERKELIUM("berkelium", 0xFFB48B41),
+        CALIFORNIUM("californium", 0xFFB47148),
 
         // Additional transition metals
-        TUNGSTEN_ALT("wolfram", 0xFF606060);  // Alternative name for tungsten
+        TUNGSTEN_ALT("wolfram", 0xFF2B313E);  // Alternative name for tungsten
 
         private final String name;
         private final int tint;

@@ -6,7 +6,9 @@ import com.hecookin.chemlibmekanized.items.ExtractedCompoundItem;
 import com.hecookin.chemlibmekanized.items.MetalIngotItem;
 import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
 import com.hecookin.chemlibmekanized.items.MetalPlateItem;
+import com.hecookin.chemlibmekanized.items.MetalCrystalItem;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
+import com.hecookin.chemlibmekanized.registry.MetalCrystalRegistry;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -19,6 +21,7 @@ public class ChemLibColorProviders {
         int metalIngotCount = 0;
         int metalNuggetCount = 0;
         int metalPlateCount = 0;
+        int metalCrystalCount = 0;
 
         // Register color providers for all element items
         for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.ELEMENT_ITEMS.values()) {
@@ -65,7 +68,16 @@ public class ChemLibColorProviders {
             }
         }
 
-        ChemlibMekanized.LOGGER.info("Registered color handlers for {} elements, {} compounds, {} metal ingots, {} nuggets, {} plates",
-                                   elementCount, compoundCount, metalIngotCount, metalNuggetCount, metalPlateCount);
+        // Register color providers for all crystal items
+        for (DeferredHolder<Item, MetalCrystalItem> itemHolder : MetalCrystalRegistry.CRYSTAL_ITEMS.values()) {
+            Item item = itemHolder.get();
+            if (item instanceof MetalCrystalItem metalCrystalItem) {
+                event.register(metalCrystalItem::getColor, item);
+                metalCrystalCount++;
+            }
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered color handlers for {} elements, {} compounds, {} metal ingots, {} nuggets, {} plates, {} crystals",
+                                   elementCount, compoundCount, metalIngotCount, metalNuggetCount, metalPlateCount, metalCrystalCount);
     }
 }

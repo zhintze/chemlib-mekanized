@@ -22,6 +22,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         addElementTranslations();
         addCompoundTranslations();
         addMetalItemTranslations();
+        addCrystalTranslations();
         addFluidTranslations();
         addChemicalTranslations();
 
@@ -78,6 +79,49 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         }
     }
 
+    private void addCrystalTranslations() {
+        // All metals/metalloids that have crystals
+        String[][] crystals = {
+            // Common metals
+            {"aluminum", "Aluminum"}, {"titanium", "Titanium"}, {"zinc", "Zinc"},
+            {"nickel", "Nickel"}, {"silver", "Silver"}, {"platinum", "Platinum"},
+            // Rare metals
+            {"tungsten", "Tungsten"}, {"chromium", "Chromium"}, {"manganese", "Manganese"},
+            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"}, {"mercury", "Mercury"},
+            // Precious metals
+            {"palladium", "Palladium"}, {"rhodium", "Rhodium"}, {"iridium", "Iridium"}, {"ruthenium", "Ruthenium"},
+            // Radioactive
+            {"thorium", "Thorium"}, {"polonium", "Polonium"},
+            // Alkali/Alkaline
+            {"lithium", "Lithium"}, {"sodium", "Sodium"}, {"potassium", "Potassium"},
+            {"calcium", "Calcium"}, {"magnesium", "Magnesium"}, {"barium", "Barium"},
+            {"strontium", "Strontium"}, {"rubidium", "Rubidium"}, {"cesium", "Cesium"},
+            {"francium", "Francium"}, {"radium", "Radium"},
+            // Metalloids
+            {"silicon", "Silicon"}, {"germanium", "Germanium"}, {"antimony", "Antimony"},
+            {"bismuth", "Bismuth"}, {"boron", "Boron"}, {"arsenic", "Arsenic"}, {"tellurium", "Tellurium"},
+            // Lanthanides
+            {"cerium", "Cerium"}, {"neodymium", "Neodymium"}, {"lanthanum", "Lanthanum"},
+            {"gadolinium", "Gadolinium"}, {"europium", "Europium"},
+            // Other metals
+            {"indium", "Indium"}, {"gallium", "Gallium"}, {"hafnium", "Hafnium"},
+            {"tantalum", "Tantalum"}, {"rhenium", "Rhenium"}, {"molybdenum", "Molybdenum"},
+            {"vanadium", "Vanadium"}, {"niobium", "Niobium"}, {"beryllium", "Beryllium"},
+            {"zirconium", "Zirconium"}, {"scandium", "Scandium"}, {"yttrium", "Yttrium"},
+            {"thallium", "Thallium"}, {"technetium", "Technetium"},
+            // Actinides
+            {"actinium", "Actinium"}, {"protactinium", "Protactinium"}, {"neptunium", "Neptunium"},
+            {"plutonium", "Plutonium"}, {"americium", "Americium"}, {"curium", "Curium"},
+            {"berkelium", "Berkelium"}, {"californium", "Californium"}
+        };
+
+        for (String[] crystal : crystals) {
+            String id = crystal[0];
+            String name = crystal[1];
+            add("item." + ChemlibMekanized.MODID + "." + id + "_crystal", name + " Crystal");
+        }
+    }
+
     private void addFluidTranslations() {
         List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
 
@@ -87,7 +131,62 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         }
     }
 
+    private void addSlurryTranslations() {
+        // Define all our slurry elements with proper display names
+        String[][] slurries = {
+            // Common metals
+            {"aluminum", "Aluminum"}, {"titanium", "Titanium"}, {"zinc", "Zinc"},
+            {"nickel", "Nickel"}, {"silver", "Silver"}, {"platinum", "Platinum"},
+            // Rare metals
+            {"tungsten", "Tungsten"}, {"chromium", "Chromium"}, {"manganese", "Manganese"},
+            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"}, {"mercury", "Mercury"},
+            // Precious metals
+            {"palladium", "Palladium"}, {"rhodium", "Rhodium"}, {"iridium", "Iridium"}, {"ruthenium", "Ruthenium"},
+            // Radioactive
+            {"thorium", "Thorium"},
+            // Alkali/Alkaline
+            {"lithium", "Lithium"}, {"sodium", "Sodium"}, {"potassium", "Potassium"},
+            {"calcium", "Calcium"}, {"magnesium", "Magnesium"}, {"barium", "Barium"}, {"strontium", "Strontium"},
+            // Metalloids
+            {"silicon", "Silicon"}, {"germanium", "Germanium"}, {"antimony", "Antimony"}, {"bismuth", "Bismuth"},
+            // Lanthanides
+            {"cerium", "Cerium"}, {"neodymium", "Neodymium"}, {"lanthanum", "Lanthanum"},
+            {"gadolinium", "Gadolinium"}, {"europium", "Europium"},
+            // Other metals
+            {"indium", "Indium"}, {"gallium", "Gallium"}, {"hafnium", "Hafnium"},
+            {"tantalum", "Tantalum"}, {"rhenium", "Rhenium"}, {"molybdenum", "Molybdenum"},
+            {"vanadium", "Vanadium"}, {"niobium", "Niobium"}, {"beryllium", "Beryllium"},
+            {"zirconium", "Zirconium"}, {"scandium", "Scandium"}, {"yttrium", "Yttrium"},
+            {"thallium", "Thallium"}, {"polonium", "Polonium"}, {"technetium", "Technetium"},
+            {"rubidium", "Rubidium"}, {"cesium", "Cesium"}, {"francium", "Francium"}, {"radium", "Radium"},
+            // Metalloids
+            {"arsenic", "Arsenic"}, {"tellurium", "Tellurium"}, {"boron", "Boron"}, {"astatine", "Astatine"},
+            // Alternative spellings
+            {"aluminium", "Aluminium"}, {"gallium_arsenide", "Gallium Arsenide"},
+            // Actinides
+            {"actinium", "Actinium"}, {"protactinium", "Protactinium"}, {"neptunium", "Neptunium"},
+            {"plutonium", "Plutonium"}, {"americium", "Americium"}, {"curium", "Curium"},
+            {"berkelium", "Berkelium"}, {"californium", "Californium"},
+            // Alternative names
+            {"wolfram", "Wolfram"},
+            // Special materials
+            {"quartz", "Quartz"}, {"lapis", "Lapis"}, {"coal", "Coal"},
+            {"netherite_scrap", "Netherite Scrap"}, {"emerald", "Emerald"}
+        };
+
+        // Add translations for each slurry
+        for (String[] slurry : slurries) {
+            String id = slurry[0];
+            String name = slurry[1];
+            add("chemical." + ChemlibMekanized.MODID + ".dirty_" + id, "Dirty " + name + " Slurry");
+            add("chemical." + ChemlibMekanized.MODID + ".clean_" + id, "Clean " + name + " Slurry");
+        }
+    }
+
     private void addChemicalTranslations() {
+        // Add slurry translations
+        addSlurryTranslations();
+
         // Gas Elements - following Mekanism's chemical.{modid}.{name} pattern
         add("chemical." + ChemlibMekanized.MODID + ".element_hydrogen", "Hydrogen");
         add("chemical." + ChemlibMekanized.MODID + ".element_oxygen", "Oxygen");

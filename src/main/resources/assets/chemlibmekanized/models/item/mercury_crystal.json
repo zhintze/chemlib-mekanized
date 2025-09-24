@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chemlibmekanized:item/crystal_base",
+    "layer1": "chemlibmekanized:item/crystal_overlay"
+  }
+}

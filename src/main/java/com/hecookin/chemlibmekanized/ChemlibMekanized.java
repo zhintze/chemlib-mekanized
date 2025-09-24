@@ -7,6 +7,7 @@ import com.hecookin.chemlibmekanized.registry.ChemlibMekanizedChemicals;
 import com.hecookin.chemlibmekanized.registry.ChemLibSlurries;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
+import com.hecookin.chemlibmekanized.registry.MetalCrystalRegistry;
 import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
 import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 
@@ -41,6 +42,9 @@ public class ChemlibMekanized {
 
         // Register metal slurries
         ChemLibSlurries.CHEMICALS.register(modEventBus);
+
+        // Register metal crystals
+        MetalCrystalRegistry.ITEMS.register(modEventBus);
 
         ChemLibItemRegistry.ITEMS.register(modEventBus);
         ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);

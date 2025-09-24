@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 16200,
+    "chemical": "chemlibmekanized:clean_vanadium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:vanadium_crystal"
+  }
+}
