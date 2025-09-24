@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:coal_block"
+  },
+  "chemical_input": {
+    "amount": 5000,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "output": {
+    "amount": 144000,
+    "id": "mekanism:carbon"
+  },
+  "per_tick_usage": true
+}

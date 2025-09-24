@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:quartz_block"
+  },
+  "chemical_input": {
+    "amount": 4000,
+    "chemical": "mekanism:hydrofluoric_acid"
+  },
+  "output": {
+    "amount": 4000,
+    "id": "chemlibmekanized:slurry_silicon"
+  },
+  "per_tick_usage": true
+}

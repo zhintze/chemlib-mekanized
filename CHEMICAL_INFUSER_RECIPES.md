@@ -2,7 +2,8 @@
 
 ## Overview
 This document tracks the implementation of Chemical Infuser recipes for ChemLibMekanized.
-**Total Implemented: 30 recipes** (Batch 1: 18, Batch 2: 12)
+**Total Working: 18 recipes** (Batch 1 only)
+**Bonus Features (Pending): 12 recipes** (Require new chemical registration)
 
 ## Recipe Format
 All recipes follow the Mekanism Chemical Infuser JSON format:
@@ -60,10 +61,10 @@ All recipes follow the Mekanism Chemical Infuser JSON format:
 - **From Mekanism (10)**: hydrogen, oxygen, fluorine, sodium, carbon, water_vapor, steam, sulfur_dioxide, sulfur_trioxide, hydrofluoric_acid, sulfuric_acid, brine, ethene
 - **From ChemLibMekanized (7)**: nitrogen, ammonia, methane, acetylene, ethylene, hydrogen_sulfide, carbon_monoxide, carbon_dioxide, nitric_oxide, nitrogen_dioxide
 
-## Batch 2: Advanced Compounds (✅ Complete - 12 recipes)
-*Generated: 2024-12-23*
+## BONUS FEATURES - Advanced Compounds (Pending Implementation)
+*These 12 recipes are created but require registering new output chemicals in the Java code*
 
-### Currently Implemented Recipes (12 total):
+### Pending Chemical Registrations Needed:
 
 #### Noble Gas Compounds:
 1. **xenon_difluoride**: Xe + 2 F₂ → XeF₂
@@ -85,15 +86,20 @@ All recipes follow the Mekanism Chemical Infuser JSON format:
 11. **hydrogen_peroxide_formation**: 2 H₂ + 2 O₂ → H₂O₂
 12. **carbon_oxysulfide_formation**: CO + SO₂ → COS
 
-### New Chemicals Created:
-- **Noble gas fluorides**: xenon_difluoride, krypton_difluoride, radon_difluoride
-- **Toxic compounds**: hydrogen_cyanide, phosgene
-- **Industrial chemicals**: formaldehyde, chlorine_monoxide, chlorine_dioxide, chlorine_trifluoride
-- **Others**: nitrous_oxide, hydrogen_peroxide, carbon_oxysulfide
-
-### Skipped Recipes:
-- Several recipes requiring chemicals not yet registered (ethylene, benzene, acetylene, nitrogen_dioxide)
-- Ozone formation (requires special catalyst handling)
+### Chemicals Requiring Registration:
+To enable these recipes, the following chemicals must be added to `ChemlibMekanizedChemicals.java`:
+- compound_xenon_difluoride
+- compound_krypton_difluoride
+- compound_radon_difluoride
+- compound_hydrogen_cyanide
+- compound_formaldehyde
+- compound_chlorine_monoxide
+- compound_chlorine_dioxide
+- compound_phosgene
+- compound_chlorine_trifluoride
+- compound_nitrous_oxide
+- compound_hydrogen_peroxide
+- compound_carbon_oxysulfide
 
 ## Next Batches (Planned)
 

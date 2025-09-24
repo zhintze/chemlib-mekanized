@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:bone"
+  },
+  "chemical_input": {
+    "amount": 1000,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "output": {
+    "amount": 3000,
+    "id": "chemlibmekanized:slurry_calcium"
+  },
+  "per_tick_usage": true
+}

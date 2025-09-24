@@ -26,11 +26,18 @@ MEKANISM_CHEMICAL_MAPPINGS = {
     "carbon": "mekanism:carbon",
     "redstone": "mekanism:redstone",
     "diamond": "mekanism:diamond",
-    "gold": "mekanism:gold",
-    "tin": "mekanism:tin",
     "refined_obsidian": "mekanism:refined_obsidian",
     "bio": "mekanism:bio",
     "fungi": "mekanism:fungi",
+
+    # Mekanism slurries (for metals)
+    "iron": "mekanism:dirty_iron",
+    "gold": "mekanism:dirty_gold",
+    "copper": "mekanism:dirty_copper",
+    "tin": "mekanism:dirty_tin",
+    "lead": "mekanism:dirty_lead",
+    "uranium": "mekanism:dirty_uranium",
+    "osmium": "mekanism:dirty_osmium",
 
     # Special Mekanism chemicals
     "brine": "mekanism:brine",
@@ -70,7 +77,11 @@ CHEMLIB_CHEMICALS = {
     "carbon_dioxide": "chemlibmekanized:compound_carbon_dioxide",
 
     # Use our nitrogen since Mekanism doesn't have it as a separate gas
-    "nitrogen": "chemlibmekanized:element_nitrogen"
+    "nitrogen": "chemlibmekanized:element_nitrogen",
+
+    # Elements as slurries for dissolution outputs
+    "silicon": "chemlibmekanized:slurry_silicon",
+    "calcium": "chemlibmekanized:slurry_calcium"
 }
 
 # New compounds created by our recipes (will need to be registered)
