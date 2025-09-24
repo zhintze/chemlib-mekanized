@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 2000,
+    "chemical": "chemlibmekanized:compound_nitric_oxide"
+  },
+  "output": {
+    "id": "minecraft:red_dye"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "infusion",
+  "input": {
+    "amount": 2000,
+    "chemical": "mekanism:carbon"
+  },
+  "output": {
+    "id": "minecraft:gray_dye"
+  }
+}

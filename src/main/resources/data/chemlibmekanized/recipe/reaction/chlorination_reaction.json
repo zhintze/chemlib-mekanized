@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:paper"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:chlorine"
+  },
+  "energy_required": 500.0,
+  "duration": 50,
+  "item_output": {
+    "id": "minecraft:white_dye"
+  }
+}

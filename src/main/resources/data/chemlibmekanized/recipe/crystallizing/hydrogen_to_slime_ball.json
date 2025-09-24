@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 16000,
+    "chemical": "mekanism:hydrogen"
+  },
+  "output": {
+    "id": "minecraft:slime_ball"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:raw_iron"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 2000,
+    "chemical": "mekanism:oxygen"
+  },
+  "energy_required": 3000.0,
+  "duration": 300,
+  "item_output": {
+    "id": "minecraft:iron_ingot"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "mekanism:sulfur_dioxide"
+  }
+}

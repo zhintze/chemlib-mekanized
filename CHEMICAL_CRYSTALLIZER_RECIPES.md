@@ -66,3 +66,43 @@ All recipes follow the Mekanism Chemical Crystallizer format:
 - Provides multiple output options for carbon (coal, charcoal, dye, diamond)
 - Noble gases produce decorative/special items
 - Practical uses for chemical compounds
+
+## Batch 2: Advanced Chemical Conversions (✅ Complete - 20 recipes)
+*Generated: 2024-12-23*
+
+### Implemented Recipes (20 total - all working):
+
+#### Alternative Carbon Outputs (5 recipes):
+1. **carbon_to_ink_sac**: 8x Carbon → Ink Sac
+2. **carbon_to_gray_dye**: 2x Carbon → Gray Dye
+3. **carbon_to_light_gray_dye**: Carbon → Light Gray Dye
+4. **large_carbon_to_obsidian**: 128x Carbon → Obsidian
+5. **carbon_to_flint**: 32x Carbon → Flint
+
+#### Gas to Dye Conversions (10 recipes):
+6. **carbon_dioxide_to_lime_dye**: 2x CO₂ → Lime Dye
+7. **nitric_oxide_to_red_dye**: 2x NO → Red Dye
+8. **hydrogen_sulfide_to_yellow_dye**: H₂S → Yellow Dye
+9. **nitrogen_to_white_dye**: 2x N₂ → White Dye
+10. **ammonia_to_green_dye**: NH₃ → Green Dye
+11. **chlorine_to_cyan_dye**: Cl₂ → Cyan Dye
+12. **fluorine_to_magenta_dye**: F₂ → Magenta Dye
+13. **methane_to_brown_dye**: CH₄ → Brown Dye
+14. **oxygen_to_blue_dye**: 2x O₂ → Blue Dye
+15. **carbon_monoxide_to_light_gray_concrete**: 8x CO → Light Gray Concrete Powder
+
+#### Noble Gas Specialties (3 recipes):
+16. **helium_to_feather**: 4x Helium → Feather
+17. **radon_to_spider_eye**: 2x Radon → Spider Eye
+18. **xenon_to_sea_lantern**: 8x Xenon → Sea Lantern
+
+#### Other Conversions (2 recipes):
+19. **hydrogen_to_slime_ball**: 16x Hydrogen → Slime Ball
+20. **large_nitrogen_to_blue_ice**: 16x Nitrogen → Blue Ice
+
+## Summary
+**Total Crystallizer Recipes: 37** (Batch 1: 17, Batch 2: 20)
+- Covers all 16 Minecraft dye colors through chemical conversions
+- Provides alternative paths to rare items (spider eye, slime ball, sea lantern)
+- Multiple output options for common chemicals (especially carbon)
+- Creative but plausible chemical transformations

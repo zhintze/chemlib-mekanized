@@ -1,0 +1,25 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:bone_block"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 2000,
+    "chemical": "mekanism:oxygen"
+  },
+  "energy_required": 2500.0,
+  "duration": 250,
+  "item_output": {
+    "id": "minecraft:bone_meal",
+    "count": 9
+  },
+  "chemical_output": {
+    "amount": 500,
+    "id": "chemlibmekanized:compound_carbon_dioxide"
+  }
+}

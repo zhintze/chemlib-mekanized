@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 1000,
+    "chemical": "mekanism:fluorine"
+  },
+  "output": {
+    "id": "minecraft:magenta_dye"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 4000,
+    "chemical": "chemlibmekanized:element_helium"
+  },
+  "output": {
+    "id": "minecraft:feather"
+  }
+}

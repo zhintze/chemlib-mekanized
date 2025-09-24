@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 8,
+    "item": "minecraft:oak_leaves"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 500,
+    "chemical": "mekanism:oxygen"
+  },
+  "energy_required": 1000.0,
+  "duration": 200,
+  "item_output": {
+    "id": "minecraft:charcoal"
+  },
+  "chemical_output": {
+    "amount": 500,
+    "id": "chemlibmekanized:compound_methane"
+  }
+}

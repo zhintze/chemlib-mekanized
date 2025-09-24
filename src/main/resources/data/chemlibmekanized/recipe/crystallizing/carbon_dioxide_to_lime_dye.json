@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 2000,
+    "chemical": "chemlibmekanized:compound_carbon_dioxide"
+  },
+  "output": {
+    "id": "minecraft:lime_dye"
+  }
+}

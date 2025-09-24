@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:gunpowder"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 1500,
+    "chemical": "mekanism:oxygen"
+  },
+  "energy_required": 2000.0,
+  "duration": 150,
+  "item_output": {
+    "id": "minecraft:charcoal"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "mekanism:sulfur_dioxide"
+  }
+}

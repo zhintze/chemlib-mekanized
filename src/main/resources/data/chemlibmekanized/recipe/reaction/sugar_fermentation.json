@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 2,
+    "item": "minecraft:sugar"
+  },
+  "fluid_input": {
+    "amount": 500,
+    "tag": "minecraft:water"
+  },
+  "energy_required": 500.0,
+  "duration": 400,
+  "chemical_output": {
+    "amount": 1000,
+    "id": "mekanism:ethene"
+  }
+}

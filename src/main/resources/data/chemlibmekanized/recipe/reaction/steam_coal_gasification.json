@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:coal"
+  },
+  "fluid_input": {
+    "amount": 1000,
+    "tag": "minecraft:water"
+  },
+  "energy_required": 2000.0,
+  "duration": 200,
+  "chemical_output": {
+    "amount": 2000,
+    "id": "chemlibmekanized:compound_carbon_monoxide"
+  }
+}

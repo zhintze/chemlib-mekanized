@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_type": "gas",
+  "input": {
+    "amount": 8000,
+    "chemical": "chemlibmekanized:compound_carbon_monoxide"
+  },
+  "output": {
+    "id": "minecraft:light_gray_concrete_powder"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:rotary",
+  "fluid_input": {
+    "amount": 1000,
+    "id": "minecraft:lava"
+  },
+  "chemical_output": {
+    "amount": 500,
+    "id": "mekanism:sulfur_dioxide"
+  }
+}

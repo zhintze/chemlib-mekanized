@@ -1,0 +1,21 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:charcoal"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 1000,
+    "chemical": "chemlibmekanized:compound_carbon_dioxide"
+  },
+  "energy_required": 3000.0,
+  "duration": 200,
+  "chemical_output": {
+    "amount": 2000,
+    "id": "chemlibmekanized:compound_carbon_monoxide"
+  }
+}

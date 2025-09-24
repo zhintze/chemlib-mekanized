@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "item_input": {
+    "count": 1,
+    "item": "minecraft:calcite"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "energy_required": 1000.0,
+  "duration": 100,
+  "item_output": {
+    "id": "minecraft:bone_meal"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:compound_carbon_dioxide"
+  }
+}
