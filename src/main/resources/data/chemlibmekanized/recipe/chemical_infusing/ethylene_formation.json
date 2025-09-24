@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 2000,
+    "chemical": "mekanism:carbon"
+  },
+  "right_input": {
+    "amount": 4000,
+    "chemical": "mekanism:hydrogen"
+  },
+  "output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:compound_ethylene"
+  }
+}

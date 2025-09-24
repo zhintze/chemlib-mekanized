@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 1000,
+    "chemical": "mekanism:sodium"
+  },
+  "right_input": {
+    "amount": 10000,
+    "chemical": "mekanism:water_vapor"
+  },
+  "output": {
+    "amount": 15000,
+    "id": "mekanism:brine"
+  }
+}

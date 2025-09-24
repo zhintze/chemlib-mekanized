@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:chemical_infusing",
+  "left_input": {
+    "amount": 1000,
+    "chemical": "mekanism:water_vapor"
+  },
+  "right_input": {
+    "amount": 1000,
+    "chemical": "mekanism:oxygen"
+  },
+  "output": {
+    "amount": 2000,
+    "id": "mekanism:steam"
+  }
+}
