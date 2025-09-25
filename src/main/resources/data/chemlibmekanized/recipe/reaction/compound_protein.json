@@ -15,6 +15,10 @@
   },
   "chemical_output": {
     "amount": 100,
+    "id": "mekanism:ethylene"
+  },
+  "item_output": {
+    "count": 1,
     "id": "mekanism:ammonia"
   }
 }

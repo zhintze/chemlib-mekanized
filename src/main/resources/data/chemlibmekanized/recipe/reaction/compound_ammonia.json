@@ -2,7 +2,7 @@
   "type": "mekanism:reaction",
   "duration": 100,
   "item_input": {
-    "item": "chemlibmekanized:ammonia",
+    "item": "mekanism:ammonia",
     "count": 1
   },
   "fluid_input": {
@@ -14,7 +14,11 @@
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
-    "amount": 100,
+    "amount": 300,
+    "id": "mekanism:hydrogen"
+  },
+  "item_output": {
+    "count": 1,
     "id": "mekanism:nitrogen"
   }
 }

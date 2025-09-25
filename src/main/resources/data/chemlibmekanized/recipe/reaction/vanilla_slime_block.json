@@ -14,7 +14,11 @@
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
-    "amount": 200,
+    "amount": 100,
+    "id": "chemlibmekanized:dirty_boron"
+  },
+  "item_output": {
+    "count": 2,
     "id": "mekanism:nitrogen"
   }
 }
