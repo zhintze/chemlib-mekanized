@@ -1,11 +1,11 @@
 {
   "type": "mekanism:crystallizing",
-  "output": {
-    "id": "chemlibmekanized:thulium_crystal",
-    "count": 1
-  },
-  "input": {
+  "chemical_input": {
     "amount": 200,
     "chemical": "chemlibmekanized:clean_thulium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:thulium_crystal"
   }
 }

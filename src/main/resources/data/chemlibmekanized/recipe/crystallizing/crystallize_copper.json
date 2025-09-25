@@ -1,11 +1,11 @@
 {
   "type": "mekanism:crystallizing",
-  "output": {
-    "id": "minecraft:copper_ingot",
-    "count": 1
-  },
-  "input": {
+  "chemical_input": {
     "amount": 200,
-    "chemical": "mekanism:clean_copper"
+    "chemical": "chemlibmekanized:clean_copper"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:copper_crystal"
   }
 }

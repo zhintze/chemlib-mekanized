@@ -1,15 +1,14 @@
 {
   "type": "mekanism:washing",
-  "output": {
-    "amount": 1,
-    "id": "mekanism:clean_tin"
+  "fluid_input": {
+    "amount": 5,
+    "fluid": "minecraft:water"
   },
   "chemical_input": {
     "amount": 1,
-    "chemical": "mekanism:dirty_tin"
+    "chemical": "chemlibmekanized:dirty_tin"
   },
-  "fluid_input": {
-    "amount": 5,
-    "tag": "minecraft:water"
+  "output": {
+    "id": "chemlibmekanized:clean_tin"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "chemlibmekanized:clean_lawrencium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:lawrencium_crystal"
+  }
+}

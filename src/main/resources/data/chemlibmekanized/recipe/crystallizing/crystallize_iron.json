@@ -1,11 +1,11 @@
 {
   "type": "mekanism:crystallizing",
-  "output": {
-    "id": "minecraft:iron_ingot",
-    "count": 1
-  },
-  "input": {
+  "chemical_input": {
     "amount": 200,
-    "chemical": "mekanism:clean_iron"
+    "chemical": "chemlibmekanized:clean_iron"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:iron_crystal"
   }
 }

@@ -7,6 +7,7 @@ import com.hecookin.chemlibmekanized.items.ExtractedCompoundItem;
 import com.hecookin.chemlibmekanized.items.MetalIngotItem;
 import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
 import com.hecookin.chemlibmekanized.items.MetalPlateItem;
+import com.hecookin.chemlibmekanized.items.MetalCrystalItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -29,6 +30,7 @@ public class ChemLibItemRegistry {
     public static final Map<String, DeferredHolder<Item, Item>> METAL_INGOT_ITEMS = new HashMap<>();
     public static final Map<String, DeferredHolder<Item, Item>> METAL_NUGGET_ITEMS = new HashMap<>();
     public static final Map<String, DeferredHolder<Item, Item>> METAL_PLATE_ITEMS = new HashMap<>();
+    public static final Map<String, DeferredHolder<Item, Item>> METAL_CRYSTAL_ITEMS = new HashMap<>();
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ELEMENTS_TAB = CREATIVE_TABS.register("elements",
         () -> CreativeModeTab.builder()
@@ -242,7 +244,31 @@ public class ChemLibItemRegistry {
         ChemlibMekanized.LOGGER.info("Registered {} metal nuggets", METAL_NUGGET_ITEMS.size());
     }
 
-    public static void registerMetalPlates() {
+
+    public static void registerMetalCrystals() {
+        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
+        List<ChemLibDataExtractor.ElementData> metalloids = ChemLibDataExtractor.extractMetalloids();
+
+        // Register crystals for all metals
+        for (ChemLibDataExtractor.ElementData metal : metals) {
+            String crystalName = metal.name + "_crystal";
+            DeferredHolder<Item, Item> crystalItem = ITEMS.register(crystalName,
+                () -> new MetalCrystalItem(metal));
+            METAL_CRYSTAL_ITEMS.put(metal.name, crystalItem);
+        }
+
+        // Register crystals for metalloids too
+        for (ChemLibDataExtractor.ElementData metalloid : metalloids) {
+            String crystalName = metalloid.name + "_crystal";
+            DeferredHolder<Item, Item> crystalItem = ITEMS.register(crystalName,
+                () -> new MetalCrystalItem(metalloid));
+            METAL_CRYSTAL_ITEMS.put(metalloid.name, crystalItem);
+        }
+
+        ChemlibMekanized.LOGGER.info("Registered {} metal/metalloid crystals", METAL_CRYSTAL_ITEMS.size());
+    }
+
+        public static void registerMetalPlates() {
         List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
 
         for (ChemLibDataExtractor.ElementData metal : metals) {
@@ -262,8 +288,9 @@ public class ChemLibItemRegistry {
         registerMetalIngots();
         registerMetalNuggets();
         registerMetalPlates();
+        registerMetalCrystals();
         ChemlibMekanized.LOGGER.info("ChemLib content extraction completed - {} elements, {} compounds, {} metal ingots, {} nuggets, {} plates",
                                    ELEMENT_ITEMS.size(), COMPOUND_ITEMS.size(), METAL_INGOT_ITEMS.size(),
-                                   METAL_NUGGET_ITEMS.size(), METAL_PLATE_ITEMS.size());
+                                   METAL_NUGGET_ITEMS.size(), METAL_PLATE_ITEMS.size(), METAL_CRYSTAL_ITEMS.size());
     }
 }

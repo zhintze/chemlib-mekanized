@@ -71,7 +71,10 @@ def main():
             recipe = create_dissolution_recipe(element, acid_name, acid_amount)
 
             # Generate filename based on acid
-            acid_suffix = acid_name.replace("_acid", "").replace("hydrogen_chloride", "hcl")
+            if acid_name == "hydrogen_chloride":
+                acid_suffix = "hcl"
+            else:
+                acid_suffix = acid_name.replace("_acid", "")
             filename = f"{output_dir}/element_{element}_dissolution_{acid_suffix}.json"
 
             # Write the recipe file
