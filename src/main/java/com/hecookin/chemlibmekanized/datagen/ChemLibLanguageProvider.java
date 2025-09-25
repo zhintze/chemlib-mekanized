@@ -113,7 +113,18 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"tantalum", "Tantalum"}, {"rhenium", "Rhenium"}, {"molybdenum", "Molybdenum"},
             {"vanadium", "Vanadium"}, {"niobium", "Niobium"}, {"beryllium", "Beryllium"},
             {"zirconium", "Zirconium"}, {"scandium", "Scandium"}, {"yttrium", "Yttrium"},
-            {"thallium", "Thallium"}, {"technetium", "Technetium"}, {"lawrencium", "Lawrencium"}
+            {"thallium", "Thallium"}, {"technetium", "Technetium"},
+            // Actinides
+            {"actinium", "Actinium"}, {"protactinium", "Protactinium"}, {"neptunium", "Neptunium"},
+            {"plutonium", "Plutonium"}, {"americium", "Americium"}, {"curium", "Curium"},
+            {"berkelium", "Berkelium"}, {"californium", "Californium"},
+            // Super-heavy elements
+            {"lawrencium", "Lawrencium"}, {"einsteinium", "Einsteinium"}, {"fermium", "Fermium"},
+            {"mendelevium", "Mendelevium"}, {"nobelium", "Nobelium"}, {"rutherfordium", "Rutherfordium"},
+            {"dubnium", "Dubnium"}, {"seaborgium", "Seaborgium"}, {"bohrium", "Bohrium"},
+            {"hassium", "Hassium"}, {"meitnerium", "Meitnerium"}, {"darmstadtium", "Darmstadtium"},
+            {"roentgenium", "Roentgenium"}, {"copernicium", "Copernicium"}, {"nihonium", "Nihonium"},
+            {"flerovium", "Flerovium"}, {"moscovium", "Moscovium"}, {"livermorium", "Livermorium"}
         };
 
         for (String[] crystal : crystals) {
@@ -204,7 +215,10 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"silicon", "Silicon"}, {"germanium", "Germanium"}, {"antimony", "Antimony"}, {"bismuth", "Bismuth"},
             // Lanthanides
             {"cerium", "Cerium"}, {"neodymium", "Neodymium"}, {"lanthanum", "Lanthanum"},
-            {"gadolinium", "Gadolinium"}, {"europium", "Europium"},
+            {"gadolinium", "Gadolinium"}, {"europium", "Europium"}, {"samarium", "Samarium"},
+            {"terbium", "Terbium"}, {"dysprosium", "Dysprosium"}, {"holmium", "Holmium"},
+            {"erbium", "Erbium"}, {"thulium", "Thulium"}, {"ytterbium", "Ytterbium"},
+            {"lutetium", "Lutetium"}, {"praseodymium", "Praseodymium"}, {"promethium", "Promethium"},
             // Other metals
             {"indium", "Indium"}, {"gallium", "Gallium"}, {"hafnium", "Hafnium"},
             {"tantalum", "Tantalum"}, {"rhenium", "Rhenium"}, {"molybdenum", "Molybdenum"},
@@ -220,6 +234,13 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"actinium", "Actinium"}, {"protactinium", "Protactinium"}, {"neptunium", "Neptunium"},
             {"plutonium", "Plutonium"}, {"americium", "Americium"}, {"curium", "Curium"},
             {"berkelium", "Berkelium"}, {"californium", "Californium"},
+            // Super-heavy elements
+            {"lawrencium", "Lawrencium"}, {"einsteinium", "Einsteinium"}, {"fermium", "Fermium"},
+            {"mendelevium", "Mendelevium"}, {"nobelium", "Nobelium"}, {"rutherfordium", "Rutherfordium"},
+            {"dubnium", "Dubnium"}, {"seaborgium", "Seaborgium"}, {"bohrium", "Bohrium"},
+            {"hassium", "Hassium"}, {"meitnerium", "Meitnerium"}, {"darmstadtium", "Darmstadtium"},
+            {"roentgenium", "Roentgenium"}, {"copernicium", "Copernicium"}, {"nihonium", "Nihonium"},
+            {"flerovium", "Flerovium"}, {"moscovium", "Moscovium"}, {"livermorium", "Livermorium"},
             // Alternative names
             {"wolfram", "Wolfram"},
             // Special materials

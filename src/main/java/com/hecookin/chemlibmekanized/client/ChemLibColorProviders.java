@@ -8,7 +8,6 @@ import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
 import com.hecookin.chemlibmekanized.items.MetalPlateItem;
 import com.hecookin.chemlibmekanized.items.MetalCrystalItem;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
-import com.hecookin.chemlibmekanized.registry.MetalCrystalRegistry;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -69,7 +68,7 @@ public class ChemLibColorProviders {
         }
 
         // Register color providers for all crystal items
-        for (DeferredHolder<Item, MetalCrystalItem> itemHolder : MetalCrystalRegistry.CRYSTAL_ITEMS.values()) {
+        for (DeferredHolder<Item, Item> itemHolder : ChemLibItemRegistry.METAL_CRYSTAL_ITEMS.values()) {
             Item item = itemHolder.get();
             if (item instanceof MetalCrystalItem metalCrystalItem) {
                 event.register(metalCrystalItem::getColor, item);

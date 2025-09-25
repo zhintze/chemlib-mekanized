@@ -116,6 +116,12 @@ public class ChemLibItemRegistry {
                                 if (plate != null && plate.get() != null) {
                                     output.accept(plate.get());
                                 }
+
+                                // Add crystal
+                                var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
+                                if (crystal != null && crystal.get() != null) {
+                                    output.accept(crystal.get());
+                                }
                             }
                         }
                     });
@@ -190,6 +196,12 @@ public class ChemLibItemRegistry {
                                 var plate = METAL_PLATE_ITEMS.get(metalName);
                                 if (plate != null && plate.get() != null) {
                                     output.accept(plate.get());
+                                }
+
+                                // Add crystal
+                                var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
+                                if (crystal != null && crystal.get() != null) {
+                                    output.accept(crystal.get());
                                 }
                             }
                         }

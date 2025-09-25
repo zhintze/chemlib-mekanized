@@ -6,7 +6,6 @@ import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.ChemlibMekanizedChemicals;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
-import com.hecookin.chemlibmekanized.registry.MetalCrystalRegistry;
 import com.hecookin.chemlibmekanized.integration.MekanismChemLibIntegration;
 import com.hecookin.chemlibmekanized.integration.ImmersiveEngineeringIntegration;
 
@@ -39,8 +38,7 @@ public class ChemlibMekanized {
         // Register all Mekanism chemicals (including slurries)
         ChemlibMekanizedChemicals.CHEMICALS.register(modEventBus);
 
-        // Register metal crystals
-        MetalCrystalRegistry.ITEMS.register(modEventBus);
+        // Metal crystals are now registered in ChemLibItemRegistry
 
         ChemLibItemRegistry.ITEMS.register(modEventBus);
         ChemLibItemRegistry.CREATIVE_TABS.register(modEventBus);
