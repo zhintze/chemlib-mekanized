@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "chemlibmekanized:butane"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "output": {
+    "amount": 200,
+    "id": "chemlibmekanized:butane"
+  },
+  "per_tick_usage": true
+}

@@ -2,15 +2,15 @@
   "type": "mekanism:dissolution",
   "item_input": {
     "count": 1,
-    "item": "minecraft:repeater"
+    "item": "chemlibmekanized:butane"
   },
   "chemical_input": {
     "amount": 10,
     "chemical": "mekanism:hydrogen_chloride"
   },
   "output": {
-    "amount": 2000,
-    "id": "mekanism:redstone"
+    "amount": 200,
+    "id": "chemlibmekanized:butane"
   },
   "per_tick_usage": true
 }

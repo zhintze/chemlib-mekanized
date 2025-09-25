@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "chemlibmekanized:lead"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "output": {
+    "amount": 200,
+    "id": "mekanism:dirty_lead"
+  },
+  "per_tick_usage": true
+}
