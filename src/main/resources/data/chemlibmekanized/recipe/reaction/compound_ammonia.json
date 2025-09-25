@@ -2,7 +2,7 @@
   "type": "mekanism:reaction",
   "duration": 100,
   "item_input": {
-    "item": "mekanism:ammonia",
+    "item": "chemlibmekanized:ammonia",
     "count": 1
   },
   "fluid_input": {
@@ -19,6 +19,6 @@
   },
   "item_output": {
     "count": 1,
-    "id": "mekanism:nitrogen"
+    "id": "chemlibmekanized:nitrogen"
   }
 }
