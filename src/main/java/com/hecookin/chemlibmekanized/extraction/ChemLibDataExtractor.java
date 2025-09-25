@@ -229,6 +229,25 @@ public class ChemLibDataExtractor {
         return metals;
     }
 
+    /**
+     * Extract only metalloid elements from ChemLib data
+     * @return List of metalloid element data
+     */
+    public static List<ElementData> extractMetalloids() {
+        List<ElementData> allElements = extractElements();
+        List<ElementData> metalloids = new ArrayList<>();
+
+        for (ElementData element : allElements) {
+            // Filter for metalloids that are solid
+            if ("metalloid".equals(element.metalType) && "solid".equals(element.matterState)) {
+                metalloids.add(element);
+            }
+        }
+
+        ChemlibMekanized.LOGGER.info("Extracted {} solid metalloids from ChemLib", metalloids.size());
+        return metalloids;
+    }
+
     public static List<CompoundData> extractCompounds() {
         List<CompoundData> compounds = new ArrayList<>();
         Path compoundsPath = Paths.get(CHEMLIB_PATH + "compounds.json");
