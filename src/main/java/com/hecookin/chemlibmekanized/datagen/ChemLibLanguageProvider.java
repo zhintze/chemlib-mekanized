@@ -85,9 +85,11 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             // Common metals
             {"aluminum", "Aluminum"}, {"titanium", "Titanium"}, {"zinc", "Zinc"},
             {"nickel", "Nickel"}, {"silver", "Silver"}, {"platinum", "Platinum"},
+            {"copper", "Copper"}, {"iron", "Iron"}, {"gold", "Gold"}, {"lead", "Lead"}, {"tin", "Tin"},
+            {"osmium", "Osmium"}, {"uranium", "Uranium"},
             // Rare metals
             {"tungsten", "Tungsten"}, {"chromium", "Chromium"}, {"manganese", "Manganese"},
-            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"}, {"mercury", "Mercury"},
+            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"},
             // Precious metals
             {"palladium", "Palladium"}, {"rhodium", "Rhodium"}, {"iridium", "Iridium"}, {"ruthenium", "Ruthenium"},
             // Radioactive
@@ -96,23 +98,22 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"lithium", "Lithium"}, {"sodium", "Sodium"}, {"potassium", "Potassium"},
             {"calcium", "Calcium"}, {"magnesium", "Magnesium"}, {"barium", "Barium"},
             {"strontium", "Strontium"}, {"rubidium", "Rubidium"}, {"cesium", "Cesium"},
-            {"francium", "Francium"}, {"radium", "Radium"},
+            {"francium", "Francium"},
             // Metalloids
-            {"silicon", "Silicon"}, {"germanium", "Germanium"}, {"antimony", "Antimony"},
-            {"bismuth", "Bismuth"}, {"boron", "Boron"}, {"arsenic", "Arsenic"}, {"tellurium", "Tellurium"},
-            // Lanthanides
+            {"germanium", "Germanium"}, {"antimony", "Antimony"},
+            {"bismuth", "Bismuth"}, {"boron", "Boron"}, {"arsenic", "Arsenic"},
+            // Lanthanides (rare earths)
             {"cerium", "Cerium"}, {"neodymium", "Neodymium"}, {"lanthanum", "Lanthanum"},
-            {"gadolinium", "Gadolinium"}, {"europium", "Europium"},
+            {"gadolinium", "Gadolinium"}, {"europium", "Europium"}, {"samarium", "Samarium"},
+            {"terbium", "Terbium"}, {"dysprosium", "Dysprosium"}, {"holmium", "Holmium"},
+            {"erbium", "Erbium"}, {"thulium", "Thulium"}, {"ytterbium", "Ytterbium"},
+            {"lutetium", "Lutetium"}, {"praseodymium", "Praseodymium"}, {"promethium", "Promethium"},
             // Other metals
             {"indium", "Indium"}, {"gallium", "Gallium"}, {"hafnium", "Hafnium"},
             {"tantalum", "Tantalum"}, {"rhenium", "Rhenium"}, {"molybdenum", "Molybdenum"},
             {"vanadium", "Vanadium"}, {"niobium", "Niobium"}, {"beryllium", "Beryllium"},
             {"zirconium", "Zirconium"}, {"scandium", "Scandium"}, {"yttrium", "Yttrium"},
-            {"thallium", "Thallium"}, {"technetium", "Technetium"},
-            // Actinides
-            {"actinium", "Actinium"}, {"protactinium", "Protactinium"}, {"neptunium", "Neptunium"},
-            {"plutonium", "Plutonium"}, {"americium", "Americium"}, {"curium", "Curium"},
-            {"berkelium", "Berkelium"}, {"californium", "Californium"}
+            {"thallium", "Thallium"}, {"technetium", "Technetium"}, {"lawrencium", "Lawrencium"}
         };
 
         for (String[] crystal : crystals) {
