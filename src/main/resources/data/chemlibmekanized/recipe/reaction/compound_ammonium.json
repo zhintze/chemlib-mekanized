@@ -14,11 +14,7 @@
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
-    "amount": 400,
-    "id": "mekanism:hydrogen"
-  },
-  "item_output": {
-    "count": 1,
+    "amount": 100,
     "id": "mekanism:nitrogen"
   }
 }

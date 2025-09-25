@@ -14,11 +14,7 @@
     "chemical": "chemlibmekanized:hydrochloric_acid"
   },
   "chemical_output": {
-    "amount": 100,
-    "id": "chemlibmekanized:dirty_calcium"
-  },
-  "item_output": {
-    "count": 2,
+    "amount": 200,
     "id": "mekanism:chlorine"
   }
 }
