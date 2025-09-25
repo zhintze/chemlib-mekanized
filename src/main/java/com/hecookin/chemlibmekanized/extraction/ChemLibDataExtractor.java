@@ -161,7 +161,8 @@ public class ChemLibDataExtractor {
                 String matterState = elementObj.get("matter_state").getAsString();
                 String metalType = elementObj.get("metal_type").getAsString();
                 boolean artificial = elementObj.has("artificial") && elementObj.get("artificial").getAsBoolean();
-                boolean hasItem = elementObj.has("has_item") && elementObj.get("has_item").getAsBoolean();
+                // Force hasItem to true for all elements - we want all elements to be items in our mod
+                boolean hasItem = true; // elementObj.has("has_item") && elementObj.get("has_item").getAsBoolean();
                 String color = elementObj.get("color").getAsString();
 
                 FluidProperties fluidProps = null;
@@ -201,6 +202,12 @@ public class ChemLibDataExtractor {
                 elements.add(new ElementData(name, atomicNumber, abbreviation, group, period,
                                            matterState, metalType, artificial, hasItem, color,
                                            fluidProps, effects));
+
+                // Log heavy/rare elements for debugging
+                if (atomicNumber >= 70 && atomicNumber <= 103) {
+                    ChemlibMekanized.LOGGER.info("Loaded element: {} (#{}) - metal_type: {}, has_item: {}, artificial: {}",
+                        name, atomicNumber, metalType, hasItem, artificial);
+                }
             }
         } catch (IOException e) {
             ChemlibMekanized.LOGGER.error("Failed to read elements.json", e);
