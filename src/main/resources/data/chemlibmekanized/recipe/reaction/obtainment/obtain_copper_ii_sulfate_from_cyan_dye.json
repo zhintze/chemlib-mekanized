@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:cyan_dye",
+    "count": 1
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:copper_ii_sulfate"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "mekanism:sulfur_dioxide"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "mekanism:sulfuric_acid"
+  }
+}

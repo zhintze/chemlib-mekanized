@@ -10,7 +10,7 @@
     "tag": "minecraft:water"
   },
   "chemical_input": {
-    "amount": 30,
+    "amount": 10,
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
@@ -19,6 +19,6 @@
   },
   "item_output": {
     "count": 2,
-    "id": "chemlibmekanized:nitrogen"
+    "id": "mekanism:nitrogen"
   }
 }

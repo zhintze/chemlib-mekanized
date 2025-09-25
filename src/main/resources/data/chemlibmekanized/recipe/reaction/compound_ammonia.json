@@ -2,7 +2,7 @@
   "type": "mekanism:reaction",
   "duration": 100,
   "item_input": {
-    "item": "chemlibmekanized:ammonia",
+    "item": "mekanism:ammonia",
     "count": 1
   },
   "fluid_input": {
@@ -10,7 +10,7 @@
     "tag": "minecraft:water"
   },
   "chemical_input": {
-    "amount": 30,
+    "amount": 10,
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
@@ -19,6 +19,6 @@
   },
   "item_output": {
     "count": 1,
-    "id": "chemlibmekanized:nitrogen"
+    "id": "mekanism:nitrogen"
   }
 }

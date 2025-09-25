@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:brown_mushroom",
+    "count": 1
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:chitin"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "mekanism:nitrogen"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "mekanism:sulfuric_acid"
+  }
+}

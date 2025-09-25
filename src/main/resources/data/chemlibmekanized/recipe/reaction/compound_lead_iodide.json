@@ -15,7 +15,7 @@
   },
   "chemical_output": {
     "amount": 200,
-    "id": "chemlibmekanized:dirty_lead"
+    "id": "mekanism:dirty_lead"
   },
   "item_output": {
     "count": 1,

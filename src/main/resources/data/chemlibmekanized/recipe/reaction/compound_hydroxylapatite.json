@@ -10,12 +10,12 @@
     "tag": "minecraft:water"
   },
   "chemical_input": {
-    "amount": 30,
+    "amount": 10,
     "chemical": "mekanism:sulfuric_acid"
   },
   "chemical_output": {
     "amount": 600,
-    "id": "chemlibmekanized:fluorine"
+    "id": "mekanism:fluorine"
   },
   "item_output": {
     "count": 5,

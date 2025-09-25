@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:potion",
+    "count": 1
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:carbonic_acid"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "mekanism:carbon_dioxide"
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  }
+}

@@ -15,7 +15,7 @@
   },
   "chemical_output": {
     "amount": 50,
-    "id": "chemlibmekanized:fluorine"
+    "id": "mekanism:fluorine"
   },
   "item_output": {
     "count": 2,
