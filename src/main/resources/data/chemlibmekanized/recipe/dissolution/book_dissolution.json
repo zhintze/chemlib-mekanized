@@ -5,7 +5,7 @@
     "item": "minecraft:book"
   },
   "chemical_input": {
-    "amount": 1500,
+    "amount": 20,
     "chemical": "mekanism:sulfuric_acid"
   },
   "output": {

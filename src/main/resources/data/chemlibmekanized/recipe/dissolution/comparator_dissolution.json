@@ -5,7 +5,7 @@
     "item": "minecraft:comparator"
   },
   "chemical_input": {
-    "amount": 200,
+    "amount": 10,
     "chemical": "mekanism:hydrogen_chloride"
   },
   "output": {

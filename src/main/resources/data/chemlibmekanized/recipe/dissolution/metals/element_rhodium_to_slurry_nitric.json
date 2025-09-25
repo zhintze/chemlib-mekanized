@@ -5,7 +5,7 @@
     "item": "chemlibmekanized:rhodium"
   },
   "chemical_input": {
-    "amount": 5,
+    "amount": 10,
     "chemical": "chemlibmekanized:nitric_acid"
   },
   "output": {

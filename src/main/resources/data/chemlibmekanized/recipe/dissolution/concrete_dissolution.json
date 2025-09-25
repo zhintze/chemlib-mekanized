@@ -5,7 +5,7 @@
     "item": "minecraft:gray_concrete"
   },
   "chemical_input": {
-    "amount": 200,
+    "amount": 20,
     "chemical": "mekanism:sulfuric_acid"
   },
   "output": {

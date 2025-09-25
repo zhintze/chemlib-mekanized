@@ -5,7 +5,7 @@
     "item": "minecraft:glowstone"
   },
   "chemical_input": {
-    "amount": 4000,
+    "amount": 20,
     "chemical": "mekanism:sulfuric_acid"
   },
   "output": {

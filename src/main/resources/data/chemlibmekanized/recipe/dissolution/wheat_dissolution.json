@@ -5,7 +5,7 @@
     "item": "minecraft:wheat"
   },
   "chemical_input": {
-    "amount": 1000,
+    "amount": 20,
     "chemical": "mekanism:sulfuric_acid"
   },
   "output": {

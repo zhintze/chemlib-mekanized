@@ -5,7 +5,7 @@
     "item": "minecraft:glistering_melon_slice"
   },
   "chemical_input": {
-    "amount": 100,
+    "amount": 10,
     "chemical": "mekanism:hydrogen_chloride"
   },
   "output": {
