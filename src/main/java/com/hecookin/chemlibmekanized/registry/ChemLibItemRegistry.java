@@ -246,23 +246,15 @@ public class ChemLibItemRegistry {
 
 
     public static void registerMetalCrystals() {
-        List<ChemLibDataExtractor.ElementData> metals = ChemLibDataExtractor.extractMetals();
-        List<ChemLibDataExtractor.ElementData> metalloids = ChemLibDataExtractor.extractMetalloids();
+        // extractMetals() already includes both metals AND metalloids
+        List<ChemLibDataExtractor.ElementData> metalsAndMetalloids = ChemLibDataExtractor.extractMetals();
 
-        // Register crystals for all metals
-        for (ChemLibDataExtractor.ElementData metal : metals) {
-            String crystalName = metal.name + "_crystal";
+        // Register crystals for all metals and metalloids (no need to separate)
+        for (ChemLibDataExtractor.ElementData element : metalsAndMetalloids) {
+            String crystalName = element.name + "_crystal";
             DeferredHolder<Item, Item> crystalItem = ITEMS.register(crystalName,
-                () -> new MetalCrystalItem(metal));
-            METAL_CRYSTAL_ITEMS.put(metal.name, crystalItem);
-        }
-
-        // Register crystals for metalloids too
-        for (ChemLibDataExtractor.ElementData metalloid : metalloids) {
-            String crystalName = metalloid.name + "_crystal";
-            DeferredHolder<Item, Item> crystalItem = ITEMS.register(crystalName,
-                () -> new MetalCrystalItem(metalloid));
-            METAL_CRYSTAL_ITEMS.put(metalloid.name, crystalItem);
+                () -> new MetalCrystalItem(element));
+            METAL_CRYSTAL_ITEMS.put(element.name, crystalItem);
         }
 
         ChemlibMekanized.LOGGER.info("Registered {} metal/metalloid crystals", METAL_CRYSTAL_ITEMS.size());
