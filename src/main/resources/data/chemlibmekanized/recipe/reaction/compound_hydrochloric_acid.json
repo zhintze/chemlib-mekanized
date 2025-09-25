@@ -15,10 +15,10 @@
   },
   "chemical_output": {
     "amount": 100,
-    "id": "mekanism:hydrogen"
+    "id": "mekanism:chlorine"
   },
   "item_output": {
     "count": 1,
-    "id": "mekanism:chlorine"
+    "id": "chemlibmekanized:hydrogen"
   }
 }

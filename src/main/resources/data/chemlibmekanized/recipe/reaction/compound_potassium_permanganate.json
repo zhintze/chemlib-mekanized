@@ -15,10 +15,10 @@
   },
   "chemical_output": {
     "amount": 400,
-    "id": "mekanism:oxygen"
+    "id": "chemlibmekanized:dirty_potassium"
   },
   "item_output": {
     "count": 1,
-    "id": "chemlibmekanized:potassium"
+    "id": "chemlibmekanized:manganese"
   }
 }

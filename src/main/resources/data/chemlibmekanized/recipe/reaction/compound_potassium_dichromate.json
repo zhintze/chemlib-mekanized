@@ -14,11 +14,11 @@
     "chemical": "chemlibmekanized:hydrochloric_acid"
   },
   "chemical_output": {
-    "amount": 700,
-    "id": "mekanism:oxygen"
+    "amount": 200,
+    "id": "chemlibmekanized:dirty_potassium"
   },
   "item_output": {
     "count": 2,
-    "id": "chemlibmekanized:potassium"
+    "id": "chemlibmekanized:chromium"
   }
 }

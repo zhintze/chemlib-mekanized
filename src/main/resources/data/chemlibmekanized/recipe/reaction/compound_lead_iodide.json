@@ -15,10 +15,10 @@
   },
   "chemical_output": {
     "amount": 200,
-    "id": "mekanism:chlorine"
+    "id": "chemlibmekanized:dirty_lead"
   },
   "item_output": {
     "count": 1,
-    "id": "chemlibmekanized:lead"
+    "id": "chemlibmekanized:iodine"
   }
 }

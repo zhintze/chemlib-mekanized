@@ -15,7 +15,7 @@
   },
   "chemical_output": {
     "amount": 100,
-    "id": "mekanism:oxygen"
+    "id": "chemlibmekanized:dirty_aluminum"
   },
   "item_output": {
     "count": 1,

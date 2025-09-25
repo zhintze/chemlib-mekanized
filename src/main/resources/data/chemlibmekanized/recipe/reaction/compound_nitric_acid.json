@@ -15,7 +15,7 @@
   },
   "chemical_output": {
     "amount": 300,
-    "id": "mekanism:oxygen"
+    "id": "mekanism:nitrogen_dioxide"
   },
   "item_output": {
     "count": 1,

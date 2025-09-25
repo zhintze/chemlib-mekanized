@@ -15,7 +15,7 @@
   },
   "chemical_output": {
     "amount": 400,
-    "id": "mekanism:oxygen"
+    "id": "mekanism:sulfur_dioxide"
   },
   "item_output": {
     "count": 2,

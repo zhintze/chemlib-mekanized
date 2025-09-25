@@ -15,10 +15,10 @@
   },
   "chemical_output": {
     "amount": 200,
-    "id": "chemlibmekanized:ammonia"
+    "id": "chemlibmekanized:ammonium"
   },
   "item_output": {
     "count": 1,
-    "id": "chemlibmekanized:hydrogen"
+    "id": "chemlibmekanized:phosphorus"
   }
 }

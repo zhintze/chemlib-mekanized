@@ -15,10 +15,10 @@
   },
   "chemical_output": {
     "amount": 200,
-    "id": "mekanism:sulfur_dioxide"
+    "id": "chemlibmekanized:carbon"
   },
   "item_output": {
-    "count": 1,
-    "id": "chemlibmekanized:carbon"
+    "count": 2,
+    "id": "chemlibmekanized:sulfur"
   }
 }
