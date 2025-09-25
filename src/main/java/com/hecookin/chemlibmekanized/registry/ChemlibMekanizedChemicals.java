@@ -7,6 +7,7 @@ import mekanism.api.chemical.ChemicalBuilder;
 import mekanism.common.registration.impl.ChemicalDeferredRegister;
 import mekanism.common.registration.impl.DeferredChemical;
 import mekanism.common.registration.impl.SlurryRegistryObject;
+import mekanism.common.registries.MekanismChemicals;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.HashMap;
@@ -153,16 +154,16 @@ public class ChemlibMekanizedChemicals {
     // Use Mekanism's hydrogen instead
     // public static final DeferredChemical<Chemical> HYDROGEN = CHEMICALS.register("hydrogen", getChemLibColor("hydrogen", 0xB3DFFF));
     public static final DeferredChemical<Chemical> HELIUM = CHEMICALS.register("helium", getChemLibColor("helium", 0xFFFDCC));
-    // public static final DeferredChemical<Chemical> NITROGEN = CHEMICALS.register("nitrogen", getChemLibColor("nitrogen", 0xE1B4B8));
+    public static final DeferredChemical<Chemical> NITROGEN = CHEMICALS.register("nitrogen", getChemLibColor("nitrogen", 0xE1B4B8));
     // Use Mekanism's oxygen instead
     // public static final DeferredChemical<Chemical> OXYGEN = CHEMICALS.register("oxygen", getChemLibColor("oxygen", 0x84CFFE));
-    // public static final DeferredChemical<Chemical> FLUORINE = CHEMICALS.register("fluorine", getChemLibColor("fluorine", 0xB4D14B));
+    public static final DeferredChemical<Chemical> FLUORINE = CHEMICALS.register("fluorine", getChemLibColor("fluorine", 0xB4D14B));
     public static final DeferredChemical<Chemical> NEON = CHEMICALS.register("neon", getChemLibColor("neon", 0xF4BC27));
     // public static final DeferredChemical<Chemical> CHLORINE = CHEMICALS.register("chlorine", getChemLibColor("chlorine", 0x8dd41c));
     public static final DeferredChemical<Chemical> ARGON = CHEMICALS.register("argon", getChemLibColor("argon", 0x6711A3));
     public static final DeferredChemical<Chemical> KRYPTON = CHEMICALS.register("krypton", getChemLibColor("krypton", 0xbce2ef));
     public static final DeferredChemical<Chemical> XENON = CHEMICALS.register("xenon", getChemLibColor("xenon", 0x2861a7));
-    // public static final DeferredChemical<Chemical> RADON = CHEMICALS.register("radon", getChemLibColor("radon", 0x5fd16a));
+    public static final DeferredChemical<Chemical> RADON = CHEMICALS.register("radon", getChemLibColor("radon", 0x5fd16a));
 
     // Liquid Elements (as slurries)
     public static final DeferredChemical<Chemical> BROMINE_SLURRY = CHEMICALS.register("bromine_slurry", getChemLibColor("bromine", 0xa61601));
@@ -174,20 +175,20 @@ public class ChemlibMekanizedChemicals {
     public static final DeferredChemical<Chemical> HYDROCHLORIC_ACID = CHEMICALS.register("hydrochloric_acid", getChemLibColor("hydrochloric_acid", 0x0000ff));
 
     // Gas Compounds
-    // public static final DeferredChemical<Chemical> CARBON_DIOXIDE = CHEMICALS.register("carbon_dioxide", getChemLibColor("carbon_dioxide", 0x32c832));
+    public static final DeferredChemical<Chemical> CARBON_DIOXIDE = CHEMICALS.register("carbon_dioxide", getChemLibColor("carbon_dioxide", 0x32c832));
     public static final DeferredChemical<Chemical> ETHYLENE = CHEMICALS.register("ethylene", getChemLibColor("ethylene", 0xc6c79f));
     public static final DeferredChemical<Chemical> AMMONIUM = CHEMICALS.register("ammonium", getChemLibColor("ammonium", 0xb4fafa));
-    // public static final DeferredChemical<Chemical> METHANE = CHEMICALS.register("methane", getChemLibColor("methane", 0xc81eb4));
+    public static final DeferredChemical<Chemical> METHANE = CHEMICALS.register("methane", getChemLibColor("methane", 0xc81eb4));
     public static final DeferredChemical<Chemical> ETHANE = CHEMICALS.register("ethane", getChemLibColor("ethane", 0xc81e32));
     public static final DeferredChemical<Chemical> PROPANE = CHEMICALS.register("propane", getChemLibColor("propane", 0x641e32));
     public static final DeferredChemical<Chemical> BUTANE = CHEMICALS.register("butane", getChemLibColor("butane", 0x6f96b4));
     // public static final DeferredChemical<Chemical> SULFUR_DIOXIDE = CHEMICALS.register("sulfur_dioxide", getChemLibColor("sulfur_dioxide", 0x9b9b32));
-    // public static final DeferredChemical<Chemical> NITROGEN_DIOXIDE = CHEMICALS.register("nitrogen_dioxide", getChemLibColor("nitrogen_dioxide", 0xb94407));
-    // public static final DeferredChemical<Chemical> AMMONIA = CHEMICALS.register("ammonia", getChemLibColor("ammonia", 0x3c78fa));
+    public static final DeferredChemical<Chemical> NITROGEN_DIOXIDE = CHEMICALS.register("nitrogen_dioxide", getChemLibColor("nitrogen_dioxide", 0xb94407));
+    public static final DeferredChemical<Chemical> AMMONIA = CHEMICALS.register("ammonia", getChemLibColor("ammonia", 0x3c78fa));
     public static final DeferredChemical<Chemical> HYDROGEN_SULFIDE = CHEMICALS.register("hydrogen_sulfide", getChemLibColor("hydrogen_sulfide", 0xf0dc1e));
     public static final DeferredChemical<Chemical> ACETYLENE = CHEMICALS.register("acetylene", getChemLibColor("acetylene", 0x96e61e));
-    // public static final DeferredChemical<Chemical> CARBON_MONOXIDE = CHEMICALS.register("carbon_monoxide", getChemLibColor("carbon_monoxide", 0x454653));
-    // public static final DeferredChemical<Chemical> NITRIC_OXIDE = CHEMICALS.register("nitric_oxide", getChemLibColor("nitric_oxide", 0x4178c8));
+    public static final DeferredChemical<Chemical> CARBON_MONOXIDE = CHEMICALS.register("carbon_monoxide", getChemLibColor("carbon_monoxide", 0x454653));
+    public static final DeferredChemical<Chemical> NITRIC_OXIDE = CHEMICALS.register("nitric_oxide", getChemLibColor("nitric_oxide", 0x4178c8));
 
     // Liquid Compounds - These are registered as fluids in ChemLibFluidRegistry, not as slurries
     // Commenting out to avoid conflicts with fluid registration
@@ -219,11 +220,16 @@ public class ChemlibMekanizedChemicals {
                 // case "oxygen" -> OXYGEN.get();
                 case "fluorine" -> FLUORINE.get();
                 case "neon" -> NEON.get();
-                case "chlorine" -> CHLORINE.get();
+                // Use Mekanism's chlorine - handled in default with Mekanism lookup
+                // case "chlorine" -> CHLORINE.get();
                 case "argon" -> ARGON.get();
                 case "krypton" -> KRYPTON.get();
                 case "xenon" -> XENON.get();
                 case "radon" -> RADON.get();
+                // Special cases - use Mekanism's built-in chemicals
+                case "hydrogen" -> MekanismChemicals.HYDROGEN.get();
+                case "oxygen" -> MekanismChemicals.OXYGEN.get();
+                case "chlorine" -> MekanismChemicals.CHLORINE.get();
                 default -> null;
             };
         } else if ("liquid".equals(matterState)) {
@@ -250,7 +256,7 @@ public class ChemlibMekanizedChemicals {
                 case "ethane" -> ETHANE.get();
                 case "propane" -> PROPANE.get();
                 case "butane" -> BUTANE.get();
-                case "sulfur_dioxide" -> SULFUR_DIOXIDE.get();
+                case "sulfur_dioxide" -> MekanismChemicals.SULFUR_DIOXIDE.get();
                 case "nitrogen_dioxide" -> NITROGEN_DIOXIDE.get();
                 case "ammonia" -> AMMONIA.get();
                 case "hydrogen_sulfide" -> HYDROGEN_SULFIDE.get();
