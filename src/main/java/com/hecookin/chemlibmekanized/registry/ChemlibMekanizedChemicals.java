@@ -91,6 +91,26 @@ public class ChemlibMekanizedChemicals {
         THULIUM("thulium", 0xFF007F7F),
         YTTERBIUM("ytterbium", 0xFF9F9F6F),
 
+        // Transuranics and super-heavy elements
+        EINSTEINIUM("einsteinium", 0xFF1F79AE),
+        FERMIUM("fermium", 0xFFE3CDA1),
+        MENDELEVIUM("mendelevium", 0xFF1512B4),
+        NOBELIUM("nobelium", 0xFF7E41E8),
+        LAWRENCIUM("lawrencium", 0xFF898A8C),
+        RUTHERFORDIUM("rutherfordium", 0xFF333236),
+        DUBNIUM("dubnium", 0xFFAB7A5F),
+        SEABORGIUM("seaborgium", 0xFFF75320),
+        BOHRIUM("bohrium", 0xFF54B889),
+        HASSIUM("hassium", 0xFF8A8951),
+        MEITNERIUM("meitnerium", 0xFF6F5D3A),
+        DARMSTADTIUM("darmstadtium", 0xFF325AA6),
+        ROENTGENIUM("roentgenium", 0xFF80B848),
+        COPERNICIUM("copernicium", 0xFFE39349),
+        NIHONIUM("nihonium", 0xFF5E0009),
+        FLEROVIUM("flerovium", 0xFF654685),
+        MOSCOVIUM("moscovium", 0xFF18F2AD),
+        LIVERMORIUM("livermorium", 0xFF487D3B),
+
         // Other useful metals
         INDIUM("indium", 0xFF86847F),
         GALLIUM("gallium", 0xFFA1A8C1),

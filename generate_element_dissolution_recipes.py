@@ -6,19 +6,24 @@ Generate 4 dissolution recipes per element using different acids
 import json
 import os
 
-# All elements that should have slurry forms
+# All elements that should have slurry forms (excluding Mekanism duplicates)
 ELEMENTS = [
     "aluminum", "antimony", "arsenic", "barium", "beryllium", "bismuth", "boron",
-    "cadmium", "calcium", "cerium", "cesium", "chromium", "cobalt", "copper",
+    "cadmium", "calcium", "cerium", "cesium", "chromium", "cobalt",
     "dysprosium", "erbium", "europium", "francium", "gadolinium", "gallium",
-    "germanium", "gold", "hafnium", "holmium", "indium", "iridium", "iron",
-    "lanthanum", "lawrencium", "lead", "lithium", "lutetium", "magnesium",
-    "manganese", "molybdenum", "neodymium", "nickel", "niobium", "osmium",
+    "germanium", "hafnium", "holmium", "indium", "iridium",
+    "lanthanum", "lawrencium", "lithium", "lutetium", "magnesium",
+    "manganese", "molybdenum", "neodymium", "nickel", "niobium",
     "palladium", "platinum", "polonium", "potassium", "praseodymium", "promethium",
     "rhenium", "rhodium", "rubidium", "ruthenium", "samarium", "scandium",
     "silver", "sodium", "strontium", "tantalum", "technetium", "terbium",
-    "thallium", "thorium", "thulium", "tin", "titanium", "tungsten", "uranium",
-    "vanadium", "ytterbium", "yttrium", "zinc", "zirconium"
+    "thallium", "thorium", "thulium", "titanium", "tungsten",
+    "vanadium", "ytterbium", "yttrium", "zinc", "zirconium",
+    # Super-heavy elements
+    "einsteinium", "fermium", "mendelevium", "nobelium", "rutherfordium",
+    "dubnium", "seaborgium", "bohrium", "hassium", "meitnerium",
+    "darmstadtium", "roentgenium", "copernicium", "nihonium", "flerovium",
+    "moscovium", "livermorium"
 ]
 
 # The 4 acids used in dissolution

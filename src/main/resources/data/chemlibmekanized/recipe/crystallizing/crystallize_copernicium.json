@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "chemical_input": {
+    "amount": 200,
+    "chemical": "chemlibmekanized:clean_copernicium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:copernicium_crystal"
+  }
+}
