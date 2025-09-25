@@ -12,5 +12,5 @@
     "amount": 4000,
     "id": "chemlibmekanized:compound_nitrogen_dioxide"
   },
-  "per_tick_usage": true
+  "per_tick_usage": false
 }

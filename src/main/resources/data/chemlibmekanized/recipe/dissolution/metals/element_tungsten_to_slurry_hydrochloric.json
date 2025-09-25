@@ -12,5 +12,5 @@
     "amount": 200,
     "id": "chemlibmekanized:dirty_wolfram"
   },
-  "per_tick_usage": true
+  "per_tick_usage": false
 }

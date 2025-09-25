@@ -12,5 +12,5 @@
     "amount": 200,
     "id": "mekanism:dirty_copper"
   },
-  "per_tick_usage": true
+  "per_tick_usage": false
 }

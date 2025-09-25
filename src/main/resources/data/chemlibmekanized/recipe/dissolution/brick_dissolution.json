@@ -12,5 +12,5 @@
     "amount": 1000,
     "id": "chemlibmekanized:dirty_silicon"
   },
-  "per_tick_usage": true
+  "per_tick_usage": false
 }
