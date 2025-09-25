@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:carbon_disulfide"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:carbon_disulfide"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_carbon_disulfide"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_carbon_disulfide"
+  }
+}

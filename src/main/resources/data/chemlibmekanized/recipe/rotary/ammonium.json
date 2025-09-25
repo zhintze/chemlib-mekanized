@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:ammonium"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:ammonium"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_ammonium"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_ammonium"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:pentane"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:pentane"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_pentane"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_pentane"
+  }
+}

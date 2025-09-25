@@ -80,6 +80,16 @@ public class ChemlibMekanizedChemicals {
         LANTHANUM("lanthanum", 0xFFBA9160),
         GADOLINIUM("gadolinium", 0xFF915536),
         EUROPIUM("europium", 0xFFCE81B3),
+        DYSPROSIUM("dysprosium", 0xFF6F8F6F),
+        ERBIUM("erbium", 0xFF9A679A),
+        HOLMIUM("holmium", 0xFF7A5F7A),
+        LUTETIUM("lutetium", 0xFF5F8F5F),
+        PRASEODYMIUM("praseodymium", 0xFFD9FFB2),
+        PROMETHIUM("promethium", 0xFFA3FFA3),
+        SAMARIUM("samarium", 0xFFFFFFCC),
+        TERBIUM("terbium", 0xFF6F6F8F),
+        THULIUM("thulium", 0xFF007F7F),
+        YTTERBIUM("ytterbium", 0xFF9F9F6F),
 
         // Other useful metals
         INDIUM("indium", 0xFF86847F),
@@ -189,6 +199,16 @@ public class ChemlibMekanizedChemicals {
     public static final DeferredChemical<Chemical> ACETYLENE = CHEMICALS.register("acetylene", getChemLibColor("acetylene", 0x96e61e));
     public static final DeferredChemical<Chemical> CARBON_MONOXIDE = CHEMICALS.register("carbon_monoxide", getChemLibColor("carbon_monoxide", 0x454653));
     public static final DeferredChemical<Chemical> NITRIC_OXIDE = CHEMICALS.register("nitric_oxide", getChemLibColor("nitric_oxide", 0x4178c8));
+
+    // Vaporized liquid compounds (gas forms of liquids)
+    public static final DeferredChemical<Chemical> ETHANOL = CHEMICALS.register("ethanol", getChemLibColor("ethanol", 0xd2fa96));
+    public static final DeferredChemical<Chemical> PROPAN_1_OL = CHEMICALS.register("propan_1_ol", getChemLibColor("propan-1-ol", 0xffa500));
+    public static final DeferredChemical<Chemical> PROPAN_2_OL = CHEMICALS.register("propan_2_ol", getChemLibColor("propan-2-ol", 0x808080));
+    public static final DeferredChemical<Chemical> PENTANE = CHEMICALS.register("pentane", getChemLibColor("pentane", 0x6f9655));
+    public static final DeferredChemical<Chemical> HEXANE = CHEMICALS.register("hexane", getChemLibColor("hexane", 0x6fcd32));
+    public static final DeferredChemical<Chemical> HEPTANE = CHEMICALS.register("heptane", getChemLibColor("heptane", 0xd9d900));
+    public static final DeferredChemical<Chemical> ACETIC_ACID = CHEMICALS.register("acetic_acid", getChemLibColor("acetic_acid", 0xc8f064));
+    public static final DeferredChemical<Chemical> CARBON_DISULFIDE = CHEMICALS.register("carbon_disulfide", getChemLibColor("carbon_disulfide", 0xc878c8));
 
     // Liquid Compounds - These are registered as fluids in ChemLibFluidRegistry, not as slurries
     // Commenting out to avoid conflicts with fluid registration

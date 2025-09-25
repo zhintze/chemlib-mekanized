@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:fluorine"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:fluorine"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_fluorine"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_fluorine"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:ethanol"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:ethanol"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_ethanol"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_ethanol"
+  }
+}

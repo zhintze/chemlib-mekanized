@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:hydrogen_sulfide"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:hydrogen_sulfide"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_hydrogen_sulfide"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_hydrogen_sulfide"
+  }
+}

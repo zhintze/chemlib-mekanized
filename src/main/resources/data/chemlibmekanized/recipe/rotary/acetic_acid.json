@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:acetic_acid"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:acetic_acid"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_acetic_acid"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_acetic_acid"
+  }
+}

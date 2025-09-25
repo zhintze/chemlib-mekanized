@@ -123,12 +123,64 @@ public class ChemLibLanguageProvider extends LanguageProvider {
     }
 
     private void addFluidTranslations() {
-        List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
+        // Add gas fluid translations (liquid_nitrogen, liquid_fluorine, etc.)
+        addGasFluidTranslations();
 
+        // Add other fluids if any
+        List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
         for (ChemLibFluidRegistry.ChemLibFluidEntry fluid : fluids) {
             String fluidTypeName = formatChemicalName(fluid.name());
+            // Add fluid type translation
             add("fluid_type." + ChemlibMekanized.MODID + "." + fluid.name(), fluidTypeName);
+            // Add block translation for fluid blocks
+            add("block." + ChemlibMekanized.MODID + "." + fluid.name() + "_block", fluidTypeName);
         }
+    }
+
+    private void addGasFluidTranslations() {
+        // Element gas fluids
+        addSingleFluidTranslation("liquid_nitrogen", "Liquid Nitrogen");
+        addSingleFluidTranslation("liquid_fluorine", "Liquid Fluorine");
+
+        // Noble gases
+        addSingleFluidTranslation("liquid_helium", "Liquid Helium");
+        addSingleFluidTranslation("liquid_neon", "Liquid Neon");
+        addSingleFluidTranslation("liquid_argon", "Liquid Argon");
+        addSingleFluidTranslation("liquid_krypton", "Liquid Krypton");
+        addSingleFluidTranslation("liquid_xenon", "Liquid Xenon");
+        addSingleFluidTranslation("liquid_radon", "Liquid Radon");
+
+        // Compound gas fluids
+        addSingleFluidTranslation("liquid_carbon_dioxide", "Liquid Carbon Dioxide");
+        addSingleFluidTranslation("liquid_ethylene", "Liquid Ethylene");
+        addSingleFluidTranslation("liquid_ammonium", "Liquid Ammonium");
+        addSingleFluidTranslation("liquid_methane", "Liquid Methane");
+        addSingleFluidTranslation("liquid_ethane", "Liquid Ethane");
+        addSingleFluidTranslation("liquid_propane", "Liquid Propane");
+        addSingleFluidTranslation("liquid_butane", "Liquid Butane");
+        addSingleFluidTranslation("liquid_nitrogen_dioxide", "Liquid Nitrogen Dioxide");
+        addSingleFluidTranslation("liquid_ammonia", "Liquid Ammonia");
+        addSingleFluidTranslation("liquid_hydrogen_sulfide", "Liquid Hydrogen Sulfide");
+        addSingleFluidTranslation("liquid_acetylene", "Liquid Acetylene");
+        addSingleFluidTranslation("liquid_carbon_monoxide", "Liquid Carbon Monoxide");
+        addSingleFluidTranslation("liquid_nitric_oxide", "Liquid Nitric Oxide");
+
+        // Vaporizable liquid compounds
+        addSingleFluidTranslation("liquid_ethanol", "Liquid Ethanol");
+        addSingleFluidTranslation("liquid_propan_1_ol", "Liquid Propan-1-ol");
+        addSingleFluidTranslation("liquid_propan_2_ol", "Liquid Propan-2-ol");
+        addSingleFluidTranslation("liquid_pentane", "Liquid Pentane");
+        addSingleFluidTranslation("liquid_hexane", "Liquid Hexane");
+        addSingleFluidTranslation("liquid_heptane", "Liquid Heptane");
+        addSingleFluidTranslation("liquid_acetic_acid", "Liquid Acetic Acid");
+        addSingleFluidTranslation("liquid_carbon_disulfide", "Liquid Carbon Disulfide");
+    }
+
+    private void addSingleFluidTranslation(String name, String displayName) {
+        // Add fluid type translation
+        add("fluid_type." + ChemlibMekanized.MODID + "." + name, displayName);
+        // Add block translation for fluid blocks
+        add("block." + ChemlibMekanized.MODID + "." + name + "_block", displayName);
     }
 
     private void addSlurryTranslations() {
@@ -184,6 +236,15 @@ public class ChemLibLanguageProvider extends LanguageProvider {
     }
 
     private void addChemicalTranslations() {
+        // Add gas chemical translations for vaporized compounds
+        add("chemical." + ChemlibMekanized.MODID + ".ethanol", "Ethanol");
+        add("chemical." + ChemlibMekanized.MODID + ".propan_1_ol", "Propan-1-ol");
+        add("chemical." + ChemlibMekanized.MODID + ".propan_2_ol", "Propan-2-ol");
+        add("chemical." + ChemlibMekanized.MODID + ".pentane", "Pentane");
+        add("chemical." + ChemlibMekanized.MODID + ".hexane", "Hexane");
+        add("chemical." + ChemlibMekanized.MODID + ".heptane", "Heptane");
+        add("chemical." + ChemlibMekanized.MODID + ".acetic_acid", "Acetic Acid");
+        add("chemical." + ChemlibMekanized.MODID + ".carbon_disulfide", "Carbon Disulfide");
         // Add slurry translations
         addSlurryTranslations();
 

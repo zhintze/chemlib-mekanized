@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:nitrogen_dioxide"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:nitrogen_dioxide"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_nitrogen_dioxide"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_nitrogen_dioxide"
+  }
+}

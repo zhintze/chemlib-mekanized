@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:propan_2_ol"
+  },
+  "chemical_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:propan_2_ol"
+  },
+  "fluid_input": {
+    "amount": 1,
+    "fluid": "chemlibmekanized:liquid_propan_2_ol"
+  },
+  "fluid_output": {
+    "amount": 1,
+    "id": "chemlibmekanized:liquid_propan_2_ol"
+  }
+}
