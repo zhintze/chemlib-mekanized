@@ -69,6 +69,11 @@ public class ChemLibFluidRegistry {
 
         for (ChemLibDataExtractor.ElementData element : elements) {
             if ("liquid".equals(element.matterState)) {
+                // Skip bromine and mercury as they're handled as slurries in ChemlibMekanizedChemicals
+                if ("bromine".equals(element.name) || "mercury".equals(element.name)) {
+                    LOGGER.info("Skipping liquid element {} - handled as slurry", element.name);
+                    continue;
+                }
                 LOGGER.info("Found liquid element: {} (has fluid properties: {})", element.name, element.fluidProperties != null);
                 if (element.fluidProperties != null) {
                     registerElementFluid(element);

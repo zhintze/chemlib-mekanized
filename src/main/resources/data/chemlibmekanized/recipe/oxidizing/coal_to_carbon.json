@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "tag": "minecraft:coals"
+  },
+  "output": {
+    "amount": 100,
+    "id": "chemlibmekanized:carbon_dioxide"
+  }
+}

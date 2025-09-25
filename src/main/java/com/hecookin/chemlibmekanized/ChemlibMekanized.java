@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.hecookin.chemlibmekanized.registry.ChemlibMekanizedChemicals;
-import com.hecookin.chemlibmekanized.registry.ChemLibSlurries;
 import com.hecookin.chemlibmekanized.registry.ChemLibItemRegistry;
 import com.hecookin.chemlibmekanized.registry.ChemLibFluidRegistry;
 import com.hecookin.chemlibmekanized.registry.MetalCrystalRegistry;
@@ -37,11 +36,8 @@ public class ChemlibMekanized {
 
         LOGGER.info("ChemLibMekanized mod initialization started");
 
-        // Register Mekanism chemicals
+        // Register all Mekanism chemicals (including slurries)
         ChemlibMekanizedChemicals.CHEMICALS.register(modEventBus);
-
-        // Register metal slurries
-        ChemLibSlurries.CHEMICALS.register(modEventBus);
 
         // Register metal crystals
         MetalCrystalRegistry.ITEMS.register(modEventBus);

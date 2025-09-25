@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "chemlibmekanized:antimony_trioxide",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 30,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "chemical_output": {
+    "amount": 300,
+    "id": "mekanism:oxygen"
+  },
+  "item_output": {
+    "count": 2,
+    "id": "chemlibmekanized:antimony"
+  }
+}

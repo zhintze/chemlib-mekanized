@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "item": "minecraft:dragon_breath"
+  },
+  "output": {
+    "amount": 100,
+    "id": "chemlibmekanized:xenon"
+  }
+}

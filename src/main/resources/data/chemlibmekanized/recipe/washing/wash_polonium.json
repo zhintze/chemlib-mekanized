@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:washing",
+  "output": {
+    "amount": 1,
+    "id": "chemlibmekanized:clean_polonium"
+  },
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:dirty_polonium"
+  },
+  "fluid_input": {
+    "amount": 5,
+    "tag": "minecraft:water"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:washing",
+  "output": {
+    "amount": 1,
+    "id": "chemlibmekanized:clean_titanium"
+  },
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:dirty_titanium"
+  },
+  "fluid_input": {
+    "amount": 5,
+    "tag": "minecraft:water"
+  }
+}

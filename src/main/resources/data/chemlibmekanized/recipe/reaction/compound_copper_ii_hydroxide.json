@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "chemlibmekanized:copper_ii_hydroxide",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 30,
+    "chemical": "mekanism:sulfuric_acid"
+  },
+  "chemical_output": {
+    "amount": 200,
+    "id": "mekanism:water_vapor"
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:copper"
+  }
+}

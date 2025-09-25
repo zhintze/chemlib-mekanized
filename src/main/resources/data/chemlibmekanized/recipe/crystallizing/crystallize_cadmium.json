@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "output": {
+    "id": "chemlibmekanized:cadmium_crystal",
+    "count": 1
+  },
+  "input": {
+    "amount": 200,
+    "chemical": "chemlibmekanized:clean_cadmium"
+  }
+}

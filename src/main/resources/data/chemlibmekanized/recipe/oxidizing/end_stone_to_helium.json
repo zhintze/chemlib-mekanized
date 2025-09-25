@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "item": "minecraft:end_stone"
+  },
+  "output": {
+    "amount": 50,
+    "id": "chemlibmekanized:helium"
+  }
+}

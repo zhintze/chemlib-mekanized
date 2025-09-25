@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "item": "minecraft:soul_sand"
+  },
+  "output": {
+    "amount": 100,
+    "id": "chemlibmekanized:nitrogen"
+  }
+}

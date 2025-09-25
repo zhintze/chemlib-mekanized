@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "output": {
+    "id": "mekanism:crystal_tin",
+    "count": 1
+  },
+  "input": {
+    "amount": 200,
+    "chemical": "mekanism:clean_tin"
+  }
+}

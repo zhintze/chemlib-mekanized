@@ -188,34 +188,41 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         addSlurryTranslations();
 
         // Gas Elements - following Mekanism's chemical.{modid}.{name} pattern
-        add("chemical." + ChemlibMekanized.MODID + ".element_hydrogen", "Hydrogen");
-        add("chemical." + ChemlibMekanized.MODID + ".element_oxygen", "Oxygen");
-        add("chemical." + ChemlibMekanized.MODID + ".element_nitrogen", "Nitrogen");
-        add("chemical." + ChemlibMekanized.MODID + ".element_chlorine", "Chlorine");
-        add("chemical." + ChemlibMekanized.MODID + ".element_fluorine", "Fluorine");
-        add("chemical." + ChemlibMekanized.MODID + ".element_helium", "Helium");
-        add("chemical." + ChemlibMekanized.MODID + ".element_neon", "Neon");
-        add("chemical." + ChemlibMekanized.MODID + ".element_argon", "Argon");
-        add("chemical." + ChemlibMekanized.MODID + ".element_krypton", "Krypton");
-        add("chemical." + ChemlibMekanized.MODID + ".element_xenon", "Xenon");
-        add("chemical." + ChemlibMekanized.MODID + ".element_radon", "Radon");
-        add("chemical." + ChemlibMekanized.MODID + ".element_uranium", "Uranium");
+        // Note: Registration doesn't use element_ prefix
+        add("chemical." + ChemlibMekanized.MODID + ".hydrogen", "Hydrogen");
+        add("chemical." + ChemlibMekanized.MODID + ".oxygen", "Oxygen");
+        add("chemical." + ChemlibMekanized.MODID + ".nitrogen", "Nitrogen");
+        add("chemical." + ChemlibMekanized.MODID + ".chlorine", "Chlorine");
+        add("chemical." + ChemlibMekanized.MODID + ".fluorine", "Fluorine");
+        add("chemical." + ChemlibMekanized.MODID + ".helium", "Helium");
+        add("chemical." + ChemlibMekanized.MODID + ".neon", "Neon");
+        add("chemical." + ChemlibMekanized.MODID + ".argon", "Argon");
+        add("chemical." + ChemlibMekanized.MODID + ".krypton", "Krypton");
+        add("chemical." + ChemlibMekanized.MODID + ".xenon", "Xenon");
+        add("chemical." + ChemlibMekanized.MODID + ".radon", "Radon");
+        add("chemical." + ChemlibMekanized.MODID + ".uranium", "Uranium");
 
         // Gas Compounds - following Mekanism's chemical.{modid}.{name} pattern
-        add("chemical." + ChemlibMekanized.MODID + ".compound_carbon_dioxide", "Carbon Dioxide");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_methane", "Methane");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_ammonia", "Ammonia");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_hydrogen_chloride", "Hydrogen Chloride");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_ethane", "Ethane");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_propane", "Propane");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_butane", "Butane");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_acetylene", "Acetylene");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_ethylene", "Ethylene");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_hydrogen_sulfide", "Hydrogen Sulfide");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_nitrogen_dioxide", "Nitrogen Dioxide");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_carbon_monoxide", "Carbon Monoxide");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_nitric_oxide", "Nitric Oxide");
-        add("chemical." + ChemlibMekanized.MODID + ".compound_sulfur_dioxide", "Sulfur Dioxide");
+        // Note: Registration doesn't use compound_ prefix
+        add("chemical." + ChemlibMekanized.MODID + ".carbon_dioxide", "Carbon Dioxide");
+        add("chemical." + ChemlibMekanized.MODID + ".methane", "Methane");
+        add("chemical." + ChemlibMekanized.MODID + ".ammonia", "Ammonia");
+        add("chemical." + ChemlibMekanized.MODID + ".hydrogen_chloride", "Hydrogen Chloride");
+        add("chemical." + ChemlibMekanized.MODID + ".ethane", "Ethane");
+        add("chemical." + ChemlibMekanized.MODID + ".propane", "Propane");
+        add("chemical." + ChemlibMekanized.MODID + ".butane", "Butane");
+        add("chemical." + ChemlibMekanized.MODID + ".acetylene", "Acetylene");
+        add("chemical." + ChemlibMekanized.MODID + ".ethylene", "Ethylene");
+        add("chemical." + ChemlibMekanized.MODID + ".hydrogen_sulfide", "Hydrogen Sulfide");
+        add("chemical." + ChemlibMekanized.MODID + ".nitrogen_dioxide", "Nitrogen Dioxide");
+        add("chemical." + ChemlibMekanized.MODID + ".carbon_monoxide", "Carbon Monoxide");
+        add("chemical." + ChemlibMekanized.MODID + ".nitric_oxide", "Nitric Oxide");
+        add("chemical." + ChemlibMekanized.MODID + ".sulfur_dioxide", "Sulfur Dioxide");
+        add("chemical." + ChemlibMekanized.MODID + ".ammonium", "Ammonium");
+
+        // Acid chemicals for PRC processing
+        add("chemical." + ChemlibMekanized.MODID + ".nitric_acid", "Nitric Acid");
+        add("chemical." + ChemlibMekanized.MODID + ".hydrochloric_acid", "Hydrochloric Acid");
     }
 
     private String formatChemicalName(String name) {
