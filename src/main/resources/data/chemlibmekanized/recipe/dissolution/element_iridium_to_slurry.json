@@ -5,7 +5,7 @@
     "item": "chemlibmekanized:iridium"
   },
   "chemical_input": {
-    "amount": 100,
+    "amount": 10,
     "chemical": "mekanism:sulfuric_acid"
   },
   "output": {
