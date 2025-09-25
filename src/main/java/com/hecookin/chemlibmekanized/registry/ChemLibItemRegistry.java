@@ -8,6 +8,7 @@ import com.hecookin.chemlibmekanized.items.MetalIngotItem;
 import com.hecookin.chemlibmekanized.items.MetalNuggetItem;
 import com.hecookin.chemlibmekanized.items.MetalPlateItem;
 import com.hecookin.chemlibmekanized.items.MetalCrystalItem;
+import com.hecookin.chemlibmekanized.items.PeriodicTableItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -31,6 +32,9 @@ public class ChemLibItemRegistry {
     public static final Map<String, DeferredHolder<Item, Item>> METAL_NUGGET_ITEMS = new HashMap<>();
     public static final Map<String, DeferredHolder<Item, Item>> METAL_PLATE_ITEMS = new HashMap<>();
     public static final Map<String, DeferredHolder<Item, Item>> METAL_CRYSTAL_ITEMS = new HashMap<>();
+
+    // Special items
+    public static final DeferredHolder<Item, Item> PERIODIC_TABLE = ITEMS.register("periodic_table", PeriodicTableItem::new);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ELEMENTS_TAB = CREATIVE_TABS.register("elements",
         () -> CreativeModeTab.builder()

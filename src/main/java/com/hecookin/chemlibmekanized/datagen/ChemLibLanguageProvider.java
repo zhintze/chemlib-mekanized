@@ -237,6 +237,11 @@ public class ChemLibLanguageProvider extends LanguageProvider {
     }
 
     private void addChemicalTranslations() {
+        // Special items
+        add("item.chemlibmekanized.periodic_table", "Periodic Table");
+        add("item.chemlibmekanized.periodic_table.tooltip", "Right-click to view the periodic table of elements");
+        add("screen.chemlibmekanized.periodic_table", "Periodic Table of Elements");
+
         // Add gas chemical translations for vaporized compounds
         add("chemical." + ChemlibMekanized.MODID + ".ethanol", "Ethanol");
         add("chemical." + ChemlibMekanized.MODID + ".propan_1_ol", "Propan-1-ol");

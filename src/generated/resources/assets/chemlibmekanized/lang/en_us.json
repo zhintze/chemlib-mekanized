@@ -683,6 +683,8 @@
   "item.chemlibmekanized.palladium_nugget": "Palladium Nugget",
   "item.chemlibmekanized.palladium_plate": "Palladium Plate",
   "item.chemlibmekanized.pentane": "Pentane",
+  "item.chemlibmekanized.periodic_table": "Periodic Table",
+  "item.chemlibmekanized.periodic_table.tooltip": "Right-click to view the periodic table of elements",
   "item.chemlibmekanized.phosphate": "Phosphate",
   "item.chemlibmekanized.phosphoric_acid": "Phosphoric Acid",
   "item.chemlibmekanized.phosphorus": "Phosphorus",
@@ -923,5 +925,6 @@
   "itemGroup.chemlibmekanized.elements": "Elements",
   "itemGroup.chemlibmekanized.metalloids": "Metalloids",
   "itemGroup.chemlibmekanized.metals": "Metals",
-  "itemGroup.chemlibmekanized.non_metals": "Non-Metals"
+  "itemGroup.chemlibmekanized.non_metals": "Non-Metals",
+  "screen.chemlibmekanized.periodic_table": "Periodic Table of Elements"
 }
