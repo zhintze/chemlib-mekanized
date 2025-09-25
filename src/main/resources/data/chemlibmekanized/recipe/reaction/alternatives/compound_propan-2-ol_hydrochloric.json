@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "chemlibmekanized:propan-2-ol",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "chemical_output": {
+    "amount": 700,
+    "id": "mekanism:hydrogen"
+  },
+  "item_output": {
+    "count": 3,
+    "id": "chemlibmekanized:carbon"
+  }
+}

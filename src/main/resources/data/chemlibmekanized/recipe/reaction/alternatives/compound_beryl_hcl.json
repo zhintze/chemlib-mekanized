@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "chemlibmekanized:beryl",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "chemlibmekanized:dirty_silicon"
+  },
+  "item_output": {
+    "count": 3,
+    "id": "chemlibmekanized:beryllium"
+  }
+}

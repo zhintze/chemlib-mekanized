@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "chemlibmekanized:calcium_chloride",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "chemlibmekanized:nitric_acid"
+  },
+  "chemical_output": {
+    "amount": 200,
+    "id": "mekanism:chlorine"
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:calcium"
+  }
+}

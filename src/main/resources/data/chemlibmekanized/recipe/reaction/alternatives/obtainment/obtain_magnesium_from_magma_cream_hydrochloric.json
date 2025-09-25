@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:magma_cream",
+    "count": 1
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:magnesium"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "mekanism:sulfur_dioxide"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  }
+}

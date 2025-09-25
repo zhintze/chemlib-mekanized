@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 150,
+  "item_input": {
+    "item": "minecraft:repeater",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 200,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "chemlibmekanized:nitric_acid"
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:germanium"
+  },
+  "chemical_output": {
+    "amount": 150,
+    "id": "mekanism:fluorine"
+  }
+}

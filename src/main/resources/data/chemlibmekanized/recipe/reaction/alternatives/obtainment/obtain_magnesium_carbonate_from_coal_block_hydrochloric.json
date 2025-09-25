@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:coal_block",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:magnesium_carbonate"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "mekanism:carbon_dioxide"
+  }
+}
