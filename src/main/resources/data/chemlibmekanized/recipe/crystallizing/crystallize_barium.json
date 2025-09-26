@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 1800,
+    "chemical": "chemlibmekanized:clean_barium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:barium_crystal"
+  }
+}

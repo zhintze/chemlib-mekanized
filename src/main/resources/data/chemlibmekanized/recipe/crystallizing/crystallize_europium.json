@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 1800,
+    "chemical": "chemlibmekanized:clean_europium"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:europium_crystal"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 1800,
+    "chemical": "chemlibmekanized:clean_cobalt"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:cobalt_crystal"
+  }
+}

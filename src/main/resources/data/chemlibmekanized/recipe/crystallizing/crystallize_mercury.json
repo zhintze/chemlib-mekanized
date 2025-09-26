@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 1800,
+    "chemical": "chemlibmekanized:clean_mercury"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:mercury_crystal"
+  }
+}

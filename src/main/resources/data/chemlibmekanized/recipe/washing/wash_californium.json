@@ -1,0 +1,14 @@
+{
+  "type": "mekanism:washing",
+  "fluid_input": {
+    "amount": 5,
+    "fluid": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "chemlibmekanized:dirty_californium"
+  },
+  "output": {
+    "id": "chemlibmekanized:clean_californium"
+  }
+}

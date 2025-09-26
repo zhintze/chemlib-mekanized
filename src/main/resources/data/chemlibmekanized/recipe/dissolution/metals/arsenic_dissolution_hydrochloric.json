@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "chemlibmekanized:arsenic"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "output": {
+    "amount": 200,
+    "id": "chemlibmekanized:dirty_arsenic"
+  },
+  "per_tick_usage": false
+}

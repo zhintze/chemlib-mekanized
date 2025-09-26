@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:dissolution",
+  "item_input": {
+    "count": 1,
+    "item": "chemlibmekanized:neodymium"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:nitric_acid"
+  },
+  "output": {
+    "amount": 200,
+    "id": "chemlibmekanized:dirty_neodymium"
+  },
+  "per_tick_usage": false
+}

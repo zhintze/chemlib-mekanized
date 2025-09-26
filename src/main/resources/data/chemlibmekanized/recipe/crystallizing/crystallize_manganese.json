@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crystallizing",
+  "input": {
+    "amount": 1800,
+    "chemical": "chemlibmekanized:clean_manganese"
+  },
+  "output": {
+    "count": 1,
+    "id": "chemlibmekanized:manganese_crystal"
+  }
+}
