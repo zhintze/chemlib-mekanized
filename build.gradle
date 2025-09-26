@@ -122,8 +122,9 @@ dependencies {
     // implementation "blank:MekanismGenerators-1.21.1-${mekanism_version}"
     // implementation "blank:MekanismTools-1.21.1-${mekanism_version}"
 
-    // Immersive Engineering (temporarily disabled due to cauldron fluid registration conflict)
-    // implementation "blank:ImmersiveEngineering-1.21.1-${immersiveengineering_version}"
+    implementation "curse.maven:polymorph-388800:5995380"
+
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

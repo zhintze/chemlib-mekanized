@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "item_input": {
+    "item": "minecraft:scute",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:hydrochloric_acid"
+  },
+  "chemical_output": {
+    "amount": 100,
+    "id": "chemlibmekanized:krypton"
+  },
+  "item_output": {
+    "count": 1,
+    "id": "chemlibmekanized:calcium_nitrate"
+  }
+}

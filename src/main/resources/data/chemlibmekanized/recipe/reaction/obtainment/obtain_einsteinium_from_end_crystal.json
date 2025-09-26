@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 200,
+  "item_input": {
+    "item": "minecraft:end_crystal",
+    "count": 1
+  },
+  "fluid_input": {
+    "amount": 100,
+    "tag": "minecraft:water"
+  },
+  "chemical_input": {
+    "amount": 10,
+    "chemical": "chemlibmekanized:nitric_acid"
+  },
+  "chemical_output": {
+    "amount": 300,
+    "id": "chemlibmekanized:dirty_einsteinium"
+  },
+  "item_output": {
+    "count": 2,
+    "id": "chemlibmekanized:einsteinium"
+  }
+}
