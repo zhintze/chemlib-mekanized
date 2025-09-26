@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:curium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:curium_ingot",
+    "count": 1
+  }
+}

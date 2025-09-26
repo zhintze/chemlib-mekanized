@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:potassium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:potassium_nugget",
+    "count": 9
+  }
+}

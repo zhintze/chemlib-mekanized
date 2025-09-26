@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:germanium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:germanium_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:seaborgium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:seaborgium_nugget",
+    "count": 9
+  }
+}

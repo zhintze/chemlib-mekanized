@@ -304,6 +304,7 @@ public class ChemLibFluidRegistry {
         List<ChemLibFluidEntry> all = new ArrayList<>();
         all.addAll(ELEMENT_FLUIDS);
         all.addAll(COMPOUND_FLUIDS);
+        all.addAll(GAS_FLUIDS);
         return all;
     }
 
@@ -311,7 +312,7 @@ public class ChemLibFluidRegistry {
      * Gets the total number of registered fluids
      */
     public static int getTotalFluidCount() {
-        return ELEMENT_FLUIDS.size() + COMPOUND_FLUIDS.size();
+        return ELEMENT_FLUIDS.size() + COMPOUND_FLUIDS.size() + GAS_FLUIDS.size();
     }
 
     /**

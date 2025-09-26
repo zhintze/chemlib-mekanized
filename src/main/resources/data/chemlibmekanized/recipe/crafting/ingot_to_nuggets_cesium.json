@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:cesium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:cesium_nugget",
+    "count": 9
+  }
+}

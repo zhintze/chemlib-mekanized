@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:hassium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:hassium_nugget",
+    "count": 9
+  }
+}

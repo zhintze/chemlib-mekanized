@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:thallium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:thallium_nugget",
+    "count": 9
+  }
+}

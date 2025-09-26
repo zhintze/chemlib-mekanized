@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:livermorium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:livermorium_ingot",
+    "count": 1
+  }
+}

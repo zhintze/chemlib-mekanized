@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:plutonium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:plutonium_nugget",
+    "count": 9
+  }
+}

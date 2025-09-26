@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:arsenic_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:arsenic_ingot",
+    "count": 1
+  }
+}

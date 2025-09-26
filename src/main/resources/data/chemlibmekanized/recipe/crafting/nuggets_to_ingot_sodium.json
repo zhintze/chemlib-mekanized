@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:sodium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:sodium_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:moscovium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:moscovium_nugget",
+    "count": 9
+  }
+}

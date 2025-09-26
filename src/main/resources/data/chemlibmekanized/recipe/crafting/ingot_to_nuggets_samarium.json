@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:samarium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:samarium_nugget",
+    "count": 9
+  }
+}

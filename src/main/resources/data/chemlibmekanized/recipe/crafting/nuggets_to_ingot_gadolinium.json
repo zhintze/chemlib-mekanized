@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:gadolinium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:gadolinium_ingot",
+    "count": 1
+  }
+}

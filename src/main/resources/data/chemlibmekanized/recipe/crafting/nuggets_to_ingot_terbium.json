@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:terbium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:terbium_ingot",
+    "count": 1
+  }
+}

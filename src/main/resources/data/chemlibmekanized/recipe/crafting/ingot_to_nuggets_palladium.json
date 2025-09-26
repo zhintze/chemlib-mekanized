@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:palladium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:palladium_nugget",
+    "count": 9
+  }
+}

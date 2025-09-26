@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:chromium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:chromium_ingot",
+    "count": 1
+  }
+}

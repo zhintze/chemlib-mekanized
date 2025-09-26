@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:lawrencium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:lawrencium_ingot",
+    "count": 1
+  }
+}

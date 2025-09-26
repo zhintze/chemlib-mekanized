@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:darmstadtium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:darmstadtium_nugget",
+    "count": 9
+  }
+}

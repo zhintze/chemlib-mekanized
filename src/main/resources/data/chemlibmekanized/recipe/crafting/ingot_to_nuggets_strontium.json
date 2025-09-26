@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:strontium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:strontium_nugget",
+    "count": 9
+  }
+}

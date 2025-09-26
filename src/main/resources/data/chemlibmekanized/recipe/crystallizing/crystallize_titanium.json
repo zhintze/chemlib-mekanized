@@ -1,7 +1,7 @@
 {
   "type": "mekanism:crystallizing",
-  "chemical_input": {
-    "amount": 200,
+  "input": {
+    "amount": 1800,
     "chemical": "chemlibmekanized:clean_titanium"
   },
   "output": {

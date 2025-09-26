@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:einsteinium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:einsteinium_nugget",
+    "count": 9
+  }
+}

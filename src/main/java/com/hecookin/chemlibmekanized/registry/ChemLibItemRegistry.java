@@ -78,53 +78,61 @@ public class ChemLibItemRegistry {
                 return ironItem != null ? new ItemStack(ironItem.get()) : ItemStack.EMPTY;
             })
             .displayItems((parameters, output) -> {
+                // Use a set to track added items and avoid duplicates
+                var addedItems = new java.util.HashSet<Item>();
+
                 // Add metal element items
                 ELEMENT_ITEMS.values().forEach(item -> {
                     if (item != null && item.get() != null) {
                         Item itemInstance = item.get();
                         if (itemInstance instanceof ExtractedElementItem elementItem &&
-                            "metal".equals(elementItem.getMetalType())) {
+                            "metal".equals(elementItem.getMetalType()) &&
+                            addedItems.add(itemInstance)) {
                             output.accept(itemInstance);
                         }
                     }
                 });
 
-                // Add metal ingot, nugget, and plate items (metals only)
+                // Add metal ingot, nugget, plate, and crystal items (metals only)
                 METAL_INGOT_ITEMS.entrySet().forEach(entry -> {
                     String metalName = entry.getKey();
-                    // Check if this is a metal (not metalloid)
-                    ELEMENT_ITEMS.values().forEach(elementItem -> {
-                        if (elementItem != null && elementItem.get() != null) {
-                            Item elementInstance = elementItem.get();
-                            if (elementInstance instanceof ExtractedElementItem elementData &&
-                                elementData.getElementData().name.equals(metalName) &&
-                                "metal".equals(elementData.getMetalType())) {
 
-                                // Add ingot
-                                if (entry.getValue() != null && entry.getValue().get() != null) {
-                                    output.accept(entry.getValue().get());
-                                }
+                    // Find the element item for this metal
+                    var elementHolder = ELEMENT_ITEMS.get(metalName);
+                    if (elementHolder != null && elementHolder.get() != null) {
+                        Item elementInstance = elementHolder.get();
+                        if (elementInstance instanceof ExtractedElementItem elementData &&
+                            elementData.getElementData() != null &&
+                            "metal".equals(elementData.getMetalType())) {
 
-                                // Add nugget
-                                var nugget = METAL_NUGGET_ITEMS.get(metalName);
-                                if (nugget != null && nugget.get() != null) {
-                                    output.accept(nugget.get());
-                                }
+                            // Add ingot
+                            if (entry.getValue() != null && entry.getValue().get() != null &&
+                                addedItems.add(entry.getValue().get())) {
+                                output.accept(entry.getValue().get());
+                            }
 
-                                // Add plate
-                                var plate = METAL_PLATE_ITEMS.get(metalName);
-                                if (plate != null && plate.get() != null) {
-                                    output.accept(plate.get());
-                                }
+                            // Add nugget
+                            var nugget = METAL_NUGGET_ITEMS.get(metalName);
+                            if (nugget != null && nugget.get() != null &&
+                                addedItems.add(nugget.get())) {
+                                output.accept(nugget.get());
+                            }
 
-                                // Add crystal
-                                var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
-                                if (crystal != null && crystal.get() != null) {
-                                    output.accept(crystal.get());
-                                }
+                            // Add plate
+                            var plate = METAL_PLATE_ITEMS.get(metalName);
+                            if (plate != null && plate.get() != null &&
+                                addedItems.add(plate.get())) {
+                                output.accept(plate.get());
+                            }
+
+                            // Add crystal
+                            var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
+                            if (crystal != null && crystal.get() != null &&
+                                addedItems.add(crystal.get())) {
+                                output.accept(crystal.get());
                             }
                         }
-                    });
+                    }
                 });
             })
             .build()
@@ -159,53 +167,61 @@ public class ChemLibItemRegistry {
                 return siliconItem != null ? new ItemStack(siliconItem.get()) : ItemStack.EMPTY;
             })
             .displayItems((parameters, output) -> {
+                // Use a set to track added items and avoid duplicates
+                var addedItems = new java.util.HashSet<Item>();
+
                 // Add metalloid element items
                 ELEMENT_ITEMS.values().forEach(item -> {
                     if (item != null && item.get() != null) {
                         Item itemInstance = item.get();
                         if (itemInstance instanceof ExtractedElementItem elementItem &&
-                            "metalloid".equals(elementItem.getMetalType())) {
+                            "metalloid".equals(elementItem.getMetalType()) &&
+                            addedItems.add(itemInstance)) {
                             output.accept(itemInstance);
                         }
                     }
                 });
 
-                // Add metalloid ingot, nugget, and plate items
+                // Add metalloid ingot, nugget, plate, and crystal items
                 METAL_INGOT_ITEMS.entrySet().forEach(entry -> {
                     String metalName = entry.getKey();
-                    // Check if this is a metalloid
-                    ELEMENT_ITEMS.values().forEach(elementItem -> {
-                        if (elementItem != null && elementItem.get() != null) {
-                            Item elementInstance = elementItem.get();
-                            if (elementInstance instanceof ExtractedElementItem elementData &&
-                                elementData.getElementData().name.equals(metalName) &&
-                                "metalloid".equals(elementData.getMetalType())) {
 
-                                // Add ingot
-                                if (entry.getValue() != null && entry.getValue().get() != null) {
-                                    output.accept(entry.getValue().get());
-                                }
+                    // Find the element item for this metalloid
+                    var elementHolder = ELEMENT_ITEMS.get(metalName);
+                    if (elementHolder != null && elementHolder.get() != null) {
+                        Item elementInstance = elementHolder.get();
+                        if (elementInstance instanceof ExtractedElementItem elementData &&
+                            elementData.getElementData() != null &&
+                            "metalloid".equals(elementData.getMetalType())) {
 
-                                // Add nugget
-                                var nugget = METAL_NUGGET_ITEMS.get(metalName);
-                                if (nugget != null && nugget.get() != null) {
-                                    output.accept(nugget.get());
-                                }
+                            // Add ingot
+                            if (entry.getValue() != null && entry.getValue().get() != null &&
+                                addedItems.add(entry.getValue().get())) {
+                                output.accept(entry.getValue().get());
+                            }
 
-                                // Add plate
-                                var plate = METAL_PLATE_ITEMS.get(metalName);
-                                if (plate != null && plate.get() != null) {
-                                    output.accept(plate.get());
-                                }
+                            // Add nugget
+                            var nugget = METAL_NUGGET_ITEMS.get(metalName);
+                            if (nugget != null && nugget.get() != null &&
+                                addedItems.add(nugget.get())) {
+                                output.accept(nugget.get());
+                            }
 
-                                // Add crystal
-                                var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
-                                if (crystal != null && crystal.get() != null) {
-                                    output.accept(crystal.get());
-                                }
+                            // Add plate
+                            var plate = METAL_PLATE_ITEMS.get(metalName);
+                            if (plate != null && plate.get() != null &&
+                                addedItems.add(plate.get())) {
+                                output.accept(plate.get());
+                            }
+
+                            // Add crystal
+                            var crystal = METAL_CRYSTAL_ITEMS.get(metalName);
+                            if (crystal != null && crystal.get() != null &&
+                                addedItems.add(crystal.get())) {
+                                output.accept(crystal.get());
                             }
                         }
-                    });
+                    }
                 });
             })
             .build()

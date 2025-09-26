@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:lithium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:lithium_ingot",
+    "count": 1
+  }
+}

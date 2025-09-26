@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:boron_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:boron_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:osmium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:osmium_ingot",
+    "count": 1
+  }
+}

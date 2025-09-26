@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:rhodium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:rhodium_ingot",
+    "count": 1
+  }
+}

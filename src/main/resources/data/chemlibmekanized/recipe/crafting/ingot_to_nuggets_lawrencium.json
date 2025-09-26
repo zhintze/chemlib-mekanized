@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:lawrencium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:lawrencium_nugget",
+    "count": 9
+  }
+}

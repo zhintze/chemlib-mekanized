@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:zinc_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:zinc_nugget",
+    "count": 9
+  }
+}

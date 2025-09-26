@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:cesium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:cesium_ingot",
+    "count": 1
+  }
+}

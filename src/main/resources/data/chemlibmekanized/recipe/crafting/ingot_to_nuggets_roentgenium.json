@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:roentgenium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:roentgenium_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:nobelium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:nobelium_nugget",
+    "count": 9
+  }
+}

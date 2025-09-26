@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:curium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:curium_nugget",
+    "count": 9
+  }
+}

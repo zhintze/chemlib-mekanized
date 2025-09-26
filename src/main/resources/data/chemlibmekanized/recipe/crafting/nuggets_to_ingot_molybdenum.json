@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:molybdenum_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:molybdenum_ingot",
+    "count": 1
+  }
+}

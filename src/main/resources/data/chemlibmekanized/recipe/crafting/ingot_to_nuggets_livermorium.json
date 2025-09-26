@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:livermorium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:livermorium_nugget",
+    "count": 9
+  }
+}

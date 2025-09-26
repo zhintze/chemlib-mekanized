@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:thorium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:thorium_nugget",
+    "count": 9
+  }
+}

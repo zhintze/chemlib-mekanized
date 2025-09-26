@@ -3,9 +3,9 @@ package com.hecookin.chemlibmekanized.registry;
 import com.hecookin.chemlibmekanized.ChemlibMekanized;
 import com.hecookin.chemlibmekanized.items.MetalCrystalItem;
 import net.minecraft.world.item.Item;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+// import net.neoforged.bus.api.SubscribeEvent; // No longer needed
+// import net.neoforged.fml.common.EventBusSubscriber; // No longer needed
+// import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent; // Not needed - handled in ChemLibItemRegistry
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -15,8 +15,9 @@ import java.util.Map;
 /**
  * Registry for metal and metalloid crystal items.
  * Crystals are produced from clean slurries in the Chemical Crystallizer.
+ * Note: Creative tab population is handled in ChemLibItemRegistry
  */
-@EventBusSubscriber(modid = ChemlibMekanized.MODID, bus = EventBusSubscriber.Bus.MOD)
+// @EventBusSubscriber(modid = ChemlibMekanized.MODID, bus = EventBusSubscriber.Bus.MOD) // No longer needed - no event handlers
 public class MetalCrystalRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(
@@ -113,7 +114,46 @@ public class MetalCrystalRegistry {
         {"americium", "Americium", "AB8040"},
         {"curium", "Curium", "920133"},
         {"berkelium", "Berkelium", "B48B41"},
-        {"californium", "Californium", "B47148"}
+        {"californium", "Californium", "B47148"},
+
+        // Missing super-heavy elements
+        {"bohrium", "Bohrium", "54B889"},
+        {"copernicium", "Copernicium", "E39349"},
+        {"darmstadtium", "Darmstadtium", "325AA6"},
+        {"dubnium", "Dubnium", "AB7A5F"},
+        {"dysprosium", "Dysprosium", "653F0E"},
+        {"einsteinium", "Einsteinium", "1F79AE"},
+        {"erbium", "Erbium", "A05768"},
+        {"fermium", "Fermium", "E3CDA1"},
+        {"flerovium", "Flerovium", "654685"},
+        {"hassium", "Hassium", "8A8951"},
+        {"holmium", "Holmium", "4D6352"},
+        {"lawrencium", "Lawrencium", "898A8C"},
+        {"livermorium", "Livermorium", "487D3B"},
+        {"lutetium", "Lutetium", "954D41"},
+        {"meitnerium", "Meitnerium", "6F5D3A"},
+        {"mendelevium", "Mendelevium", "1512B4"},
+        {"moscovium", "Moscovium", "18F2AD"},
+        {"nihonium", "Nihonium", "5E0009"},
+        {"nobelium", "Nobelium", "7E41E8"},
+        {"osmium", "Osmium", "7599C1"},
+        {"praseodymium", "Praseodymium", "73B93D"},
+        {"promethium", "Promethium", "62AF07"},
+        {"roentgenium", "Roentgenium", "80B848"},
+        {"rutherfordium", "Rutherfordium", "333236"},
+        {"samarium", "Samarium", "B7B05C"},
+        {"seaborgium", "Seaborgium", "F75320"},
+        {"terbium", "Terbium", "8BA754"},
+        {"thulium", "Thulium", "179E43"},
+        {"ytterbium", "Ytterbium", "E7E39F"},
+
+        // Vanilla/Mekanism metals (for compatibility)
+        {"copper", "Copper", "956853"},
+        {"gold", "Gold", "CFAC38"},
+        {"iron", "Iron", "34302E"},
+        {"lead", "Lead", "34465A"},
+        {"tin", "Tin", "46311A"},
+        {"uranium", "Uranium", "D1C33E"}
     };
 
     static {
@@ -146,25 +186,26 @@ public class MetalCrystalRegistry {
 
     /**
      * Add crystal items to the appropriate creative tabs
+     * DISABLED: Crystals are now handled in ChemLibItemRegistry creative tab definitions
      */
-    @SubscribeEvent
-    public static void buildCreativeTabContents(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() == ChemLibItemRegistry.METALS_TAB.get()) {
-            // Add metal crystal items to the metals tab
-            CRYSTAL_ITEMS.forEach((name, crystalHolder) -> {
-                if (crystalHolder != null && crystalHolder.get() != null && !isMetalloid(name)) {
-                    event.accept(crystalHolder.get());
-                }
-            });
-        } else if (event.getTab() == ChemLibItemRegistry.METALLOIDS_TAB.get()) {
-            // Add metalloid crystal items to the metalloids tab
-            CRYSTAL_ITEMS.forEach((name, crystalHolder) -> {
-                if (crystalHolder != null && crystalHolder.get() != null && isMetalloid(name)) {
-                    event.accept(crystalHolder.get());
-                }
-            });
-        }
-    }
+    // @SubscribeEvent
+    // public static void buildCreativeTabContents(BuildCreativeModeTabContentsEvent event) {
+    //     if (event.getTab() == ChemLibItemRegistry.METALS_TAB.get()) {
+    //         // Add metal crystal items to the metals tab
+    //         CRYSTAL_ITEMS.forEach((name, crystalHolder) -> {
+    //             if (crystalHolder != null && crystalHolder.get() != null && !isMetalloid(name)) {
+    //                 event.accept(crystalHolder.get());
+    //             }
+    //         });
+    //     } else if (event.getTab() == ChemLibItemRegistry.METALLOIDS_TAB.get()) {
+    //         // Add metalloid crystal items to the metalloids tab
+    //         CRYSTAL_ITEMS.forEach((name, crystalHolder) -> {
+    //             if (crystalHolder != null && crystalHolder.get() != null && isMetalloid(name)) {
+    //                 event.accept(crystalHolder.get());
+    //             }
+    //         });
+    //     }
+    // }
 
     private static boolean isMetalloid(String name) {
         for (String metalloid : METALLOIDS) {

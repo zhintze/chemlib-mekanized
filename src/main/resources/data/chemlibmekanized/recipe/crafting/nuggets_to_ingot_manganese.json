@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:manganese_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:manganese_ingot",
+    "count": 1
+  }
+}

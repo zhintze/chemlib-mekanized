@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:gadolinium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:gadolinium_nugget",
+    "count": 9
+  }
+}

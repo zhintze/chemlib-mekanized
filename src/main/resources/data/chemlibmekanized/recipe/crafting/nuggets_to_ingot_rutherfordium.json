@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:rutherfordium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:rutherfordium_ingot",
+    "count": 1
+  }
+}

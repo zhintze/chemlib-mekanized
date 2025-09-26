@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:francium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:francium_nugget",
+    "count": 9
+  }
+}

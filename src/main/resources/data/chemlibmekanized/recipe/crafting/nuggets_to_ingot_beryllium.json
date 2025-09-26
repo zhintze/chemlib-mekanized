@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:beryllium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:beryllium_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:roentgenium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:roentgenium_ingot",
+    "count": 1
+  }
+}

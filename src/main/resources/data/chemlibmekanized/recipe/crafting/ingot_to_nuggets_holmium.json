@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:holmium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:holmium_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:einsteinium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:einsteinium_ingot",
+    "count": 1
+  }
+}

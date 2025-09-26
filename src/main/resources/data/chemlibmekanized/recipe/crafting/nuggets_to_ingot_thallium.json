@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:thallium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:thallium_ingot",
+    "count": 1
+  }
+}

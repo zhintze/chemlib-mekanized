@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlibmekanized:yttrium_nugget"
+    }
+  },
+  "result": {
+    "id": "chemlibmekanized:yttrium_ingot",
+    "count": 1
+  }
+}

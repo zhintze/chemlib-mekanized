@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlibmekanized:hafnium_ingot"
+    }
+  ],
+  "result": {
+    "id": "chemlibmekanized:hafnium_nugget",
+    "count": 9
+  }
+}

@@ -29,6 +29,7 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
         generateMetalIngotModels();
         generateMetalNuggetModels();
         generateMetalPlateModels();
+        generateMetalCrystalModels();
 
         ChemlibMekanized.LOGGER.info("Completed generating item models");
     }
@@ -114,6 +115,20 @@ public class ChemLibItemModelProvider extends ItemModelProvider {
                          "layer0",
                          modLoc("items/plate"));
         }
+    }
+
+    private void generateMetalCrystalModels() {
+        for (Map.Entry<String, DeferredHolder<Item, Item>> entry : ChemLibItemRegistry.METAL_CRYSTAL_ITEMS.entrySet()) {
+            String metalName = entry.getKey();
+            String crystalName = metalName + "_crystal";
+
+            // Generate simple textured model using a crystal template texture
+            singleTexture(crystalName,
+                         ResourceLocation.fromNamespaceAndPath("minecraft", "item/generated"),
+                         "layer0",
+                         modLoc("item/crystal_base"));
+        }
+        ChemlibMekanized.LOGGER.info("Generated {} crystal models", ChemLibItemRegistry.METAL_CRYSTAL_ITEMS.size());
     }
 
     public ResourceLocation modLoc(String path) {
