@@ -431,6 +431,11 @@ public class ChemlibMekanizedChemicals {
     public static void init() {
         ChemlibMekanized.LOGGER.info("Initializing {} gas chemicals for ChemLib integration",
             CHEMICALS.getEntries().size());
+
+        // Debug: List all registered slurries (but don't try to access them yet)
+        ChemlibMekanized.LOGGER.info("Registered {} metal slurries:", METAL_SLURRIES.size());
+        // Note: Cannot access the actual Chemical objects here as they're not bound yet
+        // The DeferredChemical references exist but .get() would fail
     }
 
     /**
@@ -439,7 +444,8 @@ public class ChemlibMekanizedChemicals {
     private static void registerAllSlurries() {
         // Register all metal slurries
         for (ChemLibMetal metal : ChemLibMetal.values()) {
-            METAL_SLURRIES.put(metal.getName(), registerSlurry(metal.getName(), metal.getTint()));
+            SlurryRegistryObject<Chemical, Chemical> slurry = registerSlurry(metal.getName(), metal.getTint());
+            METAL_SLURRIES.put(metal.getName(), slurry);
         }
 
         // Also register special slurries for non-metal materials
@@ -498,4 +504,5 @@ public class ChemlibMekanizedChemicals {
     public static SlurryRegistryObject<Chemical, Chemical> getSlurryPair(String metalName) {
         return METAL_SLURRIES.get(metalName.toLowerCase());
     }
+
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "chemlibmekanized:copernicium_crystal"
+  },
+  "result": {
+    "count": 1,
+    "id": "chemlibmekanized:copernicium_ingot"
+  }
+}
