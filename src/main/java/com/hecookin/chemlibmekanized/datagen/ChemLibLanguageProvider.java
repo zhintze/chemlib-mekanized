@@ -89,7 +89,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"osmium", "Osmium"}, {"uranium", "Uranium"},
             // Rare metals
             {"tungsten", "Tungsten"}, {"chromium", "Chromium"}, {"manganese", "Manganese"},
-            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"},
+            {"cobalt", "Cobalt"}, {"cadmium", "Cadmium"}, {"mercury", "Mercury"},
             // Precious metals
             {"palladium", "Palladium"}, {"rhodium", "Rhodium"}, {"iridium", "Iridium"}, {"ruthenium", "Ruthenium"},
             // Radioactive
@@ -98,10 +98,10 @@ public class ChemLibLanguageProvider extends LanguageProvider {
             {"lithium", "Lithium"}, {"sodium", "Sodium"}, {"potassium", "Potassium"},
             {"calcium", "Calcium"}, {"magnesium", "Magnesium"}, {"barium", "Barium"},
             {"strontium", "Strontium"}, {"rubidium", "Rubidium"}, {"cesium", "Cesium"},
-            {"francium", "Francium"},
+            {"francium", "Francium"}, {"radium", "Radium"},
             // Metalloids
-            {"germanium", "Germanium"}, {"antimony", "Antimony"},
-            {"bismuth", "Bismuth"}, {"boron", "Boron"}, {"arsenic", "Arsenic"},
+            {"silicon", "Silicon"}, {"germanium", "Germanium"}, {"antimony", "Antimony"},
+            {"bismuth", "Bismuth"}, {"boron", "Boron"}, {"arsenic", "Arsenic"}, {"tellurium", "Tellurium"},
             // Lanthanides (rare earths)
             {"cerium", "Cerium"}, {"neodymium", "Neodymium"}, {"lanthanum", "Lanthanum"},
             {"gadolinium", "Gadolinium"}, {"europium", "Europium"}, {"samarium", "Samarium"},
@@ -135,10 +135,7 @@ public class ChemLibLanguageProvider extends LanguageProvider {
     }
 
     private void addFluidTranslations() {
-        // Add gas fluid translations (liquid_nitrogen, liquid_fluorine, etc.)
-        addGasFluidTranslations();
-
-        // Add other fluids if any
+        // Add all fluids (including gas fluids now that they're in getAllFluids())
         List<ChemLibFluidRegistry.ChemLibFluidEntry> fluids = ChemLibFluidRegistry.getAllFluids();
         for (ChemLibFluidRegistry.ChemLibFluidEntry fluid : fluids) {
             String fluidTypeName = formatChemicalName(fluid.name());
@@ -149,51 +146,6 @@ public class ChemLibLanguageProvider extends LanguageProvider {
         }
     }
 
-    private void addGasFluidTranslations() {
-        // Element gas fluids
-        addSingleFluidTranslation("liquid_nitrogen", "Liquid Nitrogen");
-        addSingleFluidTranslation("liquid_fluorine", "Liquid Fluorine");
-
-        // Noble gases
-        addSingleFluidTranslation("liquid_helium", "Liquid Helium");
-        addSingleFluidTranslation("liquid_neon", "Liquid Neon");
-        addSingleFluidTranslation("liquid_argon", "Liquid Argon");
-        addSingleFluidTranslation("liquid_krypton", "Liquid Krypton");
-        addSingleFluidTranslation("liquid_xenon", "Liquid Xenon");
-        addSingleFluidTranslation("liquid_radon", "Liquid Radon");
-
-        // Compound gas fluids
-        addSingleFluidTranslation("liquid_carbon_dioxide", "Liquid Carbon Dioxide");
-        addSingleFluidTranslation("liquid_ethylene", "Liquid Ethylene");
-        addSingleFluidTranslation("liquid_ammonium", "Liquid Ammonium");
-        addSingleFluidTranslation("liquid_methane", "Liquid Methane");
-        addSingleFluidTranslation("liquid_ethane", "Liquid Ethane");
-        addSingleFluidTranslation("liquid_propane", "Liquid Propane");
-        addSingleFluidTranslation("liquid_butane", "Liquid Butane");
-        addSingleFluidTranslation("liquid_nitrogen_dioxide", "Liquid Nitrogen Dioxide");
-        addSingleFluidTranslation("liquid_ammonia", "Liquid Ammonia");
-        addSingleFluidTranslation("liquid_hydrogen_sulfide", "Liquid Hydrogen Sulfide");
-        addSingleFluidTranslation("liquid_acetylene", "Liquid Acetylene");
-        addSingleFluidTranslation("liquid_carbon_monoxide", "Liquid Carbon Monoxide");
-        addSingleFluidTranslation("liquid_nitric_oxide", "Liquid Nitric Oxide");
-
-        // Vaporizable liquid compounds
-        addSingleFluidTranslation("liquid_ethanol", "Liquid Ethanol");
-        addSingleFluidTranslation("liquid_propan_1_ol", "Liquid Propan-1-ol");
-        addSingleFluidTranslation("liquid_propan_2_ol", "Liquid Propan-2-ol");
-        addSingleFluidTranslation("liquid_pentane", "Liquid Pentane");
-        addSingleFluidTranslation("liquid_hexane", "Liquid Hexane");
-        addSingleFluidTranslation("liquid_heptane", "Liquid Heptane");
-        addSingleFluidTranslation("liquid_acetic_acid", "Liquid Acetic Acid");
-        addSingleFluidTranslation("liquid_carbon_disulfide", "Liquid Carbon Disulfide");
-    }
-
-    private void addSingleFluidTranslation(String name, String displayName) {
-        // Add fluid type translation
-        add("fluid_type." + ChemlibMekanized.MODID + "." + name, displayName);
-        // Add block translation for fluid blocks
-        add("block." + ChemlibMekanized.MODID + "." + name + "_block", displayName);
-    }
 
     private void addSlurryTranslations() {
         // Define all our slurry elements with proper display names
